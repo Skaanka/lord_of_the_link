@@ -63,7 +63,7 @@
                         <div class="form-group col-md-2">
                             <label for="annees">Années d'obt.</label>
                         </div>
-                        <div class="form-group col-md-5">
+                        <div class="form-group col-md-4">
                             <label for="password">Intitulé</label>
 
                         </div>
@@ -125,14 +125,14 @@
                   <div class="panel-body">
                     
                     <div class="row" id="diplomes">
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-2">
                             <label for="annees">Période</label>
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-5">
                             <label for="password">Compagnie</label>
 
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-5">
                             <label for="password">Intitulé du poste</label>
                         </div>
                     </div>
@@ -230,26 +230,6 @@
                     
                     <div class="form-group col-xs-12">
                         <textarea class="form-control" rows="6"></textarea>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="panel panel-default">
-                  <div class="panel-heading"><h3>Fil d'actu.</h3></div>
-                  <div class="panel-body">
-                    
-                    <div class="form-group col-xs-12">
-                        <textarea class="form-control" rows="6"></textarea>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="panel panel-default">
-                  <div class="panel-heading"><h3>Portfolio en ligne</h3></div>
-                  <div class="panel-body">
-                    
-                    <div class="form-group col-xs-12">
-                        <input type="text" class="form-control" rows="6" placeholder="http://...">
                     </div>
                   </div>
                 </div>

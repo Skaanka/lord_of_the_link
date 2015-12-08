@@ -4,7 +4,7 @@ require_once('php/connexion.php');
     
  if (isset($_POST["deconnexion"])) { // TODO bouton deconnexion 
     unset($_SESSION["user"]);
-    echo "eee";
+    header("Location: /lord_of_the_link/pages/login.php");
 }
 ?>
 <!doctype html>

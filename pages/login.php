@@ -1,6 +1,7 @@
 <?php
     session_start();
-    require_once('../ ');
+    require_once('../php/connexion.php');
+$login_erreur ="";
 
 try {
     if ( isset($_POST['connexion'])) {
@@ -23,7 +24,12 @@ try {
                 $_SESSION['user']['siteWeb'] = $results['siteWeb'];
                 header("Location: ../index.php");  //redirection sur l'index
             } else {
-                echo "pseudo ou mot de passe invalide.";
+                $login_erreur = "pseudo ou mot de passe invalide!";
+                $redirection = $_SERVER['HTTP_REFERER'] . "?=" . $login_erreur ; // TODO sur la bonne piste
+                
+                header("Location: $redirection");
+                
+
             }
         }
     }
@@ -33,34 +39,3 @@ try {
 
 ?>
 
-<!doctype html>
-<html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <title>Base Page HTML5</title>
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        
-        <div id="wrapper">
-            <form method="POST">
-                <div class="form-group">
-                    <label for="login">login</label>
-                    <input type="text" class="form-control" id="login" name="mail">
-                </div>
-                <div class="form-group">
-                    <label for="password">Mot de Passe</label>
-                    <input type="password" class="form-control" id="password" name="mot_de_passe">
-                </div>
-                <div class="form-group">
-                    <input type="submit" name="connexion" value="Connexion" class="form-control">
-                </div>
-            </form>   
-            
-            
-            
-        </div>
-        
-    </body>
-</html>

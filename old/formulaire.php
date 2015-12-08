@@ -1,7 +1,7 @@
 <?php 
 // connexion bdd
     session_start();
-    require_once('php/connexion.php');
+    require_once('../php/connexion.php');
     
 if (isset($_POST['submit'])){
         $repertoire_upload = "c://xampp//htdocs//lord_of_the_link//uploads//";

@@ -125,7 +125,7 @@
                 
                 <div id="bouton" class="row">
                     <div class="col-md-offset-9">
-                        <button type="button" class="btn btn-primary">Page suivante</button>
+                        <input type="button" class="btn btn-default" value="Page suivante">
                     </div>
                 </div>
                 

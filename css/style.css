@@ -41,9 +41,6 @@ body {
     float: left;
 }
 
-#pics {
-}
-
 #espaceform {
     padding-top: 5em;
 }
@@ -57,3 +54,10 @@ body {
     height: 150px;
 }
 
+#diplomes {
+    text-align: center;
+}
+
+.panel-heading {
+    text-align: center;
+}

@@ -6,15 +6,24 @@ body {
 }
 
 #header {
-    background: green;
+    background: url(../img/bandeau.png) no-repeat, fixed, center;
+    background-size: cover;
+    height: 400px;
 }
 
 #wrapper {
+    padding-top: 10em;
+    padding-bottom: 10em;
     background: white;
 }
 
+#connexionbar {
+    padding: 8px;
+    background: black;
+}
+
 #connexion {
-    background: white;
+    text-align: right;
     font-size: 12px;
 }
 
@@ -23,5 +32,28 @@ body {
 }
 
 #menu-nav {
+    text-align: center;
+    
     background: grey;
 }
+
+#avatar {
+    float: left;
+}
+
+#pics {
+}
+
+#espaceform {
+    padding-top: 5em;
+}
+
+#bouton {
+    padding-top: 4em;
+}
+
+#footer {
+    background: black;
+    height: 150px;
+}
+

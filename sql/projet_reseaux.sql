@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 08 Décembre 2015 à 10:19
+-- Généré le :  Mar 08 Décembre 2015 à 15:32
 -- Version du serveur :  5.6.25
 -- Version de PHP :  5.6.11
 
@@ -46,7 +46,8 @@ CREATE TABLE IF NOT EXISTS `divertissements` (
   `xboxlive` varchar(255) NOT NULL,
   `steam` varchar(255) NOT NULL,
   `battlenet` varchar(255) NOT NULL,
-  `compte_nintendo` varchar(255) NOT NULL
+  `compte_nintendo` varchar(255) NOT NULL,
+  `origin` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -68,7 +69,15 @@ CREATE TABLE IF NOT EXISTS `membres` (
   `phone` int(15) NOT NULL,
   `siteWeb` varchar(150) NOT NULL,
   `mot_de_passe` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `membres`
+--
+
+INSERT INTO `membres` (`id`, `nom`, `prenom`, `ddn`, `avatar`, `adresse`, `cp`, `ville`, `mail`, `phone`, `siteWeb`, `mot_de_passe`) VALUES
+(1, 'test1', 'test1', '1898-01-01', 'Array', '53 test', 14258, 'test', 'test@mail.fr', 614521452, 'www.test.fr', '$2y$10$7QLeD2I7VjrNULo1Xnpu1OYkROcf2POgtXWtpoHr7pHl44MTnPbHi'),
+(4, 'kangni', 'devis', '2015-12-07', 'oIrmq.jpg', '92 rue de la platone', 95420, 'magny en vexin', 'bsx95@yahoo.fr', 606060606, 'test.fr', '$2y$10$9Q2aTD6dNM2pPyTJ5k1zK.oKOMQVBFns0hxezwcz8QUc1chw6jj4O');
 
 -- --------------------------------------------------------
 
@@ -82,7 +91,8 @@ CREATE TABLE IF NOT EXISTS `pro` (
   `linkedin` varchar(255) NOT NULL,
   `viadeo` varchar(255) NOT NULL,
   `xing` varchar(255) NOT NULL,
-  `muxi` varchar(255) NOT NULL
+  `muxi` varchar(255) NOT NULL,
+  `github` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -162,7 +172,7 @@ ALTER TABLE `divertissements`
 -- AUTO_INCREMENT pour la table `membres`
 --
 ALTER TABLE `membres`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `pro`
 --

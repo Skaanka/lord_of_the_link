@@ -27,9 +27,6 @@ body {
     font-size: 12px;
 }
 
-.connexion.form-group {
-    width: 60%;
-}
 
 #menu-nav {
     text-align: center;
@@ -60,4 +57,13 @@ body {
 
 .panel-heading {
     text-align: center;
+}
+
+.icons {
+    height: auto;
+    width: 90px;
+}
+
+.celSoc {
+    margin-top: 2%;
 }

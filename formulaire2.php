@@ -14,16 +14,16 @@
 
             <form id="connexion" class="form-inline">
                 <div class="form-group">
-                    <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                    <input type="email" class="" id="exampleInputEmail3" placeholder="Email">
+                    <label class="sr-only" for="mail">Email address</label>
+                    <input type="email" class="" id="mail" placeholder="Email">
                 </div>
                 <div class="form-group">
-                    <label class="sr-only" for="exampleInputPassword3">Password</label>
-                    <input type="password" class="" id="exampleInputPassword3" placeholder="Password">
+                    <label class="sr-only" for="password">Password</label>
+                    <input type="password" class="" id="password" placeholder="Password">
                 </div>
 
-                <button type="submit" class="btn btn-default btn-xs">Connexion</button>
-                <button type="submit" class="btn btn-default btn-xs">Inscription</button>
+                <input type="submit" class="btn btn-default btn-xs" value="Connexion">
+                <input type="submit" class="btn btn-default btn-xs" value="Inscription">
             </form>
         </div>
 
@@ -259,8 +259,8 @@
 
                 <div id="bouton" class="row">
                     <div class="">
-                        <input type="submit" class="btn btn-default col-md-offset-1" value="Page précédente">
-                        <input type="submit" class="btn btn-default col-md-offset-5" value="Page suivante">
+                        <input type="submit" class="btn btn-primary col-md-offset-1" value="Page précédente">
+                        <input type="submit" class="btn btn-primary col-md-offset-5" value="Page suivante">
                     </div>
                 </div>
 

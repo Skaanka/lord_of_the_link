@@ -1,9 +1,9 @@
 <?php
-
-// connexion bdd
     session_start();
+    // connexion bdd
     require_once('../php/connexion.php');
 ?>
+
 <!doctype html>
 <html lang="fr">
     
@@ -17,20 +17,34 @@
     <body>
         
         <div id="connexionbar" class="col-md-8 col-md-offset-2">
-            
             <form method="post" id="connexion" class="form-inline">
+                <?php 
+                if (isset($_SESSION['user']) ) { 
+                ?>      
                     <div class="form-group">
-                        <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                        <input type="email" class="" id="exampleInputEmail3" placeholder="Email" name="mail">
+                        <label for="profil">Bienvenue <?php echo $_SESSION['user']['prenom'] . " " . $_SESSION['user']['nom'] ; ?></label> <!-- TODO STYLE ECHO NOM PRENOM -->
+                        <input type="submit" id="profil" class="btn btn-default btn-xs" name="profil" value="profil" formaction="#.php">
+                        <input type="submit" class="btn btn-default btn-xs" name="deconnexion" value="déconnexion" formaction="logoff.php">
+                    </div>
+                <?php
+                } elseif ( empty($_SESSION['user']) )  {
+                ?>
+                    <div class="form-group">
+                        <label class="sr-only" for="email">Email address</label>
+                        <input type="email" class="" id="email" placeholder="Email" name="mail">
                     </div>
                     <div class="form-group">
-                        <label class="sr-only" for="exampleInputPassword3">Password</label>
-                        <input type="password" class="" id="exampleInputPassword3" placeholder="Password" name="mot_de_passe">
+                        <label class="sr-only" for="password">Password</label>
+                        <input type="password" class="" id="password" placeholder="Password" name="mot_de_passe">
                     </div>
 
                     <input type="submit" class="btn btn-default btn-xs" name="connexion" value="connexion" formaction="login.php">
                     <button type="submit" class="btn btn-default btn-xs">Inscription</button>
-                <span><?php echo $login_erreur ; ?></span>
+                <?php
+                    //echo $login_erreur; // TODO affiche message d'erreur : "erreur email ou mot de passe, veuillez réessayer" 
+                }
+                ?>
+                    
             </form>
         </div>
         

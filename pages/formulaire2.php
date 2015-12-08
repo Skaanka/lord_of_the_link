@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    // connexion bdd
+    require_once('../php/connexion.php');
+    //print_r($_SESSION['inscription']);
+?>
+
 <!doctype html>
 <html lang="fr">
 
@@ -13,17 +20,32 @@
         <div id="connexionbar" class="col-md-8 col-md-offset-2">
 
             <form method="post" id="connexion" class="form-inline">
-                <div class="form-group">
-                    <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                    <input name="mail" type="email" class="" id="exampleInputEmail3" placeholder="Email">
-                </div>
-                <div class="form-group">
-                    <label class="sr-only" for="exampleInputPassword3">Password</label>
-                    <input type="password" class="" id="exampleInputPassword3" placeholder="Password">
-                </div>
-
-                <input type="submit" class="btn btn-default btn-xs" name="connexion" value="connexion" formaction="login.php">
-                <button type="submit" class="btn btn-default btn-xs">Inscription</button>
+                <?php 
+                if (isset($_SESSION['user']) ) { 
+                ?>      
+                    <div class="form-group">
+                        <label for="profil">Bienvenue <?php echo $_SESSION['user']['prenom'] . " " . $_SESSION['user']['nom'] ; ?></label> <!-- TODO STYLE ECHO NOM PRENOM -->
+                        <input type="submit" id="profil" class="btn btn-default btn-xs" name="profil" value="profil" formaction="#.php">
+                        <input type="submit" class="btn btn-default btn-xs" name="deconnexion" value="déconnexion" formaction="logoff.php">
+                    </div>
+                <?php
+                } elseif ( empty($_SESSION['user']) )  {
+                ?>
+                    <div class="form-group">
+                        <label class="sr-only" for="email">Email address</label>
+                        <input type="email" class="" id="email" placeholder="Email" name="mail">
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="password">Password</label>
+                        <input type="password" class="" id="password" placeholder="Password" name="mot_de_passe">
+                    </div>
+                
+                    <input type="submit" class="btn btn-default btn-xs" name="connexion" value="connexion" formaction="login.php">
+                    <button type="submit" class="btn btn-default btn-xs">Inscription</button>
+                <?php
+                    //echo $login_erreur; // TODO affiche message d'erreur : "erreur email ou mot de passe, veuillez réessayer" 
+                }
+                ?>  
             </form>
         </div>
 
@@ -49,7 +71,7 @@
 
 
         <div id="wrapper" class="col-md-8 col-md-offset-2">
-            <form class="col-md-6 col-md-offset-3">  
+            <form method="POST" class="col-md-6 col-md-offset-3">  
 
                 
                 <h1>Parcour pro.</h1><br/>
@@ -64,56 +86,56 @@
                             <label for="annees">Années d'obt.</label>
                         </div>
                         <div class="form-group col-md-5">
-                            <label for="password">Intitulé</label>
+                            <label for="intitule">Intitulé</label>
 
                         </div>
                         <div class="form-group col-md-5">
-                            <label for="password">Ecole</label>
+                            <label for="ecole">Ecole</label>
                         </div>
                     </div>
                             
                     <div class="row cellule">
                         <div class="form-group col-md-2">
-                            <input type="text" class="form-control">
+                            <input type="text" name="annees_obt" class="form-control">
                         </div>
                         <div class="form-group col-md-5">
-                            <input type="text" class="form-control">
+                            <input type="text" name="intitule" class="form-control">
                         </div>
                         <div class="form-group col-md-5">
-                            <input type="text" class="form-control">
+                            <input type="text" name="ecole" class="form-control">
                         </div>
                     </div>
                     <div class="row cellule">
                         <div class="form-group col-md-2">
-                            <input type="text" class="form-control">
+                            <input type="text" name="annees_obt" class="form-control">
                         </div>
                         <div class="form-group col-md-5">
-                            <input type="text" class="form-control">
+                            <input type="text" name="intitule" class="form-control">
                         </div>
                         <div class="form-group col-md-5">
-                            <input type="text" class="form-control">
+                            <input type="text" name="ecole" class="form-control">
                         </div>
                     </div>
                     <div class="row cellule">
                         <div class="form-group col-md-2">
-                            <input type="text" class="form-control">
+                            <input type="text" name="annees_obt" class="form-control">
                         </div>
                         <div class="form-group col-md-5">
-                            <input type="text" class="form-control">
+                            <input type="text" name="intitule" class="form-control">
                         </div>
                         <div class="form-group col-md-5">
-                            <input type="text" class="form-control">
+                            <input type="text" name="ecole" class="form-control">
                         </div>
                     </div>
                     <div class="row cellule">
                         <div class="form-group col-md-2">
-                            <input type="text" class="form-control">
+                            <input type="text" name="annees_obt" class="form-control">
                         </div>
                         <div class="form-group col-md-5">
-                            <input type="text" class="form-control">
+                            <input type="text" name="intitule" class="form-control">
                         </div>
                         <div class="form-group col-md-5">
-                            <input type="text" class="form-control">
+                            <input type="text" name="ecole" class="form-control">
                         </div>
                     </div>
                       </div>
@@ -233,7 +255,9 @@
                     </div>
                   </div>
                 </div>
-                
+                <?php 
+                    if (isset($_SESSION['user']) ) {
+                ?>
                 <div class="panel panel-default">
                   <div class="panel-heading"><h3>Fil d'actu.</h3></div>
                   <div class="panel-body">
@@ -243,7 +267,9 @@
                     </div>
                   </div>
                 </div>
-                
+                <?php 
+                    }
+                ?>
                 <div class="panel panel-default">
                   <div class="panel-heading"><h3>Portfolio en ligne</h3></div>
                   <div class="panel-body">
@@ -259,8 +285,8 @@
 
                 <div id="bouton" class="row">
                     <div class="">
-                        <input type="submit" class="btn btn-default col-md-offset-1" value="Page précédente">
-                        <input type="submit" class="btn btn-default col-md-offset-5" value="Page suivante">
+                        <input type="submit" name="return" class="btn btn-default col-md-offset-1" value="Page précédente" formaction="formulaire.php">
+                        <input type="submit" name="submit" class="btn btn-default col-md-offset-5" value="Page suivante" formaction="formulaire_post2.php">
                     </div>
                 </div>
 

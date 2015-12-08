@@ -30,7 +30,6 @@ body {
 
 #menu-nav {
     text-align: center;
-    
     background: grey;
 }
 
@@ -66,4 +65,9 @@ body {
 
 .celSoc {
     margin-top: 2%;
+}
+
+.iconMini {
+    height: auto;
+    width: 20px;
 }

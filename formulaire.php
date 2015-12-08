@@ -52,10 +52,6 @@
             <form class="col-md-6 col-md-offset-3">  
 
                 <div class="form-group col-md-12" >
-                    
-                    
-                    
-
                 </div>
 
                 <div class="row">
@@ -136,5 +132,8 @@
         <div id="footer" class="col-md-8 col-md-offset-2">
         </div>
 
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
     </body>
 </html>

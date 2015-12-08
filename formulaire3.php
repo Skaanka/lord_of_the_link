@@ -10,44 +10,86 @@
     </head>
     <body>
 
+        
+        <!-- connexion  -->
         <div id="connexionbar" class="col-md-8 col-md-offset-2">
 
             <form id="connexion" class="form-inline">
                 <div class="form-group">
-                    <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                    <input type="email" class="" id="exampleInputEmail3" placeholder="Email">
+                    <label class="sr-only" for="mail">Email address</label>
+                    <input type="email" class="" id="mail" placeholder="Email">
                 </div>
                 <div class="form-group">
-                    <label class="sr-only" for="exampleInputPassword3">Password</label>
-                    <input type="password" class="" id="exampleInputPassword3" placeholder="Password">
+                    <label class="sr-only" for="password">Password</label>
+                    <input type="password" class="" id="password" placeholder="Password">
                 </div>
 
                 <input type="submit" class="btn btn-default btn-xs" value="Connexion">
-                <button type="submit" class="btn btn-default btn-xs" value="Inscription">
+                <input type="submit" class="btn btn-default btn-xs" value="Inscription">
             </form>
         </div>
 
         <div id="header" class="col-md-8 col-md-offset-2">
 
         </div>
-        <!-------- MENU HEAD ----------->
-        <nav class="col-md-8 col-md-offset-2"id="menu-nav" >
-            <!------- MENU NAV --------->
-            <ul class="navBeauty">
-                <button class="menu_str" ><a href="#">Accueil </a></button>
-                <button class="menu_str"><a href="#">Portail </a></button>
-                <button class="menu_str"><a href="#">Membres </a></button>
-                <button class="menu_str"><a href="#">s'enregistrer </a></button>
-            </ul>
-        </nav>
-        <!-------------- FIN MENU NAV ------------------------->
+            
+            
+        <!-- menu navbar en dropdown -->
+        <div class="row col-md-8 col-md-offset-2" id="menu-nav">
+            
+            <!-- bouton divertissement -->
+            <div class="btn-group" >
+              <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Divertissement <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#"><img src="img/icons/PSN_logo.png" class="iconMini">&nbsp;PSN</a></li>
+                <li><a href="#"><img src="img/icons/Xbox_logo.png" class="iconMini">&nbsp;XboxLive</a></li>
+                <li><a href="#"><img src="img/icons/Steam_logo.png" class="iconMini">&nbsp;Steam</a></li>
+                <li><a href="#"><img src="img/icons/battlenet_logo.png" class="iconMini">&nbsp;Battle.net</a></li>
+                <li><a href="#"><img src="img/icons/nintendo_logo.png" class="iconMini">&nbsp;Nintendo</a></li>
+                <li><a href="#"><img src="img/icons/origin1_logo.png" class="iconMini">&nbsp;Origin</a></li>
+              </ul>
+            </div>
+
+            <!-- bouton réseaux pro -->
+            <div class="btn-group">
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Réseaux pro. <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#"><img src="img/icons/linkedin_logo.png" class="iconMini">&nbsp;LinkedIn</a></li>
+                <li><a href="#"><img src="img/icons/viadeo_logo.png" class="iconMini">&nbsp;Viadeo</a></li>
+                <li><a href="#"><img src="img/icons/xing_logo.png" class="iconMini">&nbsp;xing</a></li>
+                <li><a href="#"><img src="img/icons/muxi_logo.jpg" class="iconMini">&nbsp;Muxy</a></li>
+                <li><a href="#"><img src="img/icons/github_logo.png" class="iconMini">&nbsp;GitHub</a></li>
+              </ul>
+            </div>
+            
+            <!-- bouton réseaux sociaux-->
+            <div class="btn-group">
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Réseaux sociaux <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#"><img src="img/icons/FB_logo.png" class="iconMini">&nbsp;Facebook</a></li>
+                <li><a href="#"><img src="img/icons/Twitter-logo.png" class="iconMini">&nbsp;Twitter</a></li>
+                <li><a href="#"><img src="img/icons/YouTube-logo.png" class="iconMini">&nbsp;Youtube</a></li>
+                <li><a href="#"><img src="img/icons/googleplus_logo.png" class="iconMini">&nbsp;Google+</a></li>
+                <li><a href="#"><img src="img/icons/Skype_logo.png" class="iconMini">&nbsp;Skype</a></li>
+                <li><a href="#"><img src="img/icons/instagram_logo.png" class="iconMini">&nbsp;Instagram</a></li>
+                <li><a href="#"><img src="img/icons/pinterest-logo.png" class="iconMini">&nbsp;Pinterest</a></li>
+                <li><a href="#"><img src="img/icons/Deezer_logo.png" class="iconMini">&nbsp;Deezer</a></li>
+                <li><a href="#"><img src="img/icons/Spotify_logo.png" class="iconMini">&nbsp;Spotify</a></li>
+                <li><a href="#"><img src="img/icons/Viber-logo.png" class="iconMini">&nbsp;Viber</a></li>
+              </ul>
+            </div>
+            
+        </div><!-- Fin de menu navbar -->
 
 
 
-
-
-
-
+        <!-- Inputs des réseaux sociaux/jeux -->
         <div id="wrapper" class="col-md-8 col-md-offset-2">
             <form class="col-md-6 col-md-offset-3">  
 
@@ -223,10 +265,14 @@
 
             </form>   
 
-        </div>
+        </div> <!-- Fin des inputs réseaux sociaux/jeux -->
 
+        <!-- Footer -->
         <div id="footer" class="col-md-8 col-md-offset-2">
         </div>
-
+        
+        <!-- Liaison bilbliothèque javascript bootstrap et Jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
     </body>
 </html>

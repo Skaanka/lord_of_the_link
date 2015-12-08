@@ -45,9 +45,6 @@
 
 
 
-
-
-
         <div id="wrapper" class="col-md-8 col-md-offset-2">
             <form class="col-md-6 col-md-offset-3">  
 
@@ -253,9 +250,6 @@
                     </div>
                   </div>
                 </div>
-                
-
-
 
                 <div id="bouton" class="row">
                     <div class="">
@@ -271,5 +265,8 @@
         <div id="footer" class="col-md-8 col-md-offset-2">
         </div>
 
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
     </body>
 </html>

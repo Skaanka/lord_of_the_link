@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 08 Décembre 2015 à 15:32
+-- Généré le :  Mar 08 Décembre 2015 à 16:17
 -- Version du serveur :  5.6.25
 -- Version de PHP :  5.6.11
 
@@ -36,6 +36,20 @@ CREATE TABLE IF NOT EXISTS `actu_perso` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `diplomes`
+--
+
+CREATE TABLE IF NOT EXISTS `diplomes` (
+  `id` int(11) NOT NULL,
+  `id_membres` int(11) NOT NULL,
+  `annees_obt` date NOT NULL,
+  `intitule` varchar(255) NOT NULL,
+  `ecole` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `divertissements`
 --
 
@@ -48,6 +62,23 @@ CREATE TABLE IF NOT EXISTS `divertissements` (
   `battlenet` varchar(255) NOT NULL,
   `compte_nintendo` varchar(255) NOT NULL,
   `origin` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `experience_pro`
+--
+
+CREATE TABLE IF NOT EXISTS `experience_pro` (
+  `id` int(11) NOT NULL,
+  `id_membres` int(11) NOT NULL,
+  `periode_debut` date NOT NULL,
+  `periode_fin` date NOT NULL,
+  `compagnie` varchar(255) NOT NULL,
+  `poste` varchar(255) NOT NULL,
+  `competences` text NOT NULL,
+  `porte_folio` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -130,9 +161,21 @@ ALTER TABLE `actu_perso`
   ADD UNIQUE KEY `id` (`id`);
 
 --
+-- Index pour la table `diplomes`
+--
+ALTER TABLE `diplomes`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `divertissements`
 --
 ALTER TABLE `divertissements`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `experience_pro`
+--
+ALTER TABLE `experience_pro`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -164,9 +207,19 @@ ALTER TABLE `reseaux`
 ALTER TABLE `actu_perso`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT pour la table `diplomes`
+--
+ALTER TABLE `diplomes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT pour la table `divertissements`
 --
 ALTER TABLE `divertissements`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `experience_pro`
+--
+ALTER TABLE `experience_pro`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `membres`

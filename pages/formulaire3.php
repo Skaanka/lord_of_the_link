@@ -1,28 +1,30 @@
 <?php
-session_start();
-// connexion bdd
-require_once('../php/connexion.php');
-print_r($_SESSION['inscription']);
+    if ( isset ($_SESSION["inscription"])) {
+        unset($_SESSION["inscription"]);
+    }
+    session_start();
+    // connexion bdd
+    require_once('../php/connexion.php');
 ?>
 
 <!doctype html>
 <html lang="fr">
-
-
+    
+    
     <head>
         <meta charset="utf-8">
         <title>LOTL formulaire</title>
-        <link rel="stylesheet" href="../css/bootstrap.css">
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-
+        
         <div id="connexionbar" class="col-md-8 col-md-offset-2">
-
-            <form method="POST" id="connexion" class="form-inline">
+            
+            <form id="connexion" class="form-inline" method="POST">
                 <?php 
                 if (isset($_SESSION['user']) ) { 
-                ?>      
+                ?>
                     <div class="form-group">
                         <label for="profil">Bienvenue <?php echo $_SESSION['user']['prenom'] . " " . $_SESSION['user']['nom'] ; ?></label> <!-- TODO STYLE ECHO NOM PRENOM -->
                         <input type="submit" id="profil" class="btn btn-default btn-xs" name="profil" value="profil" formaction="#.php">
@@ -32,20 +34,20 @@ print_r($_SESSION['inscription']);
                 } elseif ( empty($_SESSION['user']) )  {
                 ?>
                     <div class="form-group">
-                        <label class="sr-only" for="email">Email address</label>
-                        <input type="email" class="" id="email" placeholder="Email" name="mail">
+                        <label class="sr-only" for="mail">Email address</label>
+                        <input type="email" class="mail" id="mail" placeholder="Email" name="mail">
                     </div>
                     <div class="form-group">
                         <label class="sr-only" for="password">Password</label>
                         <input type="password" class="" id="password" placeholder="Password" name="mot_de_passe">
                     </div>
 
-                    <input type="submit" class="btn btn-default btn-xs" name="connexion" value="connexion" formaction="login.php">
+                     <input type="submit" class="btn btn-default btn-xs" name="connexion" value="connexion" formaction="login.php">
                     <button type="submit" class="btn btn-default btn-xs">Inscription</button>
                 <?php
                     //echo $login_erreur; // TODO affiche message d'erreur : "erreur email ou mot de passe, veuillez réessayer" 
                 }
-                ?>   
+                ?>
             </form>
         </div>
 
@@ -56,10 +58,10 @@ print_r($_SESSION['inscription']);
         <nav class="col-md-8 col-md-offset-2"id="menu-nav" >
             <!------- MENU NAV --------->
             <ul class="navBeauty">
-                <button class="menu_str" ><a href="#">Accueil </a></button>
-                <button class="menu_str"><a href="#">Portail </a></button>
-                <button class="menu_str"><a href="#">Membres </a></button>
-                <button class="menu_str"><a href="#">s'enregistrer </a></button>
+                <button class="menu_str"><a href="#"> </a></button>
+                <button class="menu_str"><a href="#"> </a></button>
+                <button class="menu_str"><a href="#"> </a></button>
+                <button class="menu_str"><a href="#"> </a></button>
             </ul>
         </nav>
         <!-------------- FIN MENU NAV ------------------------->

@@ -1,28 +1,30 @@
 <?php
+    if ( isset ($_SESSION["inscription"])) {
+        unset($_SESSION["inscription"]);
+    }
     session_start();
     // connexion bdd
     require_once('../php/connexion.php');
-    //print_r($_SESSION['inscription']);
 ?>
 
 <!doctype html>
 <html lang="fr">
-
-
+    
+    
     <head>
         <meta charset="utf-8">
         <title>LOTL formulaire</title>
-        <link rel="stylesheet" href="../css/bootstrap.css">
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-
+        
         <div id="connexionbar" class="col-md-8 col-md-offset-2">
-
-            <form method="post" id="connexion" class="form-inline">
+            
+            <form id="connexion" class="form-inline" method="POST">
                 <?php 
                 if (isset($_SESSION['user']) ) { 
-                ?>      
+                ?>
                     <div class="form-group">
                         <label for="profil">Bienvenue <?php echo $_SESSION['user']['prenom'] . " " . $_SESSION['user']['nom'] ; ?></label> <!-- TODO STYLE ECHO NOM PRENOM -->
                         <input type="submit" id="profil" class="btn btn-default btn-xs" name="profil" value="profil" formaction="#.php">
@@ -32,20 +34,20 @@
                 } elseif ( empty($_SESSION['user']) )  {
                 ?>
                     <div class="form-group">
-                        <label class="sr-only" for="email">Email address</label>
-                        <input type="email" class="" id="email" placeholder="Email" name="mail">
+                        <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                        <input type="email" class="mail" id="exampleInputEmail3" placeholder="Email">
                     </div>
                     <div class="form-group">
-                        <label class="sr-only" for="password">Password</label>
-                        <input type="password" class="" id="password" placeholder="Password" name="mot_de_passe">
+                        <label class="sr-only" for="exampleInputPassword3">Password</label>
+                        <input type="password" class="" id="exampleInputPassword3" placeholder="Password">
                     </div>
-                
-                    <input type="submit" class="btn btn-default btn-xs" name="connexion" value="connexion" formaction="login.php">
+
+                     <input type="submit" class="btn btn-default btn-xs" name="connexion" value="connexion" formaction="login.php">
                     <button type="submit" class="btn btn-default btn-xs">Inscription</button>
                 <?php
                     //echo $login_erreur; // TODO affiche message d'erreur : "erreur email ou mot de passe, veuillez réessayer" 
                 }
-                ?>  
+                ?>
             </form>
         </div>
 
@@ -71,7 +73,7 @@
 
 
         <div id="wrapper" class="col-md-8 col-md-offset-2">
-            <form method="POST" class="col-md-6 col-md-offset-3">  
+            <form class="col-md-6 col-md-offset-3">  
 
                 
                 <h1>Parcour pro.</h1><br/>
@@ -96,46 +98,46 @@
                             
                     <div class="row cellule">
                         <div class="form-group col-md-2">
-                            <input type="text" name="annees_obt" class="form-control">
+                            <input type="text" class="form-control" name="annees_obt">
                         </div>
                         <div class="form-group col-md-5">
-                            <input type="text" name="intitule" class="form-control">
+                            <input type="text"name="intitule" class="form-control">
                         </div>
                         <div class="form-group col-md-5">
-                            <input type="text" name="ecole" class="form-control">
+                            <input type="text" class="form-control" name="ecole">
                         </div>
                     </div>
                     <div class="row cellule">
                         <div class="form-group col-md-2">
-                            <input type="text" name="annees_obt" class="form-control">
+                            <input type="text" class="form-control" name="annees_obt">
                         </div>
                         <div class="form-group col-md-5">
-                            <input type="text" name="intitule" class="form-control">
+                            <input type="text" class="form-control" name="intitule">
                         </div>
                         <div class="form-group col-md-5">
-                            <input type="text" name="ecole" class="form-control">
+                            <input type="text" class="form-control"  name="ecole">
                         </div>
                     </div>
                     <div class="row cellule">
                         <div class="form-group col-md-2">
-                            <input type="text" name="annees_obt" class="form-control">
+                            <input type="text" class="form-control" name="annees_obt">
                         </div>
                         <div class="form-group col-md-5">
-                            <input type="text" name="intitule" class="form-control">
+                            <input type="text" class="form-control" name="intitule">
                         </div>
                         <div class="form-group col-md-5">
-                            <input type="text" name="ecole" class="form-control">
+                            <input type="text" class="form-control" name="ecole">
                         </div>
                     </div>
                     <div class="row cellule">
                         <div class="form-group col-md-2">
-                            <input type="text" name="annees_obt" class="form-control">
+                            <input type="text" class="form-control" name="annees_obt">
                         </div>
                         <div class="form-group col-md-5">
-                            <input type="text" name="intitule" class="form-control">
+                            <input type="text" class="form-control" name="intitule">
                         </div>
                         <div class="form-group col-md-5">
-                            <input type="text" name="ecole" class="form-control">
+                            <input type="text" class="form-control" name="ecole">
                         </div>
                     </div>
                       </div>
@@ -148,100 +150,101 @@
                     
                     <div class="row" id="diplomes">
                         <div class="form-group col-md-4">
-                            <label for="annees">Période</label>
+                            <label for="periode">Période</label>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="password">Compagnie</label>
+                            <label for="compagnie">Compagnie</label>
 
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="password">Intitulé du poste</label>
+                            <label for="intitulePoste">Intitulé du poste</label>
                         </div>
                     </div>
 
                     <div class="row cellule">
                         <div class="form-group col-xs-2">
-                            <input type="text" class="form-control">
+                            <input type="text"  class="form-control" name="">
                         </div>
                         <div class="form-group col-xs-2">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="">
                         </div>
                         <div class="form-group col-md-4">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="">
                         </div>
                         <div class="form-group col-md-4">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="">
                         </div>
                     </div>
                     <div class="row cellule">
                         <div class="form-group col-xs-2">
-                            <input type="text" class="form-control">
+                            <input type="text"  class="form-control" name="">
                         </div>
                         <div class="form-group col-xs-2">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="">
                         </div>
                         <div class="form-group col-md-4">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="">
                         </div>
                         <div class="form-group col-md-4">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="">
+                        </div>
+                    </div>
+                   <div class="row cellule">
+                        <div class="form-group col-xs-2">
+                            <input type="text"  class="form-control" name="">
+                        </div>
+                        <div class="form-group col-xs-2">
+                            <input type="text" class="form-control" name="">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control" name="">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control" name="">
                         </div>
                     </div>
                     <div class="row cellule">
                         <div class="form-group col-xs-2">
-                            <input type="text" class="form-control">
+                            <input type="text"  class="form-control" name="">
                         </div>
                         <div class="form-group col-xs-2">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="">
                         </div>
                         <div class="form-group col-md-4">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="">
                         </div>
                         <div class="form-group col-md-4">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="">
                         </div>
                     </div>
                     <div class="row cellule">
                         <div class="form-group col-xs-2">
-                            <input type="text" class="form-control">
+                            <input type="text"  class="form-control" name="">
                         </div>
                         <div class="form-group col-xs-2">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="">
                         </div>
                         <div class="form-group col-md-4">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="">
                         </div>
                         <div class="form-group col-md-4">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="">
                         </div>
                     </div>
                     <div class="row cellule">
                         <div class="form-group col-xs-2">
-                            <input type="text" class="form-control">
+                            <input type="text"  class="form-control" name="">
                         </div>
                         <div class="form-group col-xs-2">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="">
                         </div>
                         <div class="form-group col-md-4">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="">
                         </div>
                         <div class="form-group col-md-4">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="">
                         </div>
-                    </div>
-                    <div class="row cellule">
-                        <div class="form-group col-xs-2">
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="form-group col-xs-2">
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <input type="text" class="form-control">
-                        </div>
+                    
                     </div>
                   </div>
                 </div>
@@ -251,31 +254,33 @@
                   <div class="panel-body">
                     
                     <div class="form-group col-xs-12">
-                        <textarea class="form-control" rows="6"></textarea>
+                        <textarea class="form-control" rows="6" name=""></textarea>
                     </div>
                   </div>
                 </div>
                 <?php 
                     if (isset($_SESSION['user']) ) {
                 ?>
+                
                 <div class="panel panel-default">
                   <div class="panel-heading"><h3>Fil d'actu.</h3></div>
                   <div class="panel-body">
                     
                     <div class="form-group col-xs-12">
-                        <textarea class="form-control" rows="6"></textarea>
+                        <textarea class="form-control" rows="6" name=""></textarea>
                     </div>
                   </div>
                 </div>
                 <?php 
                     }
                 ?>
+                
                 <div class="panel panel-default">
                   <div class="panel-heading"><h3>Portfolio en ligne</h3></div>
                   <div class="panel-body">
                     
                     <div class="form-group col-xs-12">
-                        <input type="text" class="form-control" rows="6" placeholder="http://...">
+                        <input type="text" class="form-control" rows="6" placeholder="http://..." name="">
                     </div>
                   </div>
                 </div>
@@ -285,8 +290,8 @@
 
                 <div id="bouton" class="row">
                     <div class="">
-                        <input type="submit" name="return" class="btn btn-default col-md-offset-1" value="Page précédente" formaction="formulaire.php">
-                        <input type="submit" name="submit" class="btn btn-default col-md-offset-5" value="Page suivante" formaction="formulaire_post2.php">
+                        <input type="submit" class="btn btn-default col-md-offset-1" value="Page précédente" formaction="formulaire.php" name="">
+                        <input type="submit" class="btn btn-default col-md-offset-5" value="Page suivante" formaction="formulaire_post2.php" name="">
                     </div>
                 </div>
 

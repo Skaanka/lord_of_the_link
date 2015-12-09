@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 08 Décembre 2015 à 16:17
+-- Généré le :  Mer 09 Décembre 2015 à 10:56
 -- Version du serveur :  5.6.25
 -- Version de PHP :  5.6.11
 
@@ -42,10 +42,23 @@ CREATE TABLE IF NOT EXISTS `actu_perso` (
 CREATE TABLE IF NOT EXISTS `diplomes` (
   `id` int(11) NOT NULL,
   `id_membres` int(11) NOT NULL,
-  `annees_obt` date NOT NULL,
+  `annees_obt` varchar(4) NOT NULL,
   `intitule` varchar(255) NOT NULL,
   `ecole` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `diplomes`
+--
+
+INSERT INTO `diplomes` (`id`, `id_membres`, `annees_obt`, `intitule`, `ecole`) VALUES
+(1, 5, '0000', '', ''),
+(2, 5, '', '', ''),
+(3, 6, '', '', ''),
+(4, 6, '1212', 'fzfezfezfze', '1515fzefzefzf'),
+(5, 6, '', '', ''),
+(6, 6, '', '', ''),
+(7, 6, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -100,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `membres` (
   `phone` int(15) NOT NULL,
   `siteWeb` varchar(150) NOT NULL,
   `mot_de_passe` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `membres`
@@ -108,7 +121,9 @@ CREATE TABLE IF NOT EXISTS `membres` (
 
 INSERT INTO `membres` (`id`, `nom`, `prenom`, `ddn`, `avatar`, `adresse`, `cp`, `ville`, `mail`, `phone`, `siteWeb`, `mot_de_passe`) VALUES
 (1, 'test1', 'test1', '1898-01-01', 'Array', '53 test', 14258, 'test', 'test@mail.fr', 614521452, 'www.test.fr', '$2y$10$7QLeD2I7VjrNULo1Xnpu1OYkROcf2POgtXWtpoHr7pHl44MTnPbHi'),
-(4, 'kangni', 'devis', '2015-12-07', 'oIrmq.jpg', '92 rue de la platone', 95420, 'magny en vexin', 'bsx95@yahoo.fr', 606060606, 'test.fr', '$2y$10$9Q2aTD6dNM2pPyTJ5k1zK.oKOMQVBFns0hxezwcz8QUc1chw6jj4O');
+(4, 'kangni', 'devis', '2015-12-07', 'oIrmq.jpg', '92 rue de la platone', 95420, 'magny en vexin', 'bsx95@yahoo.fr', 606060606, 'test.fr', '$2y$10$9Q2aTD6dNM2pPyTJ5k1zK.oKOMQVBFns0hxezwcz8QUc1chw6jj4O'),
+(5, 'essai', 'essai', '2015-12-17', 'neggus-kungobram-05-12-gil-46.jpg', '92 rue de la platone', 95200, 'magny en vexin', 'e@m.fr', 600000000, 'www.wtestr.fr', '$2y$10$R9QJ4GlK6WkaljbQSBEKJOCX4h2EMJLJ1qA6ue2TKSvPTPipDSlhy'),
+(6, 'test', 'test', '2015-12-10', 'oIrmq.jpg', '95959', 959595, 'dededdeed', '1@1.com', 1231, 'vvvddvdv', '$2y$10$QWI2IeExLfqfh8yVlTFWh.ce.0e3RMFb9v3N/0KtCWTx4N2kbzHnK');
 
 -- --------------------------------------------------------
 
@@ -210,7 +225,7 @@ ALTER TABLE `actu_perso`
 -- AUTO_INCREMENT pour la table `diplomes`
 --
 ALTER TABLE `diplomes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT pour la table `divertissements`
 --
@@ -225,7 +240,7 @@ ALTER TABLE `experience_pro`
 -- AUTO_INCREMENT pour la table `membres`
 --
 ALTER TABLE `membres`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT pour la table `pro`
 --

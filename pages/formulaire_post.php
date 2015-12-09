@@ -5,8 +5,7 @@
 
     try { 
         if (isset($_POST['submit'])){ // gestion de l'avatar
-                //$repertoire_upload = "c://xampp//htdocs//lord_of_the_link//uploads//";
-                $repertoire_upload = "c://wamp//www//lord_of_the_link//uploads//";
+                $repertoire_upload = "c://xampp//htdocs//lord_of_the_link//uploads//";
                 $fichier_upload = $repertoire_upload . basename($_FILES['avatar']['name']);
                 //echo $fichier_upload;
                 if (move_uploaded_file($_FILES['avatar']['tmp_name'], $fichier_upload)) {             // TODO RENOMMER IMG DANS BDD

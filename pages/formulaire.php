@@ -35,15 +35,15 @@
                 ?>
                     <div class="form-group">
                         <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                        <input type="email" class="mail" id="exampleInputEmail3" placeholder="Email" name="mail">
+                        <input type="email" class="mail" id="exampleInputEmail3" placeholder="Email">
                     </div>
                     <div class="form-group">
                         <label class="sr-only" for="exampleInputPassword3">Password</label>
-                        <input type="password" class="" id="exampleInputPassword3" placeholder="Password" name="mot_de_passe">
+                        <input type="password" class="" id="exampleInputPassword3" placeholder="Password">
                     </div>
 
-                     <input type="submit" class="btn btn-default btn-xs" name="connexion" value="connexion" formaction="login.php">
-                    <input type="submit" class="btn btn-default btn-xs" name="" value="inscription" formaction="">
+                     <input type="submit" class="dropdown-toggle" name="connexion" value="connexion" formaction="login.php">
+                    <input type="submit" class="dropdown-toggle" name="" formaction="" value="Inscription">
                 <?php
                     //echo $login_erreur; // TODO affiche message d'erreur : "erreur email ou mot de passe, veuillez réessayer" 
                 }
@@ -59,13 +59,13 @@
         <!-- menu navbar en dropdown -->
         <div class="row col-md-8 col-md-offset-2" id="menu-nav">
             
-            <button type="button" class="btn btn-success" href="index.php">
-                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+            <button type="button" class="dropdown-toggle" href="index.php">
+                <img src="../img/icons/ring.png" id="home">
             </button>
             
             <!-- bouton divertissement -->
             <div class="btn-group" >
-              <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Divertissement <span class="caret"></span>
               </button>
               <ul class="dropdown-menu">
@@ -80,7 +80,7 @@
 
             <!-- bouton réseaux pro -->
             <div class="btn-group">
-            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Réseaux pro. <span class="caret"></span>
               </button>
               <ul class="dropdown-menu">
@@ -94,7 +94,7 @@
             
             <!-- bouton réseaux sociaux-->
             <div class="btn-group">
-            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Réseaux sociaux <span class="caret"></span>
               </button>
               <ul class="dropdown-menu">
@@ -120,7 +120,7 @@
 
 
         <div id="wrapper" class="col-md-8 col-md-offset-2">
-            <form method="POST" class="col-md-6 col-md-offset-3" enctype="multipart/form-data">  
+            <form class="col-md-6 col-md-offset-3">  
 
                 <div class="form-group col-md-12" >
                     
@@ -130,7 +130,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6 col-md-offset-3"><img src="../img/1449593217_girl.png" id="avatar" class="img-responsive img-circle" alt="Responsive image" name="avatar" ></div>
+                    <div class="col-md-6 col-md-offset-3"><img src="../img/Avatar-512.png" id="avatar" class="img-responsive img-circle" alt="Responsive image" ></div>
                     
                 </div>
 
@@ -196,7 +196,7 @@
                 
                 <div id="bouton" class="row">
                     <div class="col-md-offset-9">
-                        <input type="submit" class="btn btn-default" name="submit" value="Page suivante" formaction="formulaire_post.php">
+                        <input type="submit" class="btn btn-primary" name="submit" value="Page suivante" formaction="formulaire_post.php">
                     </div>
                 </div>
                 

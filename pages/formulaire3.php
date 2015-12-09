@@ -42,8 +42,8 @@
                         <input type="password" class="" id="password" placeholder="Password" name="mot_de_passe">
                     </div>
 
-                     <input type="submit" class="btn btn-default btn-xs" name="connexion" value="connexion" formaction="login.php">
-                    <input type="submit" class="btn btn-default btn-xs" name="" formaction="" value="Inscription">
+                     <input type="submit" class="dropdown-toggle" name="connexion" value="connexion" formaction="login.php">
+                    <input type="submit" class="dropdown-toggle" name="" formaction="" value="Inscription">
                 <?php
                     //echo $login_erreur; // TODO affiche message d'erreur : "erreur email ou mot de passe, veuillez réessayer" 
                 }
@@ -59,13 +59,13 @@
         <!-- menu navbar en dropdown -->
         <div class="row col-md-8 col-md-offset-2" id="menu-nav">
             
-            <button type="button" class="btn btn-success" href="index.php">
-                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+            <button type="button" class="dropdown-toggle" href="index.php">
+                <img src="../img/icons/ring.png" id="home">
             </button>
             
             <!-- bouton divertissement -->
             <div class="btn-group" >
-              <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Divertissement <span class="caret"></span>
               </button>
               <ul class="dropdown-menu">
@@ -80,7 +80,7 @@
 
             <!-- bouton réseaux pro -->
             <div class="btn-group">
-            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Réseaux pro. <span class="caret"></span>
               </button>
               <ul class="dropdown-menu">
@@ -94,7 +94,7 @@
             
             <!-- bouton réseaux sociaux-->
             <div class="btn-group">
-            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Réseaux sociaux <span class="caret"></span>
               </button>
               <ul class="dropdown-menu">
@@ -120,7 +120,7 @@
 
 
         <div id="wrapper" class="col-md-8 col-md-offset-2">
-            <form method="POST" class="col-md-6 col-md-offset-3">  
+            <form class="col-md-6 col-md-offset-3">  
 
                 
                 <h1>Sociaux</h1><br/>

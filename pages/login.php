@@ -25,7 +25,7 @@ try {
                 $_SESSION['user']['mail'] = $results['mail'];
                 $_SESSION['user']['phone'] = $results['phone'];
                 $_SESSION['user']['siteWeb'] = $results['siteWeb'];
-                //header("Location: ../index.php");  //redirection sur l'index
+                header("Location: ../index.php");  //redirection sur l'index
             } else {
                 $login_erreur = "pseudo ou mot de passe invalide!";
                 $redirection = $_SERVER['HTTP_REFERER'] . "?=" . $login_erreur ; // TODO sur la bonne piste

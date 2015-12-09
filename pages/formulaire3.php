@@ -14,8 +14,8 @@
     <head>
         <meta charset="utf-8">
         <title>LOTL formulaire</title>
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../css/style.css">
     </head>
     <body>
         
@@ -43,7 +43,7 @@
                     </div>
 
                      <input type="submit" class="btn btn-default btn-xs" name="connexion" value="connexion" formaction="login.php">
-                    <button type="submit" class="btn btn-default btn-xs">Inscription</button>
+                    <input type="submit" class="btn btn-default btn-xs" name="" formaction="" value="Inscription">
                 <?php
                     //echo $login_erreur; // TODO affiche message d'erreur : "erreur email ou mot de passe, veuillez réessayer" 
                 }
@@ -54,17 +54,64 @@
         <div id="header" class="col-md-8 col-md-offset-2">
 
         </div>
-        <!-------- MENU HEAD ----------->
-        <nav class="col-md-8 col-md-offset-2"id="menu-nav" >
-            <!------- MENU NAV --------->
-            <ul class="navBeauty">
-                <button class="menu_str"><a href="#"> </a></button>
-                <button class="menu_str"><a href="#"> </a></button>
-                <button class="menu_str"><a href="#"> </a></button>
-                <button class="menu_str"><a href="#"> </a></button>
-            </ul>
-        </nav>
-        <!-------------- FIN MENU NAV ------------------------->
+        
+        
+        <!-- menu navbar en dropdown -->
+        <div class="row col-md-8 col-md-offset-2" id="menu-nav">
+            
+            <button type="button" class="btn btn-success" href="index.php">
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+            </button>
+            
+            <!-- bouton divertissement -->
+            <div class="btn-group" >
+              <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Divertissement <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#"><img src="../img/icons/PSN_logo.png" class="iconMini">&nbsp;PSN</a></li>
+                <li><a href="#"><img src="../img/icons/Xbox_logo.png" class="iconMini">&nbsp;XboxLive</a></li>
+                <li><a href="#"><img src="../img/icons/Steam_logo.png" class="iconMini">&nbsp;Steam</a></li>
+                <li><a href="#"><img src="../img/icons/battlenet_logo.png" class="iconMini">&nbsp;Battle.net</a></li>
+                <li><a href="#"><img src="../img/icons/nintendo_logo.png" class="iconMini">&nbsp;Nintendo</a></li>
+                <li><a href="#"><img src="../img/icons/origin1_logo.png" class="iconMini">&nbsp;Origin</a></li>
+              </ul>
+            </div>
+
+            <!-- bouton réseaux pro -->
+            <div class="btn-group">
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Réseaux pro. <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#"><img src="../img/icons/linkedin_logo.png" class="iconMini">&nbsp;LinkedIn</a></li>
+                <li><a href="#"><img src="../img/icons/viadeo_logo.png" class="iconMini">&nbsp;Viadeo</a></li>
+                <li><a href="#"><img src="../img/icons/xing_logo.png" class="iconMini">&nbsp;xing</a></li>
+                <li><a href="#"><img src="../img/icons/muxi_logo.jpg" class="iconMini">&nbsp;Muxy</a></li>
+                <li><a href="#"><img src="../img/icons/github_logo.png" class="iconMini">&nbsp;GitHub</a></li>
+              </ul>
+            </div>
+            
+            <!-- bouton réseaux sociaux-->
+            <div class="btn-group">
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Réseaux sociaux <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="#"><img src="../img/icons/FB_logo.png" class="iconMini">&nbsp;Facebook</a></li>
+                <li><a href="#"><img src="../img/icons/Twitter-logo.png" class="iconMini">&nbsp;Twitter</a></li>
+                <li><a href="#"><img src="../img/icons/YouTube-logo.png" class="iconMini">&nbsp;Youtube</a></li>
+                <li><a href="#"><img src="../img/icons/googleplus_logo.png" class="iconMini">&nbsp;Google+</a></li>
+                <li><a href="#"><img src="../img/icons/Skype_logo.png" class="iconMini">&nbsp;Skype</a></li>
+                <li><a href="#"><img src="../img/icons/instagram_logo.png" class="iconMini">&nbsp;Instagram</a></li>
+                <li><a href="#"><img src="../img/icons/pinterest-logo.png" class="iconMini">&nbsp;Pinterest</a></li>
+                <li><a href="#"><img src="../img/icons/Deezer_logo.png" class="iconMini">&nbsp;Deezer</a></li>
+                <li><a href="#"><img src="../img/icons/Spotify_logo.png" class="iconMini">&nbsp;Spotify</a></li>
+                <li><a href="#"><img src="../img/icons/Viber-logo.png" class="iconMini">&nbsp;Viber</a></li>
+              </ul>
+            </div>
+            
+        </div><!-- Fin de menu navbar -->
 
 
 
@@ -73,7 +120,7 @@
 
 
         <div id="wrapper" class="col-md-8 col-md-offset-2">
-            <form class="col-md-6 col-md-offset-3">  
+            <form method="POST" class="col-md-6 col-md-offset-3">  
 
                 
                 <h1>Sociaux</h1><br/>
@@ -82,140 +129,160 @@
                 <div class="panel panel-default">
                     <div class="panel-heading"><h3>Divertissement</h3></div>
                     <div class="panel-body">
-                            <div class="row form-group">
-                                <label for="psn" class="col-sm-2 control-label">Id. PSN</label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="psn" placeholder="Identifiant PSN">
-                                </div>
+                        <div class="row form-group">
+                            <img class="icons col-sm-2" src="../img/icons/PSN_logo.png">
+                            <label for="psn" class="col-sm-2 control-label celSoc">Id. PSN</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control celSoc" id="psn" placeholder="Identifiant PSN">
                             </div>
-                            <div class="row form-group">
-                                <label for="xbox" class="col-sm-2 control-label">Xbox</label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="xbox" placeholder="Identifiant XboxLive">
-                                </div>
+                        </div>
+                        <div class="row form-group">
+                            <img class="icons col-sm-2" src="../img/icons/Xbox_logo.png">
+                            <label for="xbox" class="col-sm-2 control-label celSoc">XboxLive</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control celSoc" id="xbox" placeholder="Identifiant XboxLive">
                             </div>
-                            <div class="row form-group">
-                                <label for="steam" class="col-sm-2 control-label">Steam</label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="steam" placeholder="Identifiant Steam">
-                                </div>
+                        </div>
+                        <div class="row form-group">
+                            <img class="icons col-sm-2" src="../img/icons/Steam_logo.png">
+                            <label for="steam" class="col-sm-2 control-label celSoc">Steam</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control celSoc" id="steam" placeholder="Identifiant Steam">
                             </div>
-                            <div class="row form-group">
-                                <label for="battlenet" class="col-sm-2 control-label">Battle.net</label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="battlenet" placeholder="Identifiant Battle.net">
-                                </div>
+                        </div>
+                        <div class="row form-group">
+                            <img class="icons col-sm-2" src="../img/icons/battlenet_logo.png">
+                            <label for="battlenet" class="col-sm-2 control-label celSoc">Battle.net</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control celSoc" id="battlenet" placeholder="Identifiant Battle.net">
                             </div>
-                            <div class="row form-group">
-                                <label for="nintendo" class="col-sm-2 control-label">Nintendo</label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="nintendo" placeholder="Identifiant Nintendo">
-                                </div>
+                        </div>
+                        <div class="row form-group">
+                            <img class="icons col-sm-2" src="../img/icons/nintendo_logo.png">
+                            <label for="nintendo" class="col-sm-2 control-label celSoc">Nintendo</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control celSoc" id="nintendo" placeholder="Identifiant Nintendo">
                             </div>
-                            <div class="row form-group">
-                                <label for="origin" class="col-sm-2 control-label">Origin</label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="origin" placeholder="Identifiant Origin">
-                                </div>
+                        </div>
+                        <div class="row form-group">
+                            <img class="icons col-sm-2" src="../img/icons/origin1_logo.png">
+                            <label for="origin" class="col-sm-2 control-label celSoc">Origin</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control celSoc" id="origin" placeholder="Identifiant Origin">
                             </div>
+                        </div>
                     </div>
                 </div>
-                
+
                 <div class="panel panel-default">
-                  <div class="panel-heading"><h3>Réseaux Pro.</h3></div>
-                  <div class="panel-body">
-                    <div class="row form-group">
-                        <label for="linkedin" class="col-sm-2 control-label">LinkedIn</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="linkedin" placeholder="LikedIn">
+                    <div class="panel-heading"><h3>Réseaux Pro.</h3></div>
+                    <div class="panel-body">
+                        <div class="row form-group">
+                            <img class="icons col-sm-2" src="../img/icons/linkedin_logo.png">
+                            <label for="linkedin" class="col-sm-2 control-label celSoc">LinkedIn</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control celSoc" id="linkedin" placeholder="LikedIn">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <img class="icons col-sm-2" src="../img/icons/viadeo_logo.png">
+                            <label for="viadeo" class="col-sm-2 control-label celSoc">Viadeo</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control celSoc" id="viadeo" placeholder="Viadeo">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <img class="icons col-sm-2" src="../img/icons/xing_logo.png">
+                            <label for="xing" class="col-sm-2 control-label celSoc">Xing</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control celSoc" id="xing" placeholder="Xing">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <img class="icons col-sm-2" src="../img/icons/muxi_logo.jpg">
+                            <label for="muxy" class="col-sm-2 control-label celSoc">Muxy</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control celSoc" id="muxy" placeholder="Muxy">
+                            </div>
                         </div>
                     </div>
-                    <div class="row form-group">
-                        <label for="viadeo" class="col-sm-2 control-label">Viadeo</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="viadeo" placeholder="Viadeo">
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <label for="xing" class="col-sm-2 control-label">Xing</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="xing" placeholder="Xing">
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <label for="muxy" class="col-sm-2 control-label">Muxy</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="muxy" placeholder="Muxy">
-                        </div>
-                    </div>
-                  </div>
                 </div>
-                
+
                 <div class="panel panel-default">
-                  <div class="panel-heading"><h3>Réseaux Sociaux</h3></div>
-                  <div class="panel-body">
-                    <div class="row form-group">
-                        <label for="facebook" class="col-sm-2 control-label">Facebook</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="facebook" placeholder="Facebook">
+                    <div class="panel-heading"><h3>Réseaux Sociaux</h3></div>
+                    <div class="panel-body">
+                        <div class="row form-group">
+                            <img class="icons col-sm-2" src="../img/icons/FB_logo.png">
+                            <label for="facebook" class="col-sm-2 control-label celSoc">Facebook</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control celSoc" id="facebook" placeholder="Facebook">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row form-group">
-                        <label for="Twitter" class="col-sm-2 control-label">Twitter</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="twitter" placeholder="Twitter">
+                        <div class="row form-group">
+                            <img class="icons col-sm-2" src="../img/icons/Twitter-logo.png">
+                            <label for="Twitter" class="col-sm-2 control-label celSoc">Twitter</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control celSoc" id="twitter" placeholder="Twitter">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row form-group">
-                        <label for="youtube" class="col-sm-2 control-label">YouTube</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="youtube" placeholder="YouTube">
+                        <div class="row form-group">
+                            <img class="icons col-sm-2" src="../img/icons/YouTube-logo.png">
+                            <label for="youtube" class="col-sm-2 control-label celSoc">YouTube</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control celSoc" id="youtube" placeholder="YouTube">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row form-group">
-                        <label for="google" class="col-sm-2 control-label">Google+</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="google" placeholder="Google+">
+                        <div class="row form-group">
+                            <img class="icons col-sm-2" src="../img/icons/googleplus_logo.png">
+                            <label for="google" class="col-sm-2 control-label celSoc">Google+</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control celSoc" id="google" placeholder="Google+">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row form-group">
-                        <label for="skype" class="col-sm-2 control-label">Skype</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="skype" placeholder="Skype">
+                        <div class="row form-group">
+                            <img class="icons col-sm-2" src="../img/icons/Skype_logo.png">
+                            <label for="skype" class="col-sm-2 control-label celSoc">Skype</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control celSoc" id="skype" placeholder="Skype">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row form-group">
-                        <label for="instagram" class="col-sm-2 control-label">Instagram</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="instagram" placeholder="Instagram">
+                        <div class="row form-group">
+                            <img class="icons col-sm-2" src="../img/icons/instagram_logo.png">
+                            <label for="instagram" class="col-sm-2 control-label celSoc">Instagram</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control celSoc" id="instagram" placeholder="Instagram">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row form-group">
-                        <label for="pinterest" class="col-sm-2 control-label">Pinterest</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="pinterest" placeholder="Pinterest">
+                        <div class="row form-group">
+                            <img class="icons col-sm-2" src="../img/icons/pinterest-logo.png">
+                            <label for="pinterest" class="col-sm-2 control-label celSoc">Pinterest</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control celSoc" id="pinterest" placeholder="Pinterest">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row form-group">
-                        <label for="deezer" class="col-sm-2 control-label">Deezer</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="deezer" placeholder="Deezer">
+                        <div class="row form-group">
+                            <img class="icons col-sm-2" src="../img/icons/Deezer_logo.png">
+                            <label for="deezer" class="col-sm-2 control-label celSoc">Deezer</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control celSoc" id="deezer" placeholder="Deezer">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row form-group">
-                        <label for="spotify" class="col-sm-2 control-label">Spotify</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="spotify" placeholder="Spotify">
+                        <div class="row form-group">
+                            <img class="icons col-sm-2" src="../img/icons/Spotify_logo.png">
+                            <label for="spotify" class="col-sm-2 control-label celSoc">Spotify</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control celSoc" id="spotify" placeholder="Spotify">
+                            </div>
                         </div>
-                    </div>
-                    <div class="row form-group">
-                        <label for="Viber" class="col-sm-2 control-label">Viber</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="viber" placeholder="Viber">
+                        <div class="row form-group">
+                            <img class="icons col-sm-2" src="../img/icons/Viber-logo.png">
+                            <label for="Viber" class="col-sm-2 control-label celSoc">Viber</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control celSoc" id="viber" placeholder="Viber">
+                            </div>
                         </div>
+
                     </div>
-                    
-                  </div>
                 </div>
                 
 
@@ -237,6 +304,10 @@
 
         <div id="footer" class="col-md-8 col-md-offset-2">
         </div>
+        
+        <!-- Liaison bilbliothèque javascript bootstrap et Jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
 
     </body>
 </html>

@@ -2,11 +2,13 @@
 
 body {
     display: block;
-    background: blue;
+    background: url(../img/back_blue.jpg) no-repeat, center;
+    background-size: cover;
+    
 }
 
 #header {
-    background: url(../img/bandeau.png) no-repeat, fixed, center;
+    background: url(../img/bandeau.jpg) no-repeat, fixed, center;
     background-size: cover;
     height: 400px;
 }
@@ -27,14 +29,14 @@ body {
     font-size: 12px;
 }
 
-.connexion.form-group {
-    width: 60%;
-}
 
 #menu-nav {
     text-align: center;
-    
     background: grey;
+    padding-top: 2px;
+    padding-bottom: 8px;
+    background: url(../img/decor01.jpg) no-repeat;
+    background-size: cover;
 }
 
 #avatar {
@@ -60,4 +62,18 @@ body {
 
 .panel-heading {
     text-align: center;
+}
+
+.icons {
+    height: auto;
+    width: 90px;
+}
+
+.celSoc {
+    margin-top: 1%;
+}
+
+.iconMini {
+    height: auto;
+    width: 20px;
 }

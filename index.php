@@ -151,16 +151,18 @@ if(isset($_GET["query"])) {
         <main class="col-md-6">
             
             <?php
+            // TODO afficher un message d'erreur via php si le membre n'existe pas (si une personne malintentionnée modifie dans l'url le ?query=7 par exemple
+            // ou 7 est égal à l'id d'un membre dans la bdd par 25 ou 25 n'existe pas dans la bdd, une page s'affichera sans données.
 
-            
+            //récuperation de l'url
             $url = $_GET;
             //print_r($url);
 
             //print_r($url["query"]); 
             //echo "<br/>";
             //print_r($url["cat"]);
-            
-            // affichage default, profil user, profil visited     -------1- TODO ajout affichage du profil de l'utilisateur connecter
+
+            // affichage default, profil user, profil visited     ------- TODO ajout affichage du profil de l'utilisateur connecter
             if  ( isset($_GET["query"]) && isset($url["cat"]) ) {
                 $i = $url["cat"] ;
                 switch ($url["cat"]) {
@@ -181,10 +183,10 @@ if(isset($_GET["query"])) {
 
                 } 
                 include($main);     
-                echo $main;
             }else {
                 include("pages/pageDefault.php"); // en cas d'erreur affiche la pageDefault
             }
+
             ?>
             
             <?php

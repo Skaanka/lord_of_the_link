@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 09 Décembre 2015 à 10:56
+-- Généré le :  Jeu 10 Décembre 2015 à 12:01
 -- Version du serveur :  5.6.25
 -- Version de PHP :  5.6.11
 
@@ -47,19 +47,6 @@ CREATE TABLE IF NOT EXISTS `diplomes` (
   `ecole` varchar(255) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
---
--- Contenu de la table `diplomes`
---
-
-INSERT INTO `diplomes` (`id`, `id_membres`, `annees_obt`, `intitule`, `ecole`) VALUES
-(1, 5, '0000', '', ''),
-(2, 5, '', '', ''),
-(3, 6, '', '', ''),
-(4, 6, '1212', 'fzfezfezfze', '1515fzefzefzf'),
-(5, 6, '', '', ''),
-(6, 6, '', '', ''),
-(7, 6, '', '', '');
-
 -- --------------------------------------------------------
 
 --
@@ -86,8 +73,8 @@ CREATE TABLE IF NOT EXISTS `divertissements` (
 CREATE TABLE IF NOT EXISTS `experience_pro` (
   `id` int(11) NOT NULL,
   `id_membres` int(11) NOT NULL,
-  `periode_debut` date NOT NULL,
-  `periode_fin` date NOT NULL,
+  `periode_debut` varchar(4) NOT NULL,
+  `periode_fin` varchar(4) NOT NULL,
   `compagnie` varchar(255) NOT NULL,
   `poste` varchar(255) NOT NULL,
   `competences` text NOT NULL,
@@ -113,17 +100,18 @@ CREATE TABLE IF NOT EXISTS `membres` (
   `phone` int(15) NOT NULL,
   `siteWeb` varchar(150) NOT NULL,
   `mot_de_passe` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `membres`
 --
 
 INSERT INTO `membres` (`id`, `nom`, `prenom`, `ddn`, `avatar`, `adresse`, `cp`, `ville`, `mail`, `phone`, `siteWeb`, `mot_de_passe`) VALUES
-(1, 'test1', 'test1', '1898-01-01', 'Array', '53 test', 14258, 'test', 'test@mail.fr', 614521452, 'www.test.fr', '$2y$10$7QLeD2I7VjrNULo1Xnpu1OYkROcf2POgtXWtpoHr7pHl44MTnPbHi'),
-(4, 'kangni', 'devis', '2015-12-07', 'oIrmq.jpg', '92 rue de la platone', 95420, 'magny en vexin', 'bsx95@yahoo.fr', 606060606, 'test.fr', '$2y$10$9Q2aTD6dNM2pPyTJ5k1zK.oKOMQVBFns0hxezwcz8QUc1chw6jj4O'),
-(5, 'essai', 'essai', '2015-12-17', 'neggus-kungobram-05-12-gil-46.jpg', '92 rue de la platone', 95200, 'magny en vexin', 'e@m.fr', 600000000, 'www.wtestr.fr', '$2y$10$R9QJ4GlK6WkaljbQSBEKJOCX4h2EMJLJ1qA6ue2TKSvPTPipDSlhy'),
-(6, 'test', 'test', '2015-12-10', 'oIrmq.jpg', '95959', 959595, 'dededdeed', '1@1.com', 1231, 'vvvddvdv', '$2y$10$QWI2IeExLfqfh8yVlTFWh.ce.0e3RMFb9v3N/0KtCWTx4N2kbzHnK');
+(7, 'Istrateur', 'Admin', '2015-12-08', 'admin.jpg', '404 localhost erro', 666, 'WebCity', 'admin@mail.com', 1234567890, 'www.admin-istrateur.fr', '$2y$10$hpjhX7F3t0AYYbN6bB6hseFm8zhIP75dEblbT9UDJhmyLJxpIIjIu'),
+(8, 'Esqouel', 'May', '2015-12-10', 'linuxpingu.jpg', 'table 3 phpMyAdmin', 666, 'WebCity', 'sql@mail.com', 1234567890, 'localhost/phpmyadmin', '$2y$10$VxZ6yUz90dJfphyHy/7h0eUrqDlhDwsb9maUpLPakSu9O8XIODAF.'),
+(9, 'Scriptwalker', 'Javakin', '0001-01-01', 'crazy.jpg', 'Script de la mort, couloir A', 66600, 'DarkWebCity', 'javaScript@mail.fr', 1234567890, 'www.deathscript.com', '$2y$10$J7p4Glu/a6qqswOInqDaRO/B79XOYyn/MNoxPKxXJciG183tTznM6'),
+(10, 'Chpé', 'PéHa', '2015-12-10', 'cat.jpg', 'xampp htdocs', 666, 'WebCity', 'php@mail.com', 1234567890, 'www.pay-hash-pay', '$2y$10$X0CNgasxq9hc7/8ZIvgIse40Yzl7VkO4QS.3xTTJMfQIXZX/cquxm'),
+(11, 'test', 'test', '2015-12-02', '', 'isset', 404, 'Mysql', 'test@mail.fr', 1234567890, 'test.fr', '$2y$10$9WJNM0LW9ha9VoVeZw/QterZIbhwqeto7E9MOVAh9db1YSeHETZrW');
 
 -- --------------------------------------------------------
 
@@ -240,7 +228,7 @@ ALTER TABLE `experience_pro`
 -- AUTO_INCREMENT pour la table `membres`
 --
 ALTER TABLE `membres`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT pour la table `pro`
 --

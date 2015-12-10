@@ -1,26 +1,39 @@
 <?php
-    if ( isset ($_SESSION["inscription"])) {
-        unset($_SESSION["inscription"]);
+if ( isset ($_SESSION["inscription"])) {
+    unset($_SESSION["inscription"]);
+}
+session_start();
+// connexion bdd
+require_once('php/connexion.php');
+
+// recuperation dans l'url
+if(isset($_GET["query"])) {
+    $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $query  = parse_url($actual_link)["query"];
+    //echo $query;
+    parse_str($query, $params);
+    //print_r($params);
+    //echo $params["test"];
+}
+
+
+// Gestion des pages a afficher section forum
+function affichageCat($main) {
+        
+if (isset($_GET["page"])) {
+    switch ($_GET["page"]) {
+        case "form1":
+            $main = "formulaire.php";
+            break;
+        default:
+            $main = "index.php";
+            
+    } 
+    include($main); 
+    } else {
+    include("index.php");
     }
-    session_start();
-    // connexion bdd
-    require_once('php/connexion.php');
-
-
-/* tentative de front control */
-if( isset( $_GET["action"] )) {
-    $action = $_GET['action'];
-} else {
-    $action = "home";
 }
-
-
-switch($action) {
-    case "home":
-        $partiel = "categories";
-        break;
-}
-
 
 ?>
 
@@ -60,7 +73,7 @@ switch($action) {
                     </div>
 
                      <input type="submit" class="dropdown-toggle" name="connexion" value="connexion" formaction="login.php">
-                    <input type="submit" class="dropdown-toggle" name="" formaction="" value="Inscription">
+                    <input type="submit" class="dropdown-toggle" name="" formaction="pages/formulaire.php" value="Inscription">
                 <?php
                     //echo $login_erreur; // TODO affiche message d'erreur : "erreur email ou mot de passe, veuillez réessayer" 
                 }
@@ -137,35 +150,38 @@ switch($action) {
         <div id="sidebarMembres" class="col-md-2 col-md-offset-2">
             <h2>Liste des membres</h2><br/>
             <ul id="membres" >
-                <li><a href="#">nom des membres</a></li>
-                <li>nom des membres</li>
-                <li>nom des membres</li>
-                <li>nom des membres</li>
-                <li>nom des membres</li>
-                <li>nom des membres</li>
-                <li>nom des membres</li>
-                <li>nom des membres</li>
-                <li>nom des membres</li>
-                <li>nom des membres</li>
-                <li>nom des membres</li>
-                <li>nom des membres</li>
-                <li>nom des membres</li>
+                <?php
+                //affichage des membres
+                $affichageMembre = $db->query('SELECT id, prenom, nom FROM membres');
+                while ($value = $affichageMembre->fetch()) {
+                ?>
+                <li><a href="index.php<?php echo "?query=" .$value['id']; ?>"><?php echo htmlspecialchars($value["prenom"]) . " " . htmlspecialchars($value["nom"]) ?></a></li>
+                <?php
+                }
+                $affichageMembre->closeCursor();
+                ?>
             </ul>
         </div>
         
         <main class="col-md-6">
             
             <?php
-                include("pages/$partiel.php");
+            include("pages/pageProfil.php");
             ?>
             
-            
+            <?php
+            if (isset($params)) {
+            ?>
             <div id="sidebarCat" class="col-md-3 panel panel-primary">
                 <ul><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Divertissement</ul>
                 <ul><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux pro.</ul>
                 <ul><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux sociaux</ul>
             </div>
-            
+            <?php
+            } else {
+                echo "";
+            }
+            ?>
         </main>
         
         

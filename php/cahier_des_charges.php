@@ -1,14 +1,19 @@
 <?php 
 
 /* *********************** Cahier des charges PHP *********************** */
-(/pages)  
-Index.php                       ------>   []
 
+------------------------------- INDEX ------------------------------------
+    
+Index.php                       ------>   [EN COURS]
+
+    
+------------------------------- FORMULAIRE 1 - 2 - 3 ---------------------
+    
 Formulaire plusieurs pages      ------>   [OK]
     
 Formulaire 1.php                ------>   [OK]
     Formulaire_post1.php------>   [OK]
-"Voir si le <input> page suivante envoie bien le formulaire dans la bdd ------- > OUI IL LE FAIT"
+
     
 Formulaire 2.php                ------>   [A VALIDER]
     Formulaire_post2.php------>   [EN COURS]
@@ -17,20 +22,20 @@ Formulaire 2.php                ------>   [A VALIDER]
 Formulaire 3.php                ------>   []
         Formulaire_post3.php------>   []
         
-login.php                       ------>   []
-"voir redirection url si motDepasse = Erreur"
+------------------------------- LOGIN / LOGOFF --------------------------
 
-logoff.php                      ------>   []
-"Voir si redirection sur index = OK"
-"Voir la deconnection sur l'ensemble des pages"
+login.php                       ------>   []
+"voir redirection url si motDepasse = Erreur a afficher sur la page précédente de login.php"
+
+logoff.php                      ------>   [OK]
+
 -------------------------------------------------------------------------
 (/php)  
-    
 connexion.php                   ------>   [OK]             
 "connexion a la base de données"
-    
-    
--------------------------------------------------------------------------
-    
-Proposition team :
+
+
+------------------------------- Proposition team ------------------------
+
+
 

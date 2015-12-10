@@ -122,7 +122,7 @@
 
 
         <div id="wrapper" class="col-md-8 col-md-offset-2">
-            <form class="col-md-6 col-md-offset-3">  
+            <form method="post" class="col-md-6 col-md-offset-3" enctype="multipart/form-data">  
 
                 <div class="form-group col-md-12" >
                     

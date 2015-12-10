@@ -1,3 +1,4 @@
+
 <?php
 if ( isset ($_SESSION["inscription"])) {
     unset($_SESSION["inscription"]);
@@ -17,12 +18,12 @@ require_once('php/connexion.php');
     $affichageMembre->execute(array($_GET['query']));
     $value = $affichageMembre->fetch();
 ?>
-<img src="../img/Avatar-512.png" name="avatar" id="avatarProfil">avatar
+<img src="uploads/<?php echo $value['avatar']; ?>" name="avatar" id="avatarProfil">
 
 <div class="row" id="rowName">
     <p>Nom <?php echo htmlspecialchars($value["nom"])  ?></p>
-    <p>Prenom<?php echo htmlspecialchars($value["prenom"])  ?></p>
-    <p>age<?php echo htmlspecialchars($value["age"]) //TODO calcul age par rapport a date de naissance ?></p>
+    <p>Prenom <?php echo htmlspecialchars($value["prenom"])  ?></p>
+    <p>age <?php  //TODO calcul age par rapport a date de naissance ?></p>
 </div>
 
 <div class="row">
@@ -35,6 +36,6 @@ require_once('php/connexion.php');
 </div>
 
 <div id="miniNavbar">
-    <p>Divertissement</p>
+    <p>Divertissement</p> 
 
 </div>

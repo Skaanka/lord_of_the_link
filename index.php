@@ -5,6 +5,7 @@ if ( isset ($_SESSION["inscription"])) {
 session_start();
 // connexion bdd
 require_once('php/connexion.php');
+require_once('php/function.php');
 
 // recuperation dans l'url
 if(isset($_GET["query"])) {
@@ -14,25 +15,6 @@ if(isset($_GET["query"])) {
     parse_str($query, $params);
     //print_r($params);
     //echo $params["test"];
-}
-
-
-// Gestion des pages a afficher section forum
-function affichageCat($main) {
-        
-if (isset($_GET["page"])) {
-    switch ($_GET["page"]) {
-        case "form1":
-            $main = "formulaire.php";
-            break;
-        default:
-            $main = "index.php";
-            
-    } 
-    include($main); 
-    } else {
-    include("index.php");
-    }
 }
 
 ?>
@@ -53,12 +35,12 @@ if (isset($_GET["page"])) {
             
             <form id="connexion" class="form-inline" method="POST">
                 <?php 
-                if (isset($_SESSION['user']) ) { 
+                if ( isset($_SESSION['user']) ) { 
                 ?>
                     <div class="form-group">
                         <label for="profil">Bienvenue <?php echo $_SESSION['user']['prenom'] . " " . $_SESSION['user']['nom'] ; ?></label> <!-- TODO STYLE ECHO NOM PRENOM -->
-                        <input type="submit" id="profil" class="btn btn-default btn-xs" name="profil" value="profil" formaction="#.php">
-                        <input type="submit" class="btn btn-default btn-xs" name="deconnexion" value="déconnexion" formaction="logoff.php">
+                        <input type="submit" id="profil" class="btn btn-default btn-xs" name="profil" value="profil" formaction=""> <!--TODO affichage profil utilisateur -->
+                        <input type="submit" class="btn btn-default btn-xs" name="deconnexion" value="déconnexion" formaction="pages/logoff.php">
                     </div>
                 <?php
                 } elseif ( empty($_SESSION['user']) )  {
@@ -72,7 +54,7 @@ if (isset($_GET["page"])) {
                         <input type="password" class="" id="password" placeholder="Password" name="mot_de_passe">
                     </div>
 
-                     <input type="submit" class="dropdown-toggle" name="connexion" value="connexion" formaction="login.php">
+                     <input type="submit" class="dropdown-toggle" name="connexion" value="connexion" formaction="pages/login.php">
                     <input type="submit" class="dropdown-toggle" name="" formaction="pages/formulaire.php" value="Inscription">
                 <?php
                     //echo $login_erreur; // TODO affiche message d'erreur : "erreur email ou mot de passe, veuillez réessayer" 
@@ -89,9 +71,11 @@ if (isset($_GET["page"])) {
         <!-- menu navbar en dropdown -->
         <div class="row col-md-8 col-md-offset-2" id="menu-nav">
             
-            <button type="button" class="dropdown-toggle" href="index.php">
-                <img src="img/icons/ring.png" id="home">
-            </button>
+            <a href="index.php">
+                <button type="button" class="dropdown-toggle"> <!-- MODIFICATION DU BOUTON POUR REDIRECTION INDEX.PHP -- AJOUT BALISE <a> ---       -->
+                    <img src="img/icons/ring.png" id="home">
+                </button>
+            </a>
             
             <!-- bouton divertissement -->
             <div class="btn-group" >
@@ -166,16 +150,31 @@ if (isset($_GET["page"])) {
         <main class="col-md-6">
             
             <?php
-            include("pages/pageProfil.php");
+            // affichage default, profil user, profil visited     -------- TODO ajout affichage du profil de l'utilisateur connecter
+            if (isset($_GET["query"])) {
+                $visitProfil =  $_GET["query"] ;
+                
+                switch ($_GET["query"]) {
+                    case "$visitProfil": // affiche le profil du membre clické
+                        $main = "pages/pageProfil.php";
+                        break;
+                    default: // la page par défaut
+                        $main = "pages/pageDefault.php";
+
+                } 
+                include($main); 
+            } else {
+                include("pages/pageDefault.php"); // en cas d'erreur affiche la pageDefault
+            }
             ?>
             
             <?php
             if (isset($params)) {
             ?>
-            <div id="sidebarCat" class="col-md-3 panel panel-primary">
-                <ul><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Divertissement</ul>
-                <ul><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux pro.</ul>
-                <ul><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux sociaux</ul>
+            <div id="sidebarCat" class="col-md-3 ">
+                <ul><a href="index.php<?php echo "?query=" . $value['id'] . "?cat=" . 2 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Divertissement</a></ul>
+                <ul><a href="index.php<?php echo "?query=" . $value['id'] . "?cat=" . 3 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux pro.</a></ul>
+                <ul><a href="index.php<?php echo "?query=" . $value['id'] . "?cat=" . 4 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux sociaux</a></ul>
             </div>
             <?php
             } else {

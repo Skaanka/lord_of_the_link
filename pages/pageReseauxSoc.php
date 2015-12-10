@@ -19,12 +19,12 @@ $value = $affichageMembre->fetch();
 
 
 <div>
-    <h2>Voici les réseaux sociaux que [PRENOM] fréquente. </h2> <!-- TODO inserer en PHP le nom d'utilisateur -->
+    <h2>Voici les réseaux sociaux que <?php echo htmlspecialchars($value["prenom"])  ?> fréquente. </h2> <!-- TODO inserer en PHP le nom d'utilisateur -->
 </div>
 
 <div class="row col-md-6 col-md-offset-3" id="rowName">
     <div>
-        <img class="icons col-sm-2" src="../img/icons/FB_logo.png">
+        <img class="icons col-sm-2" src="img/icons/FB_logo.png">
         <label for="facebook" class="col-sm-2">Facebook</label>
         <div class="panel panel-default">
           <div class="panel-body" id="facebook">
@@ -34,7 +34,7 @@ $value = $affichageMembre->fetch();
     </div>
     
     <div>
-        <img class="icons col-sm-2" src="../img/icons/Twitter-logo.png">
+        <img class="icons col-sm-2" src="img/icons/Twitter-logo.png">
         <label for="Twitter" class="col-sm-2">Twitter</label>
         <div class="panel panel-default">
           <div class="panel-body" id="twitter">
@@ -46,7 +46,7 @@ $value = $affichageMembre->fetch();
 
 <div class="row col-md-6 col-md-offset-3" id="rowName">
     <div>
-        <img class="icons col-sm-2" src="../img/icons/YouTube-logo.png">
+        <img class="icons col-sm-2" src="img/icons/YouTube-logo.png">
         <label for="Youtube" class="col-sm-2">YouTube</label>
         <div class="panel panel-default">
           <div class="panel-body" id="YouTube">
@@ -56,7 +56,7 @@ $value = $affichageMembre->fetch();
     </div>
     
     <div>
-        <img class="icons col-sm-2" src="../img/icons/googleplus_logo.png">
+        <img class="icons col-sm-2" src="img/icons/googleplus_logo.png">
         <label for="google+" class="col-sm-2">Google+</label>
         <div class="panel panel-default">
           <div class="panel-body" id="ggogle+">
@@ -68,7 +68,7 @@ $value = $affichageMembre->fetch();
 
 <div class="row col-md-6 col-md-offset-3" id="rowName">
     <div>
-        <img class="icons col-sm-2" src="../img/icons/Skype_logo.png">
+        <img class="icons col-sm-2" src="img/icons/Skype_logo.png">
         <label for="skype" class="col-sm-2">Skype</label>
         <div class="panel panel-default">
           <div class="panel-body" id="skype">
@@ -78,7 +78,7 @@ $value = $affichageMembre->fetch();
     </div>
     
     <div>
-        <img class="icons col-sm-2" src="../img/icons/instagram_logo.png">
+        <img class="icons col-sm-2" src="img/icons/instagram_logo.png">
         <label for="instagram" class="col-sm-2">Instagram</label>
         <div class="panel panel-default">
           <div class="panel-body" id="instagram">
@@ -90,7 +90,7 @@ $value = $affichageMembre->fetch();
 
 <div class="row col-md-6 col-md-offset-3" id="rowName">
     <div>
-        <img class="icons col-sm-2" src="../img/icons/pinterest-logo.png">
+        <img class="icons col-sm-2" src="img/icons/pinterest-logo.png">
         <label for="printerest" class="col-sm-2">Pinterest</label>
         <div class="panel panel-default">
           <div class="panel-body" id="pinterest">
@@ -100,7 +100,7 @@ $value = $affichageMembre->fetch();
     </div>
     
     <div>
-        <img class="icons col-sm-2" src="../img/icons/Deezer_logo.png">
+        <img class="icons col-sm-2" src="img/icons/Deezer_logo.png">
         <label for="Deezer" class="col-sm-2">Deezer</label>
         <div class="panel panel-default">
           <div class="panel-body" id="deezer">
@@ -112,7 +112,7 @@ $value = $affichageMembre->fetch();
 
 <div class="row col-md-6 col-md-offset-3" id="rowName">
     <div>
-        <img class="icons col-sm-2" src="../img/icons/Spotify_logo.png">
+        <img class="icons col-sm-2" src="img/icons/Spotify_logo.png">
         <label for="spotify" class="col-sm-2">Spotify</label>
         <div class="panel panel-default">
           <div class="panel-body" id="spotify">
@@ -122,7 +122,7 @@ $value = $affichageMembre->fetch();
     </div>
     
     <div>
-        <img class="icons col-sm-2" src="../img/icons/Viber-logo.png">
+        <img class="icons col-sm-2" src="img/icons/Viber-logo.png">
         <label for="viber" class="col-sm-2">Viber</label>
         <div class="panel panel-default">
           <div class="panel-body" id="viber">

@@ -1,4 +1,5 @@
 <?php
+
 if ( isset ($_SESSION["inscription"])) {
     unset($_SESSION["inscription"]);
 }
@@ -139,7 +140,7 @@ if(isset($_GET["query"])) {
                 $affichageMembre = $db->query('SELECT id, prenom, nom FROM membres');
                 while ($value = $affichageMembre->fetch()) {
                 ?>
-                <li><a href="index.php<?php echo "?query=" .$value['id']; ?>"><?php echo htmlspecialchars($value["prenom"]) . " " . htmlspecialchars($value["nom"]) ?></a></li>
+                <li><a href="index.php<?php echo "?query=" .$value['id'] . "&" . "cat=" . 0 ; ?>"><?php echo htmlspecialchars($value["prenom"]) . " " . htmlspecialchars($value["nom"]) ?></a></li>
                 <?php
                 }
                 $affichageMembre->closeCursor();
@@ -150,20 +151,38 @@ if(isset($_GET["query"])) {
         <main class="col-md-6">
             
             <?php
-            // affichage default, profil user, profil visited     -------- TODO ajout affichage du profil de l'utilisateur connecter
-            if (isset($_GET["query"])) {
-                $visitProfil =  $_GET["query"] ;
-                
-                switch ($_GET["query"]) {
-                    case "$visitProfil": // affiche le profil du membre clické
+
+            
+            $url = $_GET;
+            //print_r($url);
+
+            //print_r($url["query"]); 
+            //echo "<br/>";
+            //print_r($url["cat"]);
+            
+            // affichage default, profil user, profil visited     -------1- TODO ajout affichage du profil de l'utilisateur connecter
+            if  ( isset($_GET["query"]) && isset($url["cat"]) ) {
+                $i = $url["cat"] ;
+                switch ($url["cat"]) {
+                    case 0: // affiche le profil du membre clické
                         $main = "pages/pageProfil.php";
                         break;
+                    case 2: // affiche le profil du membre clické
+                        $main = "pages/pageDivertissement.php";
+                        break;
+                    case 3: // affiche le profil du membre clické
+                        $main = "pages/pageReseauxPro.php";
+                        break;
+                    case 4: // affiche le profil du membre clické
+                        $main = "pages/pageReseauxSoc.php";
+                        break;
                     default: // la page par défaut
-                        $main = "pages/pageDefault.php";
+                        $main = "pages/pageProfil.php";
 
                 } 
-                include($main); 
-            } else {
+                include($main);     
+                echo $main;
+            }else {
                 include("pages/pageDefault.php"); // en cas d'erreur affiche la pageDefault
             }
             ?>
@@ -172,9 +191,9 @@ if(isset($_GET["query"])) {
             if (isset($params)) {
             ?>
             <div id="sidebarCat" class="col-md-3 ">
-                <ul><a href="index.php<?php echo "?query=" . $value['id'] . "?cat=" . 2 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Divertissement</a></ul>
-                <ul><a href="index.php<?php echo "?query=" . $value['id'] . "?cat=" . 3 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux pro.</a></ul>
-                <ul><a href="index.php<?php echo "?query=" . $value['id'] . "?cat=" . 4 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux sociaux</a></ul>
+                <ul><a href="index.php<?php echo "?query=" . $value['id'] . "&" . "cat=" . 2 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Divertissement</a></ul>
+                <ul><a href="index.php<?php echo "?query=" . $value['id'] . "&" . "cat=" . 3 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux pro.</a></ul>
+                <ul><a href="index.php<?php echo "?query=" . $value['id'] . "&" . "cat=" . 4 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux sociaux</a></ul>
             </div>
             <?php
             } else {

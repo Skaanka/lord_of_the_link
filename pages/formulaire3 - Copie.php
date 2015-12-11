@@ -26,7 +26,7 @@
         
         <div id="connexionbar" class="col-md-8 col-md-offset-2">
             
-            <form method="POST" id="connexion" class="form-inline" method="POST">
+            <form id="connexion" class="form-inline" method="POST">
                 <?php 
                 if (isset($_SESSION['user']) ) { 
                 ?>
@@ -126,7 +126,7 @@
 
 
         <div id="wrapper" class="col-md-8 col-md-offset-2">
-            <form method="POST" class="col-md-6 col-md-offset-3">  
+            <form class="col-md-6 col-md-offset-3">  
 
                 
                 <h1>Sociaux</h1><br/>
@@ -300,8 +300,8 @@
 
                 <div id="bouton" class="row">
                     <div class="">
-                        <input type="submit" class="btn btn-default col-md-offset-1" value="Page précédente" name="return" formaction="formulaire2.php">
-                        <input type="submit" class="btn btn-default col-md-offset-5" value="Page suivante" name="submit" formaction="formulaire_post3.php">
+                        <input type="submit" class="btn btn-default col-md-offset-1" value="Page précédente" name="" formaction="formulaire2.php">
+                        <input type="submit" class="btn btn-default col-md-offset-5" value="Page suivante" name="" formaction="formulaire_post3.php">
                     </div>
                 </div>
 

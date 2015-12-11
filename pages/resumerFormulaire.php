@@ -63,7 +63,7 @@ $inscriptionTemp->closeCursor();
 *******************/
 
 // INSERT Diplome ligne un
-if(!empty($_SESSION['inscription']['annees_obt'] && $_SESSION['inscription']['intitule'] && $_SESSION['inscription']['ecole'])) {  // empty ou isset ??
+if(isset($_SESSION['inscription']['annees_obt'], $_SESSION['inscription']['intitule'], $_SESSION['inscription']['ecole'])) {  // empty ou isset ??
     $inscriptionDiplome = $db->prepare
     ("INSERT INTO diplomes (id, id_membres, annees_obt, intitule, ecole) 
     VALUES (:id, :id_membres, :annees_obt, :intitule, :ecole) ");
@@ -76,7 +76,7 @@ if(!empty($_SESSION['inscription']['annees_obt'] && $_SESSION['inscription']['in
 }
 
 // INSERT Diplome ligne deux
-if(!empty($_SESSION['inscription']['annees_obt2'] && $_SESSION['inscription']['intitule2'] && $_SESSION['inscription']['ecole2'])) {
+if(isset($_SESSION['inscription']['annees_obt2'], $_SESSION['inscription']['intitule2'], $_SESSION['inscription']['ecole2'])) {
     $inscriptionDiplome = $db->prepare
     ("INSERT INTO diplomes (id, id_membres, annees_obt, intitule, ecole) 
     VALUES (:id, :id_membres, :annees_obt, :intitule, :ecole) ");
@@ -89,7 +89,7 @@ if(!empty($_SESSION['inscription']['annees_obt2'] && $_SESSION['inscription']['i
 }
 
 // INSERT Diplome ligne trois
-if(!empty($_SESSION['inscription']['annees_obt3'] && $_SESSION['inscription']['intitule3'] && $_SESSION['inscription']['ecole3'])) {
+if(isset($_SESSION['inscription']['annees_obt3'], $_SESSION['inscription']['intitule3'], $_SESSION['inscription']['ecole3'])) {
     $inscriptionDiplome = $db->prepare
     ("INSERT INTO diplomes (id, id_membres, annees_obt, intitule, ecole) 
     VALUES (:id, :id_membres, :annees_obt, :intitule, :ecole) ");
@@ -102,7 +102,7 @@ if(!empty($_SESSION['inscription']['annees_obt3'] && $_SESSION['inscription']['i
 }
 
 // INSERT Diplome ligne quatre
-if(!empty($_SESSION['inscription']['annees_obt4'] && $_SESSION['inscription']['intitule4'] && $_SESSION['inscription']['ecole4'])) {
+if(isset($_SESSION['inscription']['annees_obt4'], $_SESSION['inscription']['intitule4'], $_SESSION['inscription']['ecole4'])) {
     $inscriptionDiplome = $db->prepare
     ("INSERT INTO diplomes (id, id_membres, annees_obt, intitule, ecole) 
     VALUES (:id, :id_membres, :annees_obt, :intitule, :ecole) ");
@@ -121,7 +121,7 @@ if(!empty($_SESSION['inscription']['annees_obt4'] && $_SESSION['inscription']['i
 *******************/
 
 // INSERT XP PRO ligne un
-if(!empty($_SESSION['inscription']['periode_debut'] && $_SESSION['inscription']['periode_fin'] && $_SESSION['inscription']['compagnie'] && $_SESSION['inscription']['poste'])) {
+if(isset($_SESSION['inscription']['periode_debut'], $_SESSION['inscription']['periode_fin'], $_SESSION['inscription']['compagnie'], $_SESSION['inscription']['poste'])) {
     $inscriptionXpPro = $db->prepare
     ("INSERT INTO experience_pro (id, id_membres, periode_debut, periode_fin, compagnie, poste) 
     VALUES (:id, :id_membres, :periode_debut, :periode_fin, :compagnie, :poste) ");
@@ -135,7 +135,7 @@ if(!empty($_SESSION['inscription']['periode_debut'] && $_SESSION['inscription'][
 }
 
 // INSERT XP PRO ligne deux
-if(!empty($_SESSION['inscription']['periode_debut2'] && $_SESSION['inscription']['periode_fin2'] && $_SESSION['inscription']['compagnie2'] && $_SESSION['inscription']['poste2'])) {
+if(isset($_SESSION['inscription']['periode_debut2'], $_SESSION['inscription']['periode_fin2'], $_SESSION['inscription']['compagnie2'], $_SESSION['inscription']['poste2'])) {
     $inscriptionXpPro = $db->prepare
     ("INSERT INTO experience_pro (id, id_membres, periode_debut, periode_fin, compagnie, poste) 
     VALUES (:id, :id_membres, :periode_debut, :periode_fin, :compagnie, :poste) ");
@@ -149,7 +149,7 @@ if(!empty($_SESSION['inscription']['periode_debut2'] && $_SESSION['inscription']
 }
 
 // INSERT XP PRO ligne trois
-if(!empty($_SESSION['inscription']['periode_debut3'] && $_SESSION['inscription']['periode_fin3'] && $_SESSION['inscription']['compagnie3'] && $_SESSION['inscription']['poste3'])) {
+if(isset($_SESSION['inscription']['periode_debut3'], $_SESSION['inscription']['periode_fin3'], $_SESSION['inscription']['compagnie3'], $_SESSION['inscription']['poste3'])) {
     $inscriptionXpPro = $db->prepare
     ("INSERT INTO experience_pro (id, id_membres, periode_debut, periode_fin, compagnie, poste) 
     VALUES (:id, :id_membres, :periode_debut, :periode_fin, :compagnie, :poste) ");
@@ -163,7 +163,7 @@ if(!empty($_SESSION['inscription']['periode_debut3'] && $_SESSION['inscription']
 }
 
 // INSERT XP PRO ligne quatre
-if(!empty($_SESSION['inscription']['periode_debut4'] && $_SESSION['inscription']['periode_fin4'] && $_SESSION['inscription']['compagnie4'] && $_SESSION['inscription']['poste4'])) {
+if(isset($_SESSION['inscription']['periode_debut4'], $_SESSION['inscription']['periode_fin4'], $_SESSION['inscription']['compagnie4'], $_SESSION['inscription']['poste4'])) {
     $inscriptionXpPro = $db->prepare
     ("INSERT INTO experience_pro (id, id_membres, periode_debut, periode_fin, compagnie, poste) 
     VALUES (:id, :id_membres, :periode_debut, :periode_fin, :compagnie, :poste) ");
@@ -177,7 +177,7 @@ if(!empty($_SESSION['inscription']['periode_debut4'] && $_SESSION['inscription']
 }
 
 // INSERT XP PRO ligne cinq
-if(!empty($_SESSION['inscription']['periode_debut5'] && $_SESSION['inscription']['periode_fin5'] && $_SESSION['inscription']['compagnie5'] && $_SESSION['inscription']['poste5'])) {
+if(isset($_SESSION['inscription']['periode_debut5'], $_SESSION['inscription']['periode_fin5'], $_SESSION['inscription']['compagnie5'], $_SESSION['inscription']['poste5'])) {
     $inscriptionXpPro = $db->prepare
     ("INSERT INTO experience_pro (id, id_membres, periode_debut, periode_fin, compagnie, poste) 
     VALUES (:id, :id_membres, :periode_debut, :periode_fin, :compagnie, :poste) ");
@@ -191,7 +191,7 @@ if(!empty($_SESSION['inscription']['periode_debut5'] && $_SESSION['inscription']
 }
 
 // INSERT XP PRO ligne six
-if(!empty($_SESSION['inscription']['periode_debut6'] && $_SESSION['inscription']['periode_fin6'] && $_SESSION['inscription']['compagnie6'] && $_SESSION['inscription']['poste6'])) {
+if(isset($_SESSION['inscription']['periode_debut6'], $_SESSION['inscription']['periode_fin6'], $_SESSION['inscription']['compagnie6'], $_SESSION['inscription']['poste6'])) {
     $inscriptionXpPro = $db->prepare
     ("INSERT INTO experience_pro (id, id_membres, periode_debut, periode_fin, compagnie, poste) 
     VALUES (:id, :id_membres, :periode_debut, :periode_fin, :compagnie, :poste) ");
@@ -209,7 +209,7 @@ if(!empty($_SESSION['inscription']['periode_debut6'] && $_SESSION['inscription']
 //   COMPETENCES  //    --------> [OK]   [NOTE ce contenu necessitera surment une table personnelle, sinon je pense que des conflit peuvent avoir lieu dans les requetes A VOIR]
 *******************/
 
-if(!empty($_SESSION['inscription']['competences'])) {
+if(isset($_SESSION['inscription']['competences'])) {
     $competences = $db->prepare
     ("INSERT INTO experience_pro (id, id_membres, competences) 
     VALUES (:id, :id_membres, :competences) ");
@@ -225,7 +225,7 @@ if(!empty($_SESSION['inscription']['competences'])) {
 //   FIL D'ACTU   //    --------> A TESTER 
 *******************/
 
-if(!empty($_SESSION['inscription']['messages'])) {
+if(isset($_SESSION['inscription']['messages'])) {
     $file_actu = $db->prepare
         ("INSERT INTO actu_perso (id, id_membres, messages) 
         VALUES (:id, :id_membres, :messages) ");
@@ -239,7 +239,7 @@ if(!empty($_SESSION['inscription']['messages'])) {
 /*******************
 //    PORTFOLIO   //    --------> [OK]  [NOTE ce contenu necessitera surment une table personnelle, sinon je pense que des conflit peuvent avoir lieu dans les requetes A VOIR]
 *******************/
-if(!empty($_SESSION['inscription']['porte_folio'])) {
+if(isset($_SESSION['inscription']['porte_folio'])) {
     $portfolio = $db->prepare
         ("INSERT INTO experience_pro (id, id_membres, porte_folio)  
         VALUES (:id, :id_membres, :porte_folio) ");
@@ -262,7 +262,7 @@ if(!empty($_SESSION['inscription']['porte_folio'])) {
 // DIVERTISSEMENT //    --------> [OK]
 *******************/
 
-if(!empty($_SESSION['inscription']['psn'] && $_SESSION['inscription']['xboxlive'] && $_SESSION['inscription']['steam'] && $_SESSION['inscription']['battlenet'] && $_SESSION['inscription']['nintendo'] && $_SESSION['inscription']['origin'])) {
+if(isset($_SESSION['inscription']['psn'], $_SESSION['inscription']['xboxlive'], $_SESSION['inscription']['steam'], $_SESSION['inscription']['battlenet'], $_SESSION['inscription']['nintendo'], $_SESSION['inscription']['origin'])) {
     
     $inscriptionDiv = $db->prepare
         ("INSERT INTO divertissements (id, id_membres, psn, xboxlive, steam, battlenet, compte_nintendo, origin)  
@@ -284,7 +284,7 @@ if(!empty($_SESSION['inscription']['psn'] && $_SESSION['inscription']['xboxlive'
 //   RESEAUX PRO  //    --------> [OK]
 *******************/
 
-if(!empty($_SESSION['inscription']['linkedin'] && $_SESSION['inscription']['viadeo'] && $_SESSION['inscription']['xing'] && $_SESSION['inscription']['muxy'])) {
+if(isset($_SESSION['inscription']['linkedin'], $_SESSION['inscription']['viadeo'], $_SESSION['inscription']['xing'], $_SESSION['inscription']['muxy'])) {
     
     $reseauxPro = $db->prepare
         ("INSERT INTO pro (id, id_membres, linkedin, viadeo, xing, muxi)  
@@ -304,7 +304,7 @@ if(!empty($_SESSION['inscription']['linkedin'] && $_SESSION['inscription']['viad
 //   RESEAUX SOC  //    --------> [OK]
 *******************/
 
-if(!empty($_SESSION['inscription']['facebook'] && $_SESSION['inscription']['twitter'] && $_SESSION['inscription']['youtube'] && $_SESSION['inscription']['google'] && $_SESSION['inscription']['skype'] && $_SESSION['inscription']['instagram'] && $_SESSION['inscription']['pinterest'] && $_SESSION['inscription']['deezer'] && $_SESSION['inscription']['spotify'] && $_SESSION['inscription']['viber'])) {
+if(isset($_SESSION['inscription']['facebook'], $_SESSION['inscription']['twitter'], $_SESSION['inscription']['youtube'], $_SESSION['inscription']['google'], $_SESSION['inscription']['skype'], $_SESSION['inscription']['instagram'], $_SESSION['inscription']['pinterest'], $_SESSION['inscription']['deezer'], $_SESSION['inscription']['spotify'], $_SESSION['inscription']['viber'])) {
     
     $reseauxSoc = $db->prepare
         ("INSERT INTO reseaux (id, id_membres, facebook, twitter, youtube, google, skype, instagram, pinterest, deezer, spotify, viber)  
@@ -326,6 +326,6 @@ if(!empty($_SESSION['inscription']['facebook'] && $_SESSION['inscription']['twit
 
 
 //un fois le traitement du formulaire enregistrer dans la BDD, on peut détruire la session inscription et rediriger l'utilisateur sur la page index.ph
-//unset($_SESSION["inscription"]);
-//header('location: ../index.php'); // TODO page de validation du formulaire exemple : index.php?return=succes ou succes sera un "case succes " dans la boucle switch
+unset($_SESSION["inscription"]);
+header('location: ../index.php'); // TODO page de validation du formulaire exemple : index.php?return=succes ou succes sera un "case succes " dans la boucle switch
 

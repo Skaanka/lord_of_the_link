@@ -12,7 +12,7 @@
             //nettoyer les espace non voulue 
             //$nom = trim($_POST["nom"]);
             
-            // divertissment ----->
+            // divertissment -----> [OK]
             $_SESSION['inscription']['psn'] = $_POST['psn'];
             $_SESSION['inscription']['xboxlive'] = $_POST['xboxlive'];
             $_SESSION['inscription']['steam'] = $_POST['steam'];
@@ -20,13 +20,13 @@
             $_SESSION['inscription']['nintendo'] = $_POST['nintendo'];
             $_SESSION['inscription']['origin'] = $_POST['origin'];
             
-            // réseaux pro ----->
+            // réseaux pro -----> [OK]
             $_SESSION['inscription']['linkedin'] = $_POST['linkedin'];
             $_SESSION['inscription']['viadeo'] = $_POST['viadeo'];
             $_SESSION['inscription']['xing'] = $_POST['xing'];
             $_SESSION['inscription']['muxy'] = $_POST['muxy'];
             
-            // réseaux sauciaux ----->
+            // réseaux sauciaux -----> [OK]
             $_SESSION['inscription']['facebook'] = $_POST['facebook'];
             $_SESSION['inscription']['twitter'] = $_POST['twitter'];
             $_SESSION['inscription']['youtube'] = $_POST['youtube'];

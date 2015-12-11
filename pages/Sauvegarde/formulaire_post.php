@@ -21,6 +21,7 @@
         }
 
         if ($_POST) {
+            
             //nettoyer les espace non voulue 
             //$nom = trim($_POST["nom"]);
             //$prenom = trim($_POST["prenom"]);
@@ -39,7 +40,29 @@
                 
                 //hacher le mot de passe :
                 $hashPassword = password_hash($mot_de_passe, PASSWORD_DEFAULT);
-
+                
+                // ajout d'un membre dans la bdd ---> a la fin des formulaire
+                $inscription = $db->prepare("INSERT INTO membres (id, nom, prenom, ddn, avatar, adresse, cp, ville, mail, phone, siteWeb, mot_de_passe) VALUES (:id, :nom, :prenom, :ddn, :avatar, :adresse, :cp, :ville, :mail, :phone, :siteWeb, :mot_de_passe)");
+                $inscription->bindValue(':id' , '', PDO::PARAM_INT);
+                $inscription->bindValue(':nom' , $_POST['nom'], PDO::PARAM_STR);
+                $inscription->bindValue(':prenom', $_POST['prenom'], PDO::PARAM_STR);
+                $inscription->bindValue(':ddn', $_POST['ddn'], PDO::PARAM_STR);
+                $inscription->bindValue(':avatar', $_FILES['avatar']['name'], PDO::PARAM_STR);
+                $inscription->bindValue(':adresse', $_POST['adresse'], PDO::PARAM_STR);
+                $inscription->bindValue(':cp', $_POST['cp'], PDO::PARAM_STR);
+                $inscription->bindValue(':ville', $_POST['ville'], PDO::PARAM_STR);
+                $inscription->bindValue(':mail', $_POST['mail'], PDO::PARAM_STR);
+                $inscription->bindValue(':phone', $_POST['phone'], PDO::PARAM_STR);
+                $inscription->bindValue(':siteWeb', $_POST['siteWeb'], PDO::PARAM_STR);
+                $inscription->bindValue(':mot_de_passe', $hashPassword, PDO::PARAM_STR);
+                $inscription->execute();
+                
+                // creation d'une $_SESSION pour l'inscription d'un utilisateur
+                $inscriptionTemp = $db->prepare('SELECT * FROM membres WHERE mail=?'); 
+                $inscriptionTemp ->execute(array($_POST["mail"]));
+                $results = $inscriptionTemp->fetch(PDO::FETCH_ASSOC);
+                $inscriptionTemp->closeCursor();
+                
                 // si $_POST contient des données alors créa d'une $_SESSION
                 if (isset($_POST) ) {
                     
@@ -53,7 +76,7 @@
                     $_SESSION['inscription']['mail'] = $_POST['mail'];
                     $_SESSION['inscription']['phone'] = $_POST['phone'];
                     $_SESSION['inscription']['siteWeb'] = $_POST['siteWeb'];
-                    $_SESSION['inscription']['mot_de_passe'] = $hashPassword;
+                    $_SESSION['inscription']['mot_de_passe'] = $_POST['mot_de_passe'];
                     
                 } else {
                     echo "erreur session temporaire";                      

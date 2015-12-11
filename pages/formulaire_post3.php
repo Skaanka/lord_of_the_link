@@ -8,24 +8,41 @@
     require_once('../php/connexion.php');
     
     try { 
-        if ($_POST) {
+        if ( isset($_POST['submit']) ) {
             //nettoyer les espace non voulue 
             //$nom = trim($_POST["nom"]);
             
-            // ajout de l'experience pro d'un membres     [A MODIFIER ENTIEREMENT POUR CE FORMULAIRE (exemple du formulaire 1)]
-            $inscriptionDiplome = $db->prepare("INSERT INTO diplomes (id, id_membres, annees_obt, intitule, ecole) VALUES (:id, :id_membres, :annees_obt, :intitule, :ecole) ");
-            $inscriptionDiplome->bindValue(':id' , '', PDO::PARAM_INT);
-            $inscriptionDiplome->bindValue(':id_membres' , $_SESSION['inscription']['id'], PDO::PARAM_INT); 
-            $inscriptionDiplome->bindValue(':annees_obt' , $_POST['annees_obt'], PDO::PARAM_STR); 
-            $inscriptionDiplome->bindValue(':intitule' , $_POST['intitule'], PDO::PARAM_STR); 
-            $inscriptionDiplome->bindValue(':ecole' , $_POST['ecole'], PDO::PARAM_STR); 
+            // divertissment ----->
+            $_SESSION['inscription']['psn'] = $_POST['psn'];
+            $_SESSION['inscription']['xboxlive'] = $_POST['xboxlive'];
+            $_SESSION['inscription']['steam'] = $_POST['steam'];
+            $_SESSION['inscription']['battlenet'] = $_POST['battlenet'];
+            $_SESSION['inscription']['nintendo'] = $_POST['nintendo'];
+            $_SESSION['inscription']['origin'] = $_POST['origin'];
             
-            $inscriptionDiplome->execute();
-            print_r($inscriptionDiplome);
-            header("Location: formulaire3.php");
+            // réseaux pro ----->
+            $_SESSION['inscription']['linkedin'] = $_POST['linkedin'];
+            $_SESSION['inscription']['viadeo'] = $_POST['viadeo'];
+            $_SESSION['inscription']['xing'] = $_POST['xing'];
+            $_SESSION['inscription']['muxy'] = $_POST['muxy'];
+            
+            // réseaux sauciaux ----->
+            $_SESSION['inscription']['facebook'] = $_POST['facebook'];
+            $_SESSION['inscription']['twitter'] = $_POST['twitter'];
+            $_SESSION['inscription']['youtube'] = $_POST['youtube'];
+            $_SESSION['inscription']['google'] = $_POST['google'];
+            $_SESSION['inscription']['skype'] = $_POST['skype'];
+            $_SESSION['inscription']['instagram'] = $_POST['instagram'];
+            $_SESSION['inscription']['pinterest'] = $_POST['pinterest'];
+            $_SESSION['inscription']['deezer'] = $_POST['deezer'];
+            $_SESSION['inscription']['spotify'] = $_POST['spotify'];
+            $_SESSION['inscription']['viber'] = $_POST['viber'];
+
+            header("Location: resumerFormulaire.php");
+            
         } else {
             header("Location: formulaire2.php");
-            echo "Erreur : echec de l'inscription !";
+            echo "Erreur : echec de l'inscription partie 3!";
         }
             
     } catch(PDOException $ex) {

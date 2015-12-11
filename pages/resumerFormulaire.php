@@ -254,12 +254,12 @@ if(!empty($_SESSION['inscription']['porte_folio'])) {
 
 
         /************************
-        // INSERT Formulaire 3 //    --------> [EN COURS]
+        // INSERT Formulaire 3 //    --------> [OK]
         ************************/
 
 
 /*******************
-// DIVERTISSEMENT //    --------> A TESTER n'enregistre pas dans la bdd   WHY ??????????
+// DIVERTISSEMENT //    --------> [OK]
 *******************/
 
 if(!empty($_SESSION['inscription']['psn'] && $_SESSION['inscription']['xboxlive'] && $_SESSION['inscription']['steam'] && $_SESSION['inscription']['battlenet'] && $_SESSION['inscription']['nintendo'] && $_SESSION['inscription']['origin'])) {

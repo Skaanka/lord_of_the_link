@@ -147,7 +147,7 @@
                             <img class="icons col-sm-2" src="../img/icons/Xbox_logo.png">
                             <label for="xbox" class="col-sm-2 control-label celSoc">XboxLive</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control celSoc" id="xbox" placeholder="Identifiant XboxLive" name="xbox">
+                                <input type="text" class="form-control celSoc" id="xbox" placeholder="Identifiant XboxLive" name="xboxlive">
                             </div>
                         </div>
                         <div class="row form-group">

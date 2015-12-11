@@ -1,10 +1,15 @@
-<?php   
+<?php
+    //creation de session
     session_start();
+
     // connexion bdd
     require_once('../php/connexion.php');
 
+
     try { 
-        if (isset($_POST['submit'])){ // gestion de l'avatar
+        
+        // gestion de l'avatar
+        if (isset($_POST['submit'])){ 
                 $repertoire_upload = "c://xampp//htdocs//lord_of_the_link//uploads//";
                 $fichier_upload = $repertoire_upload . basename($_FILES['avatar']['name']);
                 //echo $fichier_upload;
@@ -16,6 +21,7 @@
         }
 
         if ($_POST) {
+            
             //nettoyer les espace non voulue 
             //$nom = trim($_POST["nom"]);
             //$prenom = trim($_POST["prenom"]);
@@ -29,9 +35,12 @@
             //$siteWeb = trim($_POST["siteWeb"]);
             $mot_de_passe = trim($_POST["mot_de_passe"]);
             
+            // verifie si l'email est valide et si le champs mot de passe est remplie
             if ( filter_var($mail, FILTER_VALIDATE_EMAIL) && !empty($mot_de_passe) ) { // verifie
+                
                 //hacher le mot de passe :
                 $hashPassword = password_hash($mot_de_passe, PASSWORD_DEFAULT);
+                
                 // ajout d'un membre dans la bdd
                 $inscription = $db->prepare("INSERT INTO membres (id, nom, prenom, ddn, avatar, adresse, cp, ville, mail, phone, siteWeb, mot_de_passe) VALUES (:id, :nom, :prenom, :ddn, :avatar, :adresse, :cp, :ville, :mail, :phone, :siteWeb, :mot_de_passe)");
                 $inscription->bindValue(':id' , '', PDO::PARAM_INT);
@@ -48,10 +57,12 @@
                 $inscription->bindValue(':mot_de_passe', $hashPassword, PDO::PARAM_STR);
                 $inscription->execute();
                 
-                $inscriptionTemp = $db->prepare('SELECT * FROM membres WHERE mail=?'); // creation d'une $_SESSION pour l'inscription d'un utilisateur
+                // creation d'une $_SESSION pour l'inscription d'un utilisateur
+                $inscriptionTemp = $db->prepare('SELECT * FROM membres WHERE mail=?'); 
                 $inscriptionTemp ->execute(array($_POST["mail"]));
                 $results = $inscriptionTemp->fetch(PDO::FETCH_ASSOC);
                 $inscriptionTemp->closeCursor();
+                
                 if ($results) {
                     $_SESSION['inscription']['id'] = $results['id'];
                     $_SESSION['inscription']['nom'] = $results['nom'];
@@ -64,6 +75,7 @@
                     $_SESSION['inscription']['mail'] = $results['mail'];
                     $_SESSION['inscription']['phone'] = $results['phone'];
                     $_SESSION['inscription']['siteWeb'] = $results['siteWeb'];
+                    
                 } else {
                     echo "erreur session temporaire";                      
                 }
@@ -81,5 +93,4 @@
     } catch(PDOException $ex) {
         echo "erreur! !";
     }
-?>
 

@@ -6,4 +6,3 @@ if (isset($_POST["deconnexion"])) { // TODO bouton deconnexion
     header('location: ../index.php');
 }
 
-?>

@@ -46,7 +46,7 @@
     
     
             /*******************
-            //     XP PRO     //    --------> EN COURS [3/6]
+            //     XP PRO     //    --------> A TESTER [6/6]
             *******************/
             if(!empty($_POST['periode_debut'] && $_POST['periode_fin'] && $_POST['compagnie'] && $_POST['poste'])) {
                 $_SESSION['inscription']['periode_debut'] = $_POST['periode_debut'];
@@ -63,33 +63,59 @@
                 $_SESSION['inscription']['poste2'] = $_POST['poste2'];
             }
 
-            if(!empty($_POST['periode_debut3'] && $_POST['periode_fin3'] && $_POST['compagnie3'] && $_POST['poste2'])) {
+            if(!empty($_POST['periode_debut3'] && $_POST['periode_fin3'] && $_POST['compagnie3'] && $_POST['poste3'])) {
                 $_SESSION['inscription']['periode_debut3'] = $_POST['periode_debut3'];
                 $_SESSION['inscription']['periode_fin3'] = $_POST['periode_fin3'];
                 $_SESSION['inscription']['compagnie3'] = $_POST['compagnie3'];
                 $_SESSION['inscription']['poste3'] = $_POST['poste3'];
             }
             
+            if(!empty($_POST['periode_debut4'] && $_POST['periode_fin4'] && $_POST['compagnie4'] && $_POST['poste4'])) {
+                $_SESSION['inscription']['periode_debut4'] = $_POST['periode_debut4'];
+                $_SESSION['inscription']['periode_fin4'] = $_POST['periode_fin4'];
+                $_SESSION['inscription']['compagnie4'] = $_POST['compagnie4'];
+                $_SESSION['inscription']['poste4'] = $_POST['poste4'];
+            }  
+
+
+            if(!empty($_POST['periode_debut5'] && $_POST['periode_fin5'] && $_POST['compagnie5'] && $_POST['poste5'])) {
+                $_SESSION['inscription']['periode_debut5'] = $_POST['periode_debut5'];
+                $_SESSION['inscription']['periode_fin5'] = $_POST['periode_fin5'];
+                $_SESSION['inscription']['compagnie5'] = $_POST['compagnie5'];
+                $_SESSION['inscription']['poste5'] = $_POST['poste5'];
+            }
+
+            if(!empty($_POST['periode_debut6'] && $_POST['periode_fin6'] && $_POST['compagnie6'] && $_POST['poste6'])) {
+                $_SESSION['inscription']['periode_debut6'] = $_POST['periode_debut6'];
+                $_SESSION['inscription']['periode_fin6'] = $_POST['periode_fin6'];
+                $_SESSION['inscription']['compagnie6'] = $_POST['compagnie6'];
+                $_SESSION['inscription']['poste6'] = $_POST['poste6'];
+            }
+            
             
             
             
             
             /*******************
-            //   COMPETENCES  //    --------> A FAIRE
+            //   COMPETENCES  //    --------> A TESTER
             *******************/
+            if(!empty($_POST['competences'])) {                    
+                $_SESSION['inscription']['competences'] = $_POST['competences'];
+            }
             
             /*******************
             //   FIL D'ACTU   //    --------> Fonctionne à 100%
             *******************/
             if(!empty($_POST['messages'])) {                    
-             $file_actu = $db->prepare("INSERT INTO actu_perso (id, id_membres, messages) VALUES (:id, :id_membres, :messages) ");
                 $_SESSION['inscription']['messages'] = $_POST['messages'];
             }
-
-            /*******************
-            //    PORTFOLIO   //    --------> A FAIRE
-            *******************/
             
+            /*******************
+            //    PORTFOLIO   //    --------> A TESTER
+            *******************/
+            if(!empty($_POST['porte_folio'])) {                    
+                $_SESSION['inscription']['porte_folio'] = $_POST['porte_folio'];
+            }
             
 
             header("Location: formulaire3.php");  // supprimer le mode commentaire lorsque page OK

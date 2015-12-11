@@ -17,7 +17,7 @@ Formulaire 1.php                ------>   [OK]
     
 Formulaire 2.php                ------>   [A VALIDER]
     Formulaire_post2.php------>   [EN COURS]
-"voir avec team pour les problemes de non des input entre les versions."
+
     
 Formulaire 3.php                ------>   []
         Formulaire_post3.php------>   []

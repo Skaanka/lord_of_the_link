@@ -1,12 +1,15 @@
 <?php
+    // si une $_SESSION["inscription"] existe alors elle est détruite ! KABOUM
     if ( isset ($_SESSION["inscription"])) {
         unset($_SESSION["inscription"]);
     }
+
+    //creation session
     session_start();
+    //print_r($_SESSION['inscription']);
+
     // connexion bdd
     require_once('../php/connexion.php');
-    print_r($_SESSION['inscription']);
-// manque name="" pour xp_pro ligne 215
 ?>
 
 <!doctype html>
@@ -36,12 +39,12 @@
                 } elseif ( empty($_SESSION['user']) )  {
                 ?>
                     <div class="form-group">
-                        <label class="sr-only" for="email">Email address</label>
-                        <input type="email" class="mail" id="email" placeholder="Email">
+                        <label class="sr-only" for="mail">Email address</label>
+                        <input type="email" class="mail" id="mail" placeholder="Email">
                     </div>
                     <div class="form-group">
                         <label class="sr-only" for="password">Password</label>
-                        <input type="password" class="" id="password" placeholder="Password" name="mot_de_passe">
+                        <input type="password" class="" id="password" placeholder="Password">
                     </div>
 
                      <input type="submit" class="dropdown-toggle" name="connexion" value="connexion" formaction="login.php">
@@ -122,7 +125,7 @@
 
 
         <div id="wrapper" class="col-md-8 col-md-offset-2">
-            <form method="post" class="col-md-6 col-md-offset-3">  
+            <form class="col-md-6 col-md-offset-3" method="POST">  
 
                 
                 <h1>Parcour pro.</h1><br/>
@@ -150,7 +153,7 @@
                             <input type="text" class="form-control" name="annees_obt">
                         </div>
                         <div class="form-group col-md-5">
-                            <input type="text"name="intitule" class="form-control">
+                            <input type="text" class="form-control" name="intitule">
                         </div>
                         <div class="form-group col-md-5">
                             <input type="text" class="form-control" name="ecole">
@@ -321,7 +324,7 @@
                   </div>
                 </div>
                 <?php 
-                   }
+                    }
                 ?>
                 
                 <div class="panel panel-default">
@@ -339,7 +342,7 @@
 
                 <div id="bouton" class="row">
                     <div class="">
-                        <input type="submit" class="btn btn-default col-md-offset-1" value="Page précédente" formaction="formulaire.php" name="">
+                        <input type="submit" class="btn btn-default col-md-offset-1" value="Page précédente" formaction="formulaire.php" name="return">
                         <input type="submit" class="btn btn-default col-md-offset-5" value="Page suivante" formaction="formulaire_post2.php" name="submit">
                     </div>
                 </div>

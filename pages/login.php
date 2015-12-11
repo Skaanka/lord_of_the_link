@@ -43,5 +43,5 @@ try {
         echo "erreur try !";
     }
 
-?>
+
 

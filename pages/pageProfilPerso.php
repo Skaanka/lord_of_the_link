@@ -19,12 +19,23 @@ require_once('php/connexion.php');
     $value = $affichageMembre->fetch();
 ?>
 
-   
+
+<h2>Mon profil.</h2>
+
+<input type="button" class="btn btn-danger">Parcours Pro.</input>
+<input type="button" class="btn btn-danger">Réseaux sociaux</input>
+
+<h3>Mes informations personnelles.</h3>
+
+
+<div class="row col-md-6 col-md-offset-3">
+    <img src="img/Avatar-512.png" name="avatar" id="avatarProfil" class="col-md-2 col-md-offset-1">
+</div>
+
 <div class="row col-md-8 col-md-offset-2" id="rowName">
-    <img src="uploads/<?php echo $value['avatar']; ?>" name="avatar" id="avatarProfil" class="col-md-2 col-md-offset-1"> <!-- TODO PHP renommer l'image dans la bdd et dossier -->
     <p class="col-md-2 col-md-offset-1"><?php echo htmlspecialchars($value["nom"])  ?></p>
     <p class="col-md-2 col-md-offset-1"><?php echo htmlspecialchars($value["prenom"])  ?></p>
-    <p class="col-md-2 col-md-offset-1">age<?php //TODO calcul age par rapport a date de naissance ?></p>
+    <p class="col-md-2 col-md-offset-1">age<?php echo htmlspecialchars($value["age"]) //TODO calcul age par rapport a date de naissance ?></p>
 </div>
 
 <div class="row col-md-8 col-md-offset-2">

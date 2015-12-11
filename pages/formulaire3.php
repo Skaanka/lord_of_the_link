@@ -1,8 +1,12 @@
 <?php
+    // destruction de $_SESSION["inscription"] si elle existe
     if ( isset ($_SESSION["inscription"])) {
         unset($_SESSION["inscription"]);
     }
+    
+    //creation de session
     session_start();
+
     // connexion bdd
     require_once('../php/connexion.php');
 ?>
@@ -43,7 +47,7 @@
                     </div>
 
                      <input type="submit" class="dropdown-toggle" name="connexion" value="connexion" formaction="login.php">
-                    <input type="submit" class="dropdown-toggle" name="" formaction="" value="Inscription">
+                    <input type="submit" class="dropdown-toggle" name="" formaction="formulaire.php" value="Inscription">
                 <?php
                     //echo $login_erreur; // TODO affiche message d'erreur : "erreur email ou mot de passe, veuillez réessayer" 
                 }
@@ -118,22 +122,22 @@
 
 
 
-
         <div id="wrapper" class="col-md-8 col-md-offset-2">
             <form class="col-md-6 col-md-offset-3">  
 
                 
                 <h1>Sociaux</h1><br/>
 
+           
                 
                 <div class="panel panel-default">
                     <div class="panel-heading"><h3>Divertissement</h3></div>
                     <div class="panel-body">
                         <div class="row form-group">
                             <img class="icons col-sm-2" src="../img/icons/PSN_logo.png">
-                            <label for="psn" class="col-sm-2 control-label celSoc">Id. PSN</label>
+                            <label for="psn" class="col-sm-2 control-label celSoc">PSN</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control celSoc" id="psn" placeholder="Identifiant PSN">
+                                <input type="text" class="form-control celSoc" id="psn" placeholder="Identifiant Playstation Network">
                             </div>
                         </div>
                         <div class="row form-group">

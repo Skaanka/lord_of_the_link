@@ -1,10 +1,12 @@
 <?php 
-// connexion bdd
+    // creation de session
     session_start();
+    
+    // connexion bdd
     require_once('../php/connexion.php');
     //print_r($_SESSION['inscription']);
     
-    //try { 
+    //try { TODO RE ACTIVER LE TRY
         if ( isset($_POST['submit']) ) {
             //TODO nettoyer les espace non voulue 
             //$nom = trim($_POST["nom"]);            
@@ -12,7 +14,7 @@
 
 
             /*******************
-            //    DIPLOMES    //    --------> Fonctionne à 100%
+            //    DIPLOMES    //    --------> Fonctionne à 100% [4/6]
             *******************/
             if(!empty($_POST['annees_obt'] && $_POST['intitule'] && $_POST['ecole'])) {
     

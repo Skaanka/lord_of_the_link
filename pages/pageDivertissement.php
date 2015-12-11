@@ -23,7 +23,7 @@ $value = $affichageMembre->fetch();
 
 <div class="row col-md-6 col-md-offset-3" id="rowName">
     <div>
-        <img class="icons col-sm-2" src="../img/icons/PSN_logo.png">
+        <img class="icons col-sm-2" src="img/icons/PSN_logo.png">
         <label for="psn" class="col-sm-2">PSN</label>
         <div class="panel panel-default">
           <div class="panel-body" id="psn">
@@ -33,7 +33,7 @@ $value = $affichageMembre->fetch();
     </div>
     
     <div>
-        <img class="icons col-sm-2" src="../img/icons/Xbox_logo.png">
+        <img class="icons col-sm-2" src="img/icons/Xbox_logo.png">
         <label for="xbox" class="col-sm-2">XboxLive</label>
         <div class="panel panel-default">
           <div class="panel-body" id="xbox">
@@ -45,7 +45,7 @@ $value = $affichageMembre->fetch();
 
 <div class="row col-md-6 col-md-offset-3" id="rowName">
     <div>
-        <img class="icons col-sm-2" src="../img/icons/Steam_logo.png">
+        <img class="icons col-sm-2" src="img/icons/Steam_logo.png">
         <label for="steam" class="col-sm-2">Steam</label>
         <div class="panel panel-default">
           <div class="panel-body" id="steam">
@@ -55,7 +55,7 @@ $value = $affichageMembre->fetch();
     </div>
     
     <div>
-        <img class="icons col-sm-2" src="../img/icons/Xbox_logo.png">
+        <img class="icons col-sm-2" src="img/icons/Xbox_logo.png">
         <label for="battlenet" class="col-sm-2">Battle.net</label>
         <div class="panel panel-default">
           <div class="panel-body" id="battlenet">
@@ -67,7 +67,7 @@ $value = $affichageMembre->fetch();
 
 <div class="row col-md-6 col-md-offset-3" id="rowName">
     <div>
-        <img class="icons col-sm-2" src="../img/icons/PSN_logo.png">
+        <img class="icons col-sm-2" src="img/icons/PSN_logo.png">
         <label for="origin" class="col-sm-2">Origin</label>
         <div class="panel panel-default">
           <div class="panel-body" id="origin">
@@ -77,7 +77,7 @@ $value = $affichageMembre->fetch();
     </div>
     
     <div>
-        <img class="icons col-sm-2" src="../img/icons/Xbox_logo.png">
+        <img class="icons col-sm-2" src="img/icons/Xbox_logo.png">
         <label for="nintendo" class="col-sm-2">Nintendo</label>
         <div class="panel panel-default">
           <div class="panel-body" id="nintendo">

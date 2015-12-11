@@ -23,7 +23,7 @@ $value = $affichageMembre->fetch();
 
 <div class="row col-md-6 col-md-offset-3" id="rowName">
     <div>
-        <img class="icons col-sm-2" src="../img/icons/linkedin_logo.png">
+        <img class="icons col-sm-2" src="img/icons/linkedin_logo.png">
         <label for="linkedin" class="col-sm-2">LinkedIn</label>
         <div class="panel panel-default">
           <div class="panel-body" id="linkedin">
@@ -33,7 +33,7 @@ $value = $affichageMembre->fetch();
     </div>
     
     <div>
-        <img class="icons col-sm-2" src="../img/icons/viadeo_logo.png">
+        <img class="icons col-sm-2" src="img/icons/viadeo_logo.png">
         <label for="viadeo" class="col-sm-2">Viadeo</label>
         <div class="panel panel-default">
           <div class="panel-body" id="viadeo">
@@ -45,7 +45,7 @@ $value = $affichageMembre->fetch();
 
 <div class="row col-md-6 col-md-offset-3" id="rowName">
     <div>
-        <img class="icons col-sm-2" src="../img/icons/xing_logo.png">
+        <img class="icons col-sm-2" src="img/icons/xing_logo.png">
         <label for="xing" class="col-sm-2">Xing</label>
         <div class="panel panel-default">
           <div class="panel-body" id="xing">
@@ -55,7 +55,7 @@ $value = $affichageMembre->fetch();
     </div>
     
     <div>
-        <img class="icons col-sm-2" src="../img/icons/muxi_logo.jpg">
+        <img class="icons col-sm-2" src="img/icons/muxi_logo.jpg">
         <label for="muxy" class="col-sm-2">Muxy</label>
         <div class="panel panel-default">
           <div class="panel-body" id="muxy">
@@ -67,7 +67,7 @@ $value = $affichageMembre->fetch();
 
 <div class="row col-md-6 col-md-offset-3" id="rowName">
     <div>
-        <img class="icons col-sm-2" src="../img/icons/github_logo.png">
+        <img class="icons col-sm-2" src="img/icons/github_logo.png">
         <label for="github" class="col-sm-2">GitHub</label>
         <div class="panel panel-default">
           <div class="panel-body" id="github">

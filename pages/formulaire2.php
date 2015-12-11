@@ -64,9 +64,11 @@
         <!-- menu navbar en dropdown -->
         <div class="row col-md-8 col-md-offset-2" id="menu-nav">
             
-            <button href="#" type="button" class="dropdown-toggle" href="index.php">
-                <img src="../img/icons/ring.png" id="home">
-            </button>
+            <a href="../index.php">
+                <button type="button" class="dropdown-toggle" >
+                    <img src="../img/icons/ring.png" id="home">
+                </button>
+            </a>
             
             <!-- bouton divertissement -->
             <div class="btn-group" >

@@ -1,8 +1,12 @@
 <?php
+    // destruction de $_SESSION["inscription"] si elle existe
     if ( isset ($_SESSION["inscription"])) {
         unset($_SESSION["inscription"]);
     }
+    
+    //creation de session
     session_start();
+
     // connexion bdd
     require_once('../php/connexion.php');
 ?>
@@ -43,7 +47,7 @@
                     </div>
 
                      <input type="submit" class="dropdown-toggle" name="connexion" value="connexion" formaction="login.php">
-                    <input type="submit" class="dropdown-toggle" name="" formaction="" value="Inscription">
+                    <input type="submit" class="dropdown-toggle" name="" formaction="formulaire.php" value="Inscription">
                 <?php
                     //echo $login_erreur; // TODO affiche message d'erreur : "erreur email ou mot de passe, veuillez réessayer" 
                 }

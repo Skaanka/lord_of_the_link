@@ -1,8 +1,12 @@
 <?php
+// détruit la $_SESSION["inscription"] si elle existe
 if ( isset ($_SESSION["inscription"])) {
     unset($_SESSION["inscription"]);
 }
+
+//creation de session
 session_start();
+
 // connexion bdd
 require_once('php/connexion.php');
 
@@ -71,7 +75,7 @@ if(isset($_GET["query"])) {
         <div class="row col-md-8 col-md-offset-2" id="menu-nav">
             
             <a href="index.php">
-                <button type="button" class="dropdown-toggle"> <!-- MODIFICATION DU BOUTON POUR REDIRECTION INDEX.PHP -- AJOUT BALISE <a> ---       -->
+                <button type="button" class="dropdown-toggle"> 
                     <img src="img/icons/ring.png" id="home">
                 </button>
             </a>
@@ -138,7 +142,7 @@ if(isset($_GET["query"])) {
                 $affichageMembre = $db->query('SELECT id, prenom, nom FROM membres');
                 while ($value = $affichageMembre->fetch()) {
                 ?>
-                <li><a href="index.php<?php echo "?query=" .$value['id']; ?>"><?php echo htmlspecialchars($value["prenom"]) . " " . htmlspecialchars($value["nom"]) ?></a></li>
+                <li><a href="index.php<?php echo "?query=" .$value['id'] . "&" . "cat=" . 0 ; ?>"><?php echo htmlspecialchars($value["prenom"]) . " " . htmlspecialchars($value["nom"]) ?></a></li>
                 <?php
                 }
                 $affichageMembre->closeCursor();
@@ -149,31 +153,51 @@ if(isset($_GET["query"])) {
         <main class="col-md-6">
             
             <?php
-            // affichage default, profil user, profil visited     -------- TODO ajout affichage du profil de l'utilisateur connecter
-            if (isset($_GET["query"])) {
-                $visitProfil =  $_GET["query"] ;
-                
-                switch ($_GET["query"]) {
-                    case "$visitProfil": // affiche le profil du membre clické
+            // TODO afficher un message d'erreur via php si le membre n'existe pas (si une personne malintentionnée modifie dans l'url le ?query=7 par exemple
+            // ou 7 est égal à l'id d'un membre dans la bdd par 25 ou 25 n'existe pas dans la bdd, une page s'affichera sans données.
+
+            //récuperation de l'url
+            $url = $_GET;
+            //print_r($url);
+
+            //print_r($url["query"]); 
+            //echo "<br/>";
+            //print_r($url["cat"]);
+
+            // affichage default, profil user, profil visited     ------- TODO ajout affichage du profil de l'utilisateur connecter
+            if  ( isset($_GET["query"]) && isset($url["cat"]) ) {
+                $i = $url["cat"] ;
+                switch ($url["cat"]) {
+                    case 0: // affiche le profil du membre clické
                         $main = "pages/pageProfil.php";
                         break;
+                    case 2: // affiche le profil du membre clické
+                        $main = "pages/pageDivertissement.php";
+                        break;
+                    case 3: // affiche le profil du membre clické
+                        $main = "pages/pageReseauxPro.php";
+                        break;
+                    case 4: // affiche le profil du membre clické
+                        $main = "pages/pageReseauxSoc.php";
+                        break;
                     default: // la page par défaut
-                        $main = "pages/pageDefault.php";
+                        $main = "pages/pageProfil.php";
 
                 } 
-                include($main); 
-            } else {
+                include($main);     
+            }else {
                 include("pages/pageDefault.php"); // en cas d'erreur affiche la pageDefault
             }
+
             ?>
             
             <?php
             if (isset($params)) {
             ?>
-            <div id="sidebarCat" class="col-md-3">
-                <ul><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Divertissement</ul>
-                <ul><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux pro.</ul>
-                <ul><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux sociaux</ul>
+            <div id="sidebarCat" class="col-md-3 ">
+                <ul><a href="index.php<?php echo "?query=" . $value['id'] . "&" . "cat=" . 2 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Divertissement</a></ul>
+                <ul><a href="index.php<?php echo "?query=" . $value['id'] . "&" . "cat=" . 3 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux pro.</a></ul>
+                <ul><a href="index.php<?php echo "?query=" . $value['id'] . "&" . "cat=" . 4 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux sociaux</a></ul>
             </div>
             <?php
             } else {

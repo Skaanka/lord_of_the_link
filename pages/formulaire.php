@@ -1,8 +1,12 @@
 <?php
+    // détruit la $_SESSION["inscription"] si elle existe
     if ( isset ($_SESSION["inscription"])) {
         unset($_SESSION["inscription"]);
     }
+
+    //creation de session
     session_start();
+
     // connexion bdd
     require_once('../php/connexion.php');
 ?>
@@ -27,19 +31,19 @@
                 ?>
                     <div class="form-group">
                         <label for="profil">Bienvenue <?php echo $_SESSION['user']['prenom'] . " " . $_SESSION['user']['nom'] ; ?></label> <!-- TODO STYLE ECHO NOM PRENOM -->
-                        <input type="submit" id="profil" class="btn btn-default btn-xs" name="profil" value="profil" formaction="#.php">
+                        <input type="submit" id="profil" class="btn btn-default btn-xs" name="profil" value="profil" formaction="#.php"> <!--TODO PHP-->
                         <input type="submit" class="btn btn-default btn-xs" name="deconnexion" value="déconnexion" formaction="logoff.php">
                     </div>
                 <?php
                 } elseif ( empty($_SESSION['user']) )  {
                 ?>
                     <div class="form-group">
-                        <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                        <input type="email" class="mail" id="exampleInputEmail3" placeholder="Email">
+                        <label class="sr-only" for="mail">Email address</label>
+                        <input type="email" class="mail" id="mail" placeholder="Email">
                     </div>
                     <div class="form-group">
-                        <label class="sr-only" for="exampleInputPassword3">Password</label>
-                        <input type="password" class="" id="exampleInputPassword3" placeholder="Password">
+                        <label class="sr-only" for="password">Password</label>
+                        <input type="password" class="" id="password" placeholder="Password">
                     </div>
 
                      <input type="submit" class="dropdown-toggle" name="connexion" value="connexion" formaction="login.php">

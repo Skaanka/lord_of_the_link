@@ -1,30 +1,25 @@
-
-<!-- J'ai remis le début du php qu'il y avait sur "pageProfil", si ça peut faire gagner du temps... -->
-
 <?php
+// detruit la session inscription si elle existe
 if ( isset ($_SESSION["inscription"])) {
     unset($_SESSION["inscription"]);
 }
-// connexion bdd
+
+// appel du fichier connexion bdd
 require_once('php/connexion.php');
 
+//print_r($params);
+global $db, $params;
 
-?>
-
-<?php
 //affichage des membres
-    //print_r($params);
-    global $db, $params;
-
-    $affichageMembre = $db->prepare('SELECT * FROM membres WHERE id = ? ');
-    $affichageMembre->execute(array($_GET['query']));
-    $value = $affichageMembre->fetch();
+$affichageMembre = $db->prepare('SELECT * FROM membres WHERE id = ? ');
+$affichageMembre->execute(array($_GET['query']));
+$value = $affichageMembre->fetch();
 ?>
 
 
 
 <div>
-    <h2>Voici les réseaux sociaux que [PRENOM] fréquente. </h2>
+    <h2>Voici les réseaux sociaux que <?php echo htmlspecialchars($value["prenom"])  ?> fréquente. </h2>
 </div>
 
 <div class="row col-md-6 col-md-offset-3" id="rowName">

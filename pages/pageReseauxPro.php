@@ -1,26 +1,24 @@
-
 <?php
+// detruit la session inscription si elle existe
 if ( isset ($_SESSION["inscription"])) {
     unset($_SESSION["inscription"]);
 }
-// connexion bdd
+
+// appel du fichier connexion bdd
 require_once('php/connexion.php');
 
+//print_r($params);
+global $db, $params;
 
-?>
-
-<?php
 //affichage des membres
-    //print_r($params);
-    global $db, $params;
-
-    $affichageMembre = $db->prepare('SELECT * FROM membres WHERE id = ? ');
-    $affichageMembre->execute(array($_GET['query']));
-    $value = $affichageMembre->fetch();
+$affichageMembre = $db->prepare('SELECT * FROM membres WHERE id = ? ');
+$affichageMembre->execute(array($_GET['query']));
+$value = $affichageMembre->fetch();
 ?>
 
 
-<h2> [[PRENOM]] est présent(e) sur ces réseaux professionnel. </h2>
+
+<h2> <?php echo htmlspecialchars($value["prenom"])  ?> est présent(e) sur ces réseaux professionnel. </h2>
 
 
 <div class="row col-md-6 col-md-offset-3" id="rowName">

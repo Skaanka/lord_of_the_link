@@ -21,10 +21,10 @@ require_once('php/connexion.php');
 
    
 <div class="row col-md-8 col-md-offset-2" id="rowName">
-    <img src="img/Avatar-512.png" name="avatar" id="avatarProfil" class="col-md-2 col-md-offset-1">
+    <img src="uploads/<?php echo $value['avatar']; ?>" name="avatar" id="avatarProfil" class="col-md-2 col-md-offset-1"> <!-- TODO PHP renommer l'image dans la bdd et dossier -->
     <p class="col-md-2 col-md-offset-1"><?php echo htmlspecialchars($value["nom"])  ?></p>
     <p class="col-md-2 col-md-offset-1"><?php echo htmlspecialchars($value["prenom"])  ?></p>
-    <p class="col-md-2 col-md-offset-1">age<?php echo htmlspecialchars($value["age"]) //TODO calcul age par rapport a date de naissance ?></p>
+    <p class="col-md-2 col-md-offset-1">age<?php //TODO calcul age par rapport a date de naissance ?></p>
 </div>
 
 <div class="row col-md-8 col-md-offset-2">

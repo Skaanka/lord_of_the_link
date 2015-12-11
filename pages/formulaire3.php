@@ -6,7 +6,7 @@
     
     //creation de session
     session_start();
-    print_r($_SESSION['inscription']);
+    //print_r($_SESSION['inscription']);
 
     // connexion bdd
     require_once('../php/connexion.php');

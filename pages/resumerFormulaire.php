@@ -7,9 +7,9 @@
     require_once('../php/connexion.php');
 
     /* aide debug */
-    echo "<pre>";
-    print_r($_SESSION['inscription']);
-    echo "<pre>";
+    //echo "<pre>";
+    //print_r($_SESSION['inscription']);
+    //echo "<pre>";
 
 
 

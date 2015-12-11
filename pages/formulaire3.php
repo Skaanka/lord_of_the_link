@@ -301,7 +301,7 @@
                 <div id="bouton" class="row">
                     <div class="">
                         <input type="submit" class="btn btn-default col-md-offset-1" value="Page précédente" name="" formaction="formulaire2.php">
-                        <input type="submit" class="btn btn-default col-md-offset-5" value="Page suivante" name="" formaction="resumerFormulaire.php">
+                        <input type="submit" class="btn btn-default col-md-offset-5" value="Page suivante" name="" formaction="formulaire_post3.php">
                     </div>
                 </div>
 

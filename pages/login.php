@@ -37,7 +37,6 @@ try {
                     global $login_erreur;
                     $redirection = $_SERVER['HTTP_REFERER'] ;//. "?=" . $login_erreur ; // TODO sur la bonne piste // ! HTTP_REFERER ne serait pas fiable en terme de sécurité.
                     header("Location: $redirection");
-                    
                 }
             } // fin du if ($results)
           
@@ -45,6 +44,7 @@ try {
             $login_erreur = "pseudo et/ou mot de passe manquant!";
             $redirection = $_SERVER['HTTP_REFERER'] ;//. "?=" . $login_erreur ; // TODO sur la bonne piste // ! HTTP_REFERER ne serait pas fiable en terme de sécurité.
             header("Location: $redirection"); 
+            echo "erreur" ;
             
         }
         

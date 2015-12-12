@@ -65,7 +65,7 @@ $affichageMembre->closeCursor();
                         <label class="sr-only" for="password">Password</label>
                         <input type="password" class="" id="password" placeholder="Password" name="mot_de_passe">
                     </div>
-                    <input type="submit" class="dropdown-toggle" name="connexion" value="connexion" >
+                    <input type="submit" class="dropdown-toggle" name="connexion" value="connexion" formaction="pages/login.php">
                     <input type="submit" class="dropdown-toggle" name="" formaction="pages/formulaire.php" value="Inscription">
                 <?php
                     //echo $login_erreur; // TODO affiche message d'erreur : "erreur email ou mot de passe, veuillez réessayer" 
@@ -220,7 +220,7 @@ $affichageMembre->closeCursor();
             ?>
             
             <?php
-            if (isset($params)) {
+            if (isset($url["cat"])) { //
             ?>
             <div id="sidebarCat" class="col-md-3 ">
                 <ul><a href="index.php<?php echo "?query=" . $value['id'] . "&" . "cat=" . 2 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Divertissement</a></ul>

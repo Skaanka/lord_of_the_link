@@ -48,8 +48,33 @@ body {
     width: auto;
 }
 
+.rowProfil {
+    font-size: 24px;
+    font-family: 'Droid Sans', sans-serif;
+}
+
+.name {
+    font-size: 34px;
+}
+
 #rowName {
-    
+    margin-top: 18em;
+}
+
+#avatarProfilName {
+    padding: 0;
+    height: 150px;
+    width: 150px;
+    border: 1px solid grey;
+    box-shadow: 5px 5px 5px grey;
+}
+
+#rowAdress {
+    margin-top: 4em;
+}
+
+#rowCom {
+    margin-top: 4em;
 }
 
 #espaceform {
@@ -99,7 +124,6 @@ body {
 
 #membres {
     list-style-type: none;
-    transition: all ease-in-out 0.8s 0s;
 }
 
 #membres li {
@@ -107,11 +131,50 @@ body {
     border-bottom: 1px solid white;
 }
 
-#membres li:hover {
+
+/* Début animation membres*/
+/*============*/
+.animated:hover { 
+    -webkit-animation-duration: 0.2s; 
+    animation-duration: 0.2s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+    -webkit-animation-timing-function: ease-out; 
+    animation-timing-function: ease-out; 
     background: white;
     color: black;
     font-size: 20px;
+    padding-left: 30px;
+} 
+
+@-webkit-keyframes fadeInLeft { 
+    0% { 
+        opacity: 0; 
+        -webkit-transform: translateX(-5px); 
+    } 
+    100% { 
+        opacity: 1; 
+        -webkit-transform: translateX(10px); 
+    } 
+} 
+@keyframes fadeInLeft { 
+    0% { 
+        opacity: 0; 
+        transform: translateX(-5px); 
+    } 
+    
+    100% { 
+        opacity: 1; 
+        transform: translateX(10px); 
+    } 
+} 
+.fadeInLeft:hover { 
+    -webkit-animation-name: fadeInLeft; 
+    animation-name: fadeInLeft; 
 }
+/* Fin animation membres*/
+/*============*/
+
 
 main {
     background: url(../img/calepin.jpg) no-repeat;
@@ -126,8 +189,23 @@ main {
     padding-top: 80px;
     float: right;
     transform: rotate(5deg);
+    font-family: 'Indie Flower', cursive;
 }
 
+#sidebarCat li{
+    padding-bottom: 0.5em;
+    list-style-type: none;
+    margin-left: -8%;
+    list-style-type: none;
+    font-size: 1.3em;
+}
+
+#sidebarCat a {
+    color: black;
+}
+
+
+/* Boutons déroulants */
 .dropdown-menu {
     background: #9b9fa3;
     font-weight: bold;
@@ -157,4 +235,5 @@ main {
   background-image: linear-gradient(to bottom, #e3e3e3, #45535c);
   text-decoration: none;
 }
+/* fin de boutons déroulants*/
 

@@ -21,7 +21,7 @@ $value = $affichageMembre->fetch();
     <h2> <?php echo htmlspecialchars($value["prenom"])  ?> utilise ces plateformes de jeux online. </h2> <!-- TODO STYLE -->
 </div>
 
-<div class="row col-md-6 col-md-offset-3" id="rowName">
+<div class="row col-md-6 col-md-offset-3">
     <div>
         <img class="icons col-sm-2" src="img/icons/PSN_logo.png">
         <label for="psn" class="col-sm-2">PSN</label>
@@ -43,7 +43,7 @@ $value = $affichageMembre->fetch();
     </div>
 </div>
 
-<div class="row col-md-6 col-md-offset-3" id="rowName">
+<div class="row col-md-6 col-md-offset-3">
     <div>
         <img class="icons col-sm-2" src="img/icons/Steam_logo.png">
         <label for="steam" class="col-sm-2">Steam</label>
@@ -65,7 +65,7 @@ $value = $affichageMembre->fetch();
     </div>
 </div>
 
-<div class="row col-md-6 col-md-offset-3" id="rowName">
+<div class="row col-md-6 col-md-offset-3">
     <div>
         <img class="icons col-sm-2" src="img/icons/PSN_logo.png">
         <label for="origin" class="col-sm-2">Origin</label>

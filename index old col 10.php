@@ -1,26 +1,24 @@
 <?php
-    if ( isset ($_SESSION["inscription"])) {
-        unset($_SESSION["inscription"]);
-    }
-    session_start();
-    // connexion bdd
-    require_once('php/connexion.php');
-
-
-/* tentative de front control */
-if( isset( $_GET["action"] )) {
-    $action = $_GET['action'];
-} else {
-    $action = "home";
+// détruit la $_SESSION["inscription"] si elle existe
+if ( isset ($_SESSION["inscription"])) {
+    unset($_SESSION["inscription"]);
 }
 
+//creation de session
+session_start();
 
-switch($action) {
-    case "home":
-        $partiel = "categories";
-        break;
+// connexion bdd
+require_once('php/connexion.php');
+
+// recuperation dans l'url
+if(isset($_GET["query"])) {
+    $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $query  = parse_url($actual_link)["query"];
+    //echo $query;
+    parse_str($query, $params);
+    //print_r($params);
+    //echo $params["test"];
 }
-
 
 ?>
 
@@ -36,16 +34,16 @@ switch($action) {
     </head>
     <body>
         
-        <div id="connexionbar" class="col-md-8 col-md-offset-2">
+        <div id="connexionbar" class="col-md-10 col-md-offset-1">
             
             <form id="connexion" class="form-inline" method="POST">
                 <?php 
-                if (isset($_SESSION['user']) ) { 
+                if ( isset($_SESSION['user']) ) { 
                 ?>
                     <div class="form-group">
                         <label for="profil">Bienvenue <?php echo $_SESSION['user']['prenom'] . " " . $_SESSION['user']['nom'] ; ?></label> <!-- TODO STYLE ECHO NOM PRENOM -->
-                        <input type="submit" id="profil" class="btn btn-default btn-xs" name="profil" value="profil" formaction="#.php">
-                        <input type="submit" class="btn btn-default btn-xs" name="deconnexion" value="déconnexion" formaction="logoff.php">
+                        <input type="submit" id="profil" class="btn btn-default btn-xs" name="profil" value="profil" formaction=""> <!--TODO affichage profil utilisateur -->
+                        <input type="submit" class="btn btn-default btn-xs" name="deconnexion" value="déconnexion" formaction="pages/logoff.php">
                     </div>
                 <?php
                 } elseif ( empty($_SESSION['user']) )  {
@@ -59,8 +57,8 @@ switch($action) {
                         <input type="password" class="" id="password" placeholder="Password" name="mot_de_passe">
                     </div>
 
-                     <input type="submit" class="dropdown-toggle" name="connexion" value="connexion" formaction="login.php">
-                    <input type="submit" class="dropdown-toggle" name="" formaction="" value="Inscription">
+                     <input type="submit" class="dropdown-toggle" name="connexion" value="connexion" formaction="pages/login.php">
+                    <input type="submit" class="dropdown-toggle" name="" formaction="pages/formulaire.php" value="Inscription">
                 <?php
                     //echo $login_erreur; // TODO affiche message d'erreur : "erreur email ou mot de passe, veuillez réessayer" 
                 }
@@ -68,17 +66,19 @@ switch($action) {
             </form>
         </div>
 
-        <div id="header" class="col-md-8 col-md-offset-2">
+        <div id="header" class="col-md-10 col-md-offset-1">
 
         </div>
         
         
         <!-- menu navbar en dropdown -->
-        <div class="row col-md-8 col-md-offset-2" id="menu-nav">
+        <div class="row col-md-10 col-md-offset-1" id="menu-nav">
             
-            <button type="button" class="dropdown-toggle" href="index.php">
-                <img src="img/icons/ring.png" id="home">
-            </button>
+            <a href="index.php">
+                <button type="button" class="dropdown-toggle"> 
+                    <img src="img/icons/ring.png" id="home">
+                </button>
+            </a>
             
             <!-- bouton divertissement -->
             <div class="btn-group" >
@@ -134,45 +134,83 @@ switch($action) {
         
         
         
-        <div id="sidebarMembres" class="col-md-2 col-md-offset-2">
+        <div id="sidebarMembres" class="col-md-2 col-md-offset-1">
             <h2>Liste des membres</h2><br/>
             <ul id="membres" >
-                <li><a href="#">nom des membres</a></li>
-                <li>nom des membres</li>
-                <li>nom des membres</li>
-                <li>nom des membres</li>
-                <li>nom des membres</li>
-                <li>nom des membres</li>
-                <li>nom des membres</li>
-                <li>nom des membres</li>
-                <li>nom des membres</li>
-                <li>nom des membres</li>
-                <li>nom des membres</li>
-                <li>nom des membres</li>
-                <li>nom des membres</li>
+                <?php
+                //affichage des membres
+                $affichageMembre = $db->query('SELECT id, prenom, nom FROM membres');
+                while ($value = $affichageMembre->fetch()) {
+                ?>
+                <li><a href="index.php<?php echo "?query=" .$value['id'] . "&" . "cat=" . 0 ; ?>"><?php echo htmlspecialchars($value["prenom"]) . " " . htmlspecialchars($value["nom"]) ?></a></li>
+                <?php
+                }
+                $affichageMembre->closeCursor();
+                ?>
             </ul>
         </div>
         
-        <main class="col-md-6">
+        <main class="col-md-8">
             
             <?php
-                include("pages/$partiel.php");
+            // TODO afficher un message d'erreur via php si le membre n'existe pas (si une personne malintentionnée modifie dans l'url le ?query=7 par exemple
+            // ou 7 est égal à l'id d'un membre dans la bdd par 25 ou 25 n'existe pas dans la bdd, une page s'affichera sans données.
+
+            //récuperation de l'url
+            $url = $_GET;
+            //print_r($url);
+
+            //print_r($url["query"]); 
+            //echo "<br/>";
+            //print_r($url["cat"]);
+
+            // affichage default, profil user, profil visited     ------- TODO ajout affichage du profil de l'utilisateur connecter
+            if  ( isset($_GET["query"]) && isset($url["cat"]) ) {
+                $i = $url["cat"] ;
+                switch ($url["cat"]) {
+                    case 0: // affiche le profil du membre clické
+                        $main = "pages/pageProfil.php";
+                        break;
+                    case 2: // affiche le profil du membre clické
+                        $main = "pages/pageDivertissement.php";
+                        break;
+                    case 3: // affiche le profil du membre clické
+                        $main = "pages/pageReseauxPro.php";
+                        break;
+                    case 4: // affiche le profil du membre clické
+                        $main = "pages/pageReseauxSoc.php";
+                        break;
+                    default: // la page par défaut
+                        $main = "pages/pageProfil.php";
+
+                } 
+                include($main);     
+            }else {
+                include("pages/pageDefault.php"); // en cas d'erreur affiche la pageDefault
+            }
+
             ?>
             
-            
-            <div id="sidebarCat" class="col-md-3 panel panel-primary">
-                <ul><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Divertissement</ul>
-                <ul><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux pro.</ul>
-                <ul><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux sociaux</ul>
+            <?php
+            if (isset($params)) {
+            ?>
+            <div id="sidebarCat" class="col-md-3 ">
+                <ul><a href="index.php<?php echo "?query=" . $value['id'] . "&" . "cat=" . 2 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Divertissement</a></ul>
+                <ul><a href="index.php<?php echo "?query=" . $value['id'] . "&" . "cat=" . 3 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux pro.</a></ul>
+                <ul><a href="index.php<?php echo "?query=" . $value['id'] . "&" . "cat=" . 4 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux sociaux</a></ul>
             </div>
-            
+            <?php
+            } else {
+                echo "";
+            }
+            ?>
         </main>
         
         
 
         
 
-        <div id="footer" class="col-md-8 col-md-offset-2">
+        <div id="footer" class="col-md-10 col-md-offset-1">
         </div>
         
         <!-- Liaison bilbliothèque javascript bootstrap et Jquery -->

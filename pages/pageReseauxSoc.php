@@ -22,7 +22,7 @@ $value = $affichageMembre->fetch();
     <h2>Voici les réseaux sociaux que <?php echo htmlspecialchars($value["prenom"])  ?> fréquente. </h2>
 </div>
 
-<div class="row col-md-6 col-md-offset-3" id="rowName">
+<div class="row col-md-6 col-md-offset-3" >
     <div>
         <img class="icons col-sm-2" src="img/icons/FB_logo.png">
         <label for="facebook" class="col-sm-2">Facebook</label>
@@ -44,7 +44,7 @@ $value = $affichageMembre->fetch();
     </div>
 </div>
 
-<div class="row col-md-6 col-md-offset-3" id="rowName">
+<div class="row col-md-6 col-md-offset-3" >
     <div>
         <img class="icons col-sm-2" src="img/icons/YouTube-logo.png">
         <label for="Youtube" class="col-sm-2">YouTube</label>
@@ -66,7 +66,7 @@ $value = $affichageMembre->fetch();
     </div>
 </div>
 
-<div class="row col-md-6 col-md-offset-3" id="rowName">
+<div class="row col-md-6 col-md-offset-3" >
     <div>
         <img class="icons col-sm-2" src="img/icons/Skype_logo.png">
         <label for="skype" class="col-sm-2">Skype</label>
@@ -88,7 +88,7 @@ $value = $affichageMembre->fetch();
     </div>
 </div>
 
-<div class="row col-md-6 col-md-offset-3" id="rowName">
+<div class="row col-md-6 col-md-offset-3" >
     <div>
         <img class="icons col-sm-2" src="img/icons/pinterest-logo.png">
         <label for="printerest" class="col-sm-2">Pinterest</label>
@@ -110,7 +110,7 @@ $value = $affichageMembre->fetch();
     </div>
 </div>
 
-<div class="row col-md-6 col-md-offset-3" id="rowName">
+<div class="row col-md-6 col-md-offset-3" >
     <div>
         <img class="icons col-sm-2" src="img/icons/Spotify_logo.png">
         <label for="spotify" class="col-sm-2">Spotify</label>

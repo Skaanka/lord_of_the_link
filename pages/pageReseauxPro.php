@@ -21,7 +21,7 @@ $value = $affichageMembre->fetch();
 <h2> <?php echo htmlspecialchars($value["prenom"])  ?> est présent(e) sur ces réseaux professionnel. </h2>
 
 
-<div class="row col-md-6 col-md-offset-3" id="rowName">
+<div class="row col-md-6 col-md-offset-3" >
     <div>
         <img class="icons col-sm-2" src="img/icons/linkedin_logo.png">
         <label for="linkedin" class="col-sm-2">LinkedIn</label>
@@ -43,7 +43,7 @@ $value = $affichageMembre->fetch();
     </div>
 </div>
 
-<div class="row col-md-6 col-md-offset-3" id="rowName">
+<div class="row col-md-6 col-md-offset-3" >
     <div>
         <img class="icons col-sm-2" src="img/icons/xing_logo.png">
         <label for="xing" class="col-sm-2">Xing</label>
@@ -65,7 +65,7 @@ $value = $affichageMembre->fetch();
     </div>
 </div>
 
-<div class="row col-md-6 col-md-offset-3" id="rowName">
+<div class="row col-md-6 col-md-offset-3" >
     <div>
         <img class="icons col-sm-2" src="img/icons/github_logo.png">
         <label for="github" class="col-sm-2">GitHub</label>

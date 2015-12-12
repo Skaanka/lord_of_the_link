@@ -31,6 +31,7 @@ if(isset($_GET["query"])) {
         <title>LOTL home</title>
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Indie+Flower|Droid+Sans:400,700' rel='stylesheet' type='text/css'>
     </head>
     <body>
         
@@ -142,7 +143,7 @@ if(isset($_GET["query"])) {
                 $affichageMembre = $db->query('SELECT id, prenom, nom FROM membres');
                 while ($value = $affichageMembre->fetch()) {
                 ?>
-                <li><a href="index.php<?php echo "?query=" .$value['id'] . "&" . "cat=" . 0 ; ?>"><?php echo htmlspecialchars($value["prenom"]) . " " . htmlspecialchars($value["nom"]) ?></a></li>
+                <li id="animated-example" class="animated fadeInLeft"><a href="index.php<?php echo "?query=" .$value['id'] . "&" . "cat=" . 0 ; ?>"><?php echo htmlspecialchars($value["prenom"]) . " " . htmlspecialchars($value["nom"]) ?></a></li>
                 <?php
                 }
                 $affichageMembre->closeCursor();
@@ -195,9 +196,11 @@ if(isset($_GET["query"])) {
             if (isset($params)) {
             ?>
             <div id="sidebarCat" class="col-md-3 ">
-                <ul><a href="index.php<?php echo "?query=" . $value['id'] . "&" . "cat=" . 2 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Divertissement</a></ul>
-                <ul><a href="index.php<?php echo "?query=" . $value['id'] . "&" . "cat=" . 3 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux pro.</a></ul>
-                <ul><a href="index.php<?php echo "?query=" . $value['id'] . "&" . "cat=" . 4 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux sociaux</a></ul>
+                <ul>
+                <li><a href="index.php<?php echo "?query=" . $value['id'] . "&" . "cat=" . 2 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Divertissement</a></li>
+                <li><a href="index.php<?php echo "?query=" . $value['id'] . "&" . "cat=" . 3 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux pro.</a></li>
+                <li><a href="index.php<?php echo "?query=" . $value['id'] . "&" . "cat=" . 4 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux sociaux</a></li>
+                </ul>
             </div>
             <?php
             } else {

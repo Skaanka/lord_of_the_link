@@ -1,0 +1,23 @@
+La page index :
+
+tout les liens de pages sont fonctionnels,
+cependant ceux de la nav bar cocnernant les divertissements, reseaux soc et xp pro
+ne renvoie nul part (page à créer)
+
+Le profil perso s'affiche completement
+
+Les profil des membres inscrit s'affiche entierement 
+(manque un bouton dans l'aside droite pour retour profil general (reflexion en cour coté php)
+a faire: edition du profil
+
+le bouton connexion et deconnexion fonctionne sans probleme 
+(manque le message d'erreur lors d'une erreur de saissie en cour coté php)
+
+
+
+
+les formulaire d'inscription :
+
+l'enregistrement fonctionne pour la creation d'un membre (en test : boutton précédent)
+
+supprimer la possibilité de connexion pendant l'inscription ?

@@ -24,12 +24,12 @@ Formulaire 1.php                ------>   [OK]
     Formulaire_post1.php ------>   [OK]
 
     
-Formulaire 2.php                ------>   [A VALIDER]
-    Formulaire_post2.php------>   [EN COURS]
+Formulaire 2.php                ------>   [OK]
+    Formulaire_post2.php------>   [OK]
 
     
-Formulaire 3.php                ------>   []
-        Formulaire_post3.php------>   []
+Formulaire 3.php                ------>   [OK]
+        Formulaire_post3.php------>   [OK]
         
 ------------------------------- LOGIN / LOGOFF --------------------------
 

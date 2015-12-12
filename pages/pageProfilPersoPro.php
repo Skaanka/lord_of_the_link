@@ -10,17 +10,17 @@ require_once('php/connexion.php');
 //print_r($params);
 global $db, $params;
 
-//affichage des membres TODO
-$affichageMembre = $db->prepare('SELECT * FROM membres WHERE id = ? ');
-$affichageMembre->execute(array($_SESSION['user']));
-$value = $affichageMembre->fetch();
 ?>
 
 
 <h2>Mon profil.</h2>
 
-<input type="button" class="btn btn-danger">Infos perso</input>
-<input type="button" class="btn btn-danger">Réseaux sociaux</input>
+<a href="index.php<?php echo "?query=" . $_SESSION['user']['id'] . "&" . "pCat=" . 0 ; ?>">
+    <input type="button" class="btn btn-danger">Infos perso</input>
+</a>
+<a href="index.php<?php echo "?query=" . $_SESSION['user']['id'] . "&" . "pCat=" . 2 ; ?>">
+    <input type="button" class="btn btn-danger">Réseaux sociaux</input>
+</a>
 
 <h3>Mon parcours pro.</h3>
 

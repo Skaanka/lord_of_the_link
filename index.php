@@ -50,7 +50,7 @@ $affichageMembre->closeCursor();
                     <div class="form-group">
                         <label for="profil">Bienvenue <?php echo $_SESSION['user']['prenom'] . " " . $_SESSION['user']['nom'] ; ?></label> <!-- TODO STYLE ECHO NOM PRENOM -->
                         
-                            <input type="submit" id="profil" class="btn btn-default btn-xs" name="profil" value="profil" formaction="index.php<?php echo "?query=" .$value['id'] . "&" . "pCat=" . 0 ; ?>"> <!--TODO affichage profil utilisateur -->
+                            <input type="submit" id="profil" class="btn btn-default btn-xs" name="profil" value="profil" formaction="index.php<?php echo "?query=" .$_SESSION['user']['id'] . "&" . "pCat=" . 0 ; ?>"> 
                         
                         <input type="submit" class="btn btn-default btn-xs" name="deconnexion" value="déconnexion" formaction="pages/logoff.php">
                     </div>
@@ -199,14 +199,11 @@ $affichageMembre->closeCursor();
                     case 0: // affiche le profil perso
                         $main = "pages/pageProfilPerso.php";
                         break;
-                    case 1: // affiche le profil perso
-                        $main = "pages/#.php"; // ??????????????????????????????????????????????????????????
+                    case 1: // affiche le parcour pro
+                        $main = "pages/pageProfilPersoPro.php";
                         break;
-                    case 2: // affiche le profil perso
-                        $main = "pages/pageReseauxPersoPro.php";
-                        break;
-                    case 3: // affiche le profil perso
-                        $main = "pages/pageReseauxPersoSoc.php";
+                    case 2: // affiche les reseaux sociaux
+                        $main = "pages/pageProfilPersoSoc.php";
                         break;
                     default: // la page par défaut
                         $main = "pages/pageProfilPerso.php";

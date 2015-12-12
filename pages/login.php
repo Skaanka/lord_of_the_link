@@ -11,13 +11,17 @@ try {
         
         if(!empty($_POST['mail'] && $_POST['mot_de_passe'])) {
             
-            $login = $db->prepare('SELECT * FROM membres WHERE mail=?');
+            // recupere le profil de l'utilisateur connecté dans la table membres
+            $login = $db->prepare('SELECT * FROM membres WHERE mail= ?');
             $login ->execute(array($_POST["mail"]));
             $results = $login->fetch(PDO::FETCH_ASSOC);
             $login->closeCursor();
-
-            if ($results) {
+            
+            
+            if ($results) { //ajouter les autres results
                 if (password_verify($_POST['mot_de_passe'], $results['mot_de_passe']) ) {
+                    
+                    //recuperation profil general
                     $_SESSION['user']['id'] = $results['id'];
                     $_SESSION['user']['nom'] = $results['nom'];
                     $_SESSION['user']['prenom'] = $results['prenom'];

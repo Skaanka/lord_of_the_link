@@ -8,7 +8,8 @@ Le profil perso s'affiche completement
 
 Les profil des membres inscrit s'affiche entierement 
 (manque un bouton dans l'aside droite pour retour profil general (reflexion en cour coté php)
-a faire: edition du profil
+a faire: edition du profil (je propose d'attendre d'avoir un formulaire finie entierement 
+un copier coller suffit).
 
 le bouton connexion et deconnexion fonctionne sans probleme 
 (manque le message d'erreur lors d'une erreur de saissie en cour coté php)

@@ -19,6 +19,7 @@ le bouton connexion et deconnexion fonctionne sans probleme
 
 les formulaire d'inscription :
 
-l'enregistrement fonctionne pour la creation d'un membre (en test : boutton précédent)
+l'enregistrement fonctionne pour la creation d'un membre 
+(en test : boutton précédent, pour moi tout a l'air de bien fonctionner avec le boutton précédent[greg])
 
 supprimer la possibilité de connexion pendant l'inscription ?

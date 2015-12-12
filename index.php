@@ -94,12 +94,12 @@ $affichageMembre->closeCursor();
                 Divertissement <span class="caret"></span>
               </button>
               <ul class="dropdown-menu">
-                <li><a href="#"><img src="img/icons/PSN_logo.png" class="iconMini">&nbsp;PSN</a></li>
-                <li><a href="#"><img src="img/icons/Xbox_logo.png" class="iconMini">&nbsp;XboxLive</a></li>
-                <li><a href="#"><img src="img/icons/Steam_logo.png" class="iconMini">&nbsp;Steam</a></li>
-                <li><a href="#"><img src="img/icons/battlenet_logo.png" class="iconMini">&nbsp;Battle.net</a></li>
-                <li><a href="#"><img src="img/icons/nintendo_logo.png" class="iconMini">&nbsp;Nintendo</a></li>
-                <li><a href="#"><img src="img/icons/origin1_logo.png" class="iconMini">&nbsp;Origin</a></li>
+                <li><a href="index.php<?php echo "?divCat=" . 0 ; ?>"><img src="img/icons/PSN_logo.png" class="iconMini">&nbsp;PSN</a></li>
+                <li><a href="index.php<?php echo "?divCat=" . 1 ; ?>"><img src="img/icons/Xbox_logo.png" class="iconMini">&nbsp;XboxLive</a></li>
+                <li><a href="index.php<?php echo "?divCat=" . 2 ; ?>"><img src="img/icons/Steam_logo.png" class="iconMini">&nbsp;Steam</a></li>
+                <li><a href="index.php<?php echo "?divCat=" . 3 ; ?>"><img src="img/icons/battlenet_logo.png" class="iconMini">&nbsp;Battle.net</a></li>
+                <li><a href="index.php<?php echo "?divCat=" . 4 ; ?>"><img src="img/icons/nintendo_logo.png" class="iconMini">&nbsp;Nintendo</a></li>
+                <li><a href="index.php<?php echo "?divCat=" . 5 ; ?>"><img src="img/icons/origin1_logo.png" class="iconMini">&nbsp;Origin</a></li>
               </ul>
             </div>
 
@@ -109,11 +109,11 @@ $affichageMembre->closeCursor();
                 Réseaux pro. <span class="caret"></span>
               </button>
               <ul class="dropdown-menu">
-                <li><a href="#"><img src="img/icons/linkedin_logo.png" class="iconMini">&nbsp;LinkedIn</a></li>
-                <li><a href="#"><img src="img/icons/viadeo_logo.png" class="iconMini">&nbsp;Viadeo</a></li>
-                <li><a href="#"><img src="img/icons/xing_logo.png" class="iconMini">&nbsp;xing</a></li>
-                <li><a href="#"><img src="img/icons/muxi_logo.jpg" class="iconMini">&nbsp;Muxy</a></li>
-                <li><a href="#"><img src="img/icons/github_logo.png" class="iconMini">&nbsp;GitHub</a></li>
+                <li><a href="index.php<?php echo "?proCat=" . 0 ; ?>"><img src="img/icons/linkedin_logo.png" class="iconMini">&nbsp;LinkedIn</a></li>
+                <li><a href="index.php<?php echo "?proCat=" . 1 ; ?>"><img src="img/icons/viadeo_logo.png" class="iconMini">&nbsp;Viadeo</a></li>
+                <li><a href="index.php<?php echo "?proCat=" . 2 ; ?>"><img src="img/icons/xing_logo.png" class="iconMini">&nbsp;xing</a></li>
+                <li><a href="index.php<?php echo "?proCat=" . 3 ; ?>"><img src="img/icons/muxi_logo.jpg" class="iconMini">&nbsp;Muxy</a></li>
+                <li><a href="index.php<?php echo "?proCat=" . 4 ; ?>"><img src="img/icons/github_logo.png" class="iconMini">&nbsp;GitHub</a></li>
               </ul>
             </div>
             
@@ -123,16 +123,16 @@ $affichageMembre->closeCursor();
                 Réseaux sociaux <span class="caret"></span>
               </button>
               <ul class="dropdown-menu">
-                <li><a href="#"><img src="img/icons/FB_logo.png" class="iconMini">&nbsp;Facebook</a></li>
-                <li><a href="#"><img src="img/icons/Twitter-logo.png" class="iconMini">&nbsp;Twitter</a></li>
-                <li><a href="#"><img src="img/icons/YouTube-logo.png" class="iconMini">&nbsp;Youtube</a></li>
-                <li><a href="#"><img src="img/icons/googleplus_logo.png" class="iconMini">&nbsp;Google+</a></li>
-                <li><a href="#"><img src="img/icons/Skype_logo.png" class="iconMini">&nbsp;Skype</a></li>
-                <li><a href="#"><img src="img/icons/instagram_logo.png" class="iconMini">&nbsp;Instagram</a></li>
-                <li><a href="#"><img src="img/icons/pinterest-logo.png" class="iconMini">&nbsp;Pinterest</a></li>
-                <li><a href="#"><img src="img/icons/Deezer_logo.png" class="iconMini">&nbsp;Deezer</a></li>
-                <li><a href="#"><img src="img/icons/Spotify_logo.png" class="iconMini">&nbsp;Spotify</a></li>
-                <li><a href="#"><img src="img/icons/Viber-logo.png" class="iconMini">&nbsp;Viber</a></li>
+                <li><a href="<?php echo "?resCat=" . 0 ; ?>"><img src="img/icons/FB_logo.png" class="iconMini">&nbsp;Facebook</a></li>
+                <li><a href="<?php echo "?resCat=" . 1 ; ?>"><img src="img/icons/Twitter-logo.png" class="iconMini">&nbsp;Twitter</a></li>
+                <li><a href="<?php echo "?resCat=" . 2 ; ?>"><img src="img/icons/YouTube-logo.png" class="iconMini">&nbsp;Youtube</a></li>
+                <li><a href="<?php echo "?resCat=" . 3 ; ?>"><img src="img/icons/googleplus_logo.png" class="iconMini">&nbsp;Google+</a></li>
+                <li><a href="<?php echo "?resCat=" . 4 ; ?>"><img src="img/icons/Skype_logo.png" class="iconMini">&nbsp;Skype</a></li>
+                <li><a href="<?php echo "?resCat=" . 5 ; ?>"><img src="img/icons/instagram_logo.png" class="iconMini">&nbsp;Instagram</a></li>
+                <li><a href="<?php echo "?resCat=" . 6 ; ?>"><img src="img/icons/pinterest-logo.png" class="iconMini">&nbsp;Pinterest</a></li>
+                <li><a href="<?php echo "?resCat=" . 7 ; ?>"><img src="img/icons/Deezer_logo.png" class="iconMini">&nbsp;Deezer</a></li>
+                <li><a href="<?php echo "?resCat=" . 8 ; ?>"><img src="img/icons/Spotify_logo.png" class="iconMini">&nbsp;Spotify</a></li>
+                <li><a href="<?php echo "?resCat=" . 9 ; ?>"><img src="img/icons/Viber-logo.png" class="iconMini">&nbsp;Viber</a></li>
               </ul>
             </div>
             
@@ -210,6 +210,92 @@ $affichageMembre->closeCursor();
                 } 
                     include($main);
                 
+            } elseif ( isset($url["divCat"]) ) {
+                $i = $url["divCat"] ;
+                switch ($url["divCat"]) {
+                    case 0: // affiche le profil perso
+                        $main = "pages/#.php";
+                        break;
+                    case 1: // affiche le parcour pro
+                        $main = "pages/#.php";
+                        break;
+                    case 2: // affiche les reseaux sociaux
+                        $main = "pages/#.php";
+                        break;
+                    case 3: // affiche le parcour pro
+                        $main = "pages/#.php";
+                        break;
+                    case 4: // affiche les reseaux sociaux
+                        $main = "pages/#.php";
+                        break;
+                    default: // la page par défaut
+                        $main = "pages/pageProfilPerso.php";
+                } 
+                    include($main);
+                
+            } elseif ( isset($url["proCat"]) ) {
+                $i = $url["proCat"] ;
+                switch ($url["proCat"]) {
+                    case 0: // affiche le profil perso
+                        $main = "pages/#.php";
+                        break;
+                    case 1: // affiche le parcour pro
+                        $main = "pages/#.php";
+                        break;
+                    case 2: // affiche les reseaux sociaux
+                        $main = "pages/#.php";
+                        break;
+                    case 3: // affiche le parcour pro
+                        $main = "pages/#.php";
+                        break;
+                    case 4: // affiche les reseaux sociaux
+                        $main = "pages/#.php";
+                        break;
+                    case 5: // affiche les reseaux sociaux
+                        $main = "pages/#.php";
+                        break;
+                    case 6: // affiche les reseaux sociaux
+                        $main = "pages/#.php";
+                        break;
+                    case 7: // affiche les reseaux sociaux
+                        $main = "pages/#.php";
+                        break;
+                    case 8: // affiche les reseaux sociaux
+                        $main = "pages/#.php";
+                        break;
+                    case 9: // affiche les reseaux sociaux
+                        $main = "pages/#.php";
+                        break;
+                    default: // la page par défaut
+                        $main = "pages/pageProfilPerso.php";
+                } 
+                    include($main);
+                
+            } elseif ( isset($url["resCat"]) ) {
+                $i = $url["resCat"] ;
+                switch ($url["resCat"]) {
+                    case 0: // affiche le profil perso
+                        $main = "pages/#.php";
+                        break;
+                    case 1: // affiche le parcour pro
+                        $main = "pages/#.php";
+                        break;
+                    case 2: // affiche les reseaux sociaux
+                        $main = "pages/#.php";
+                        break;
+                    case 3: // affiche le parcour pro
+                        $main = "pages/#.php";
+                        break;
+                    case 4: // affiche les reseaux sociaux
+                        $main = "pages/#.php";
+                        break;
+                    case 5: // affiche les reseaux sociaux
+                        $main = "pages/#.php";
+                        break;
+                    default: // la page par défaut
+                        $main = "pages/pageProfilPerso.php";
+                } 
+                    include($main);
             } else {
                 include("pages/pageDefault.php"); // en cas d'erreur affiche la pageDefault
             }

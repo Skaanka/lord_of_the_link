@@ -20,6 +20,13 @@ if(isset($_GET["query"])) {
     //echo $params["test"];
 }
 
+
+//affichage des membres
+$affichageMembre = $db->query('SELECT id, prenom, nom FROM membres');
+    while ($value = $affichageMembre->fetch()) {
+}
+$affichageMembre->closeCursor();
+
 ?>
 
 <!doctype html>
@@ -42,7 +49,9 @@ if(isset($_GET["query"])) {
                 ?>
                     <div class="form-group">
                         <label for="profil">Bienvenue <?php echo $_SESSION['user']['prenom'] . " " . $_SESSION['user']['nom'] ; ?></label> <!-- TODO STYLE ECHO NOM PRENOM -->
-                        <input type="submit" id="profil" class="btn btn-default btn-xs" name="profil" value="profil" formaction=""> <!--TODO affichage profil utilisateur -->
+                        
+                            <input type="submit" id="profil" class="btn btn-default btn-xs" name="profil" value="profil" formaction="index.php<?php echo "?query=" .$value['id'] . "&" . "pCat=" . 0 ; ?>"> <!--TODO affichage profil utilisateur -->
+                        
                         <input type="submit" class="btn btn-default btn-xs" name="deconnexion" value="déconnexion" formaction="pages/logoff.php">
                     </div>
                 <?php
@@ -56,8 +65,7 @@ if(isset($_GET["query"])) {
                         <label class="sr-only" for="password">Password</label>
                         <input type="password" class="" id="password" placeholder="Password" name="mot_de_passe">
                     </div>
-
-                     <input type="submit" class="dropdown-toggle" name="connexion" value="connexion" formaction="pages/login.php">
+                    <input type="submit" class="dropdown-toggle" name="connexion" value="connexion" >
                     <input type="submit" class="dropdown-toggle" name="" formaction="pages/formulaire.php" value="Inscription">
                 <?php
                     //echo $login_erreur; // TODO affiche message d'erreur : "erreur email ou mot de passe, veuillez réessayer" 
@@ -182,10 +190,30 @@ if(isset($_GET["query"])) {
                         break;
                     default: // la page par défaut
                         $main = "pages/pageProfil.php";
-
                 } 
-                include($main);     
-            }else {
+                include($main);  
+                
+            } elseif ( isset($_GET["query"]) && isset($url["pCat"]) ) {
+                $i = $url["pCat"] ;
+                switch ($url["pCat"]) {
+                    case 0: // affiche le profil perso
+                        $main = "pages/pageProfilPerso.php";
+                        break;
+                    case 1: // affiche le profil perso
+                        $main = "pages/#.php"; // ??????????????????????????????????????????????????????????
+                        break;
+                    case 2: // affiche le profil perso
+                        $main = "pages/pageReseauxPersoPro.php";
+                        break;
+                    case 3: // affiche le profil perso
+                        $main = "pages/pageReseauxPersoSoc.php";
+                        break;
+                    default: // la page par défaut
+                        $main = "pages/pageProfilPerso.php";
+                } 
+                    include($main);
+                
+            } else {
                 include("pages/pageDefault.php"); // en cas d'erreur affiche la pageDefault
             }
 

@@ -21,13 +21,21 @@ $value = $affichageMembre->fetch();
     <h2> <?php echo htmlspecialchars($value["prenom"])  ?> utilise ces plateformes de jeux online. </h2> <!-- TODO STYLE -->
 </div>
 
+<?php
+//affichage des identifiant jeux online
+$urlId = $_GET['query']; //recuperation de l'id de l'utilisateur 
+
+$affichageMembreDivertissements = $db->query('SELECT * FROM divertissements WHERE id_membres =' . $urlId );
+                
+while ($value = $affichageMembreDivertissements->fetch()) { //debut de la boucle
+?>
 <div class="row col-md-6 col-md-offset-3" id="rowName">
     <div>
         <img class="icons col-sm-2" src="img/icons/PSN_logo.png">
         <label for="psn" class="col-sm-2">PSN</label>
         <div class="panel panel-default">
           <div class="panel-body" id="psn">
-            adresse compte psn
+            <?php echo $value['psn']; ?>
           </div>
         </div>
     </div>
@@ -37,7 +45,7 @@ $value = $affichageMembre->fetch();
         <label for="xbox" class="col-sm-2">XboxLive</label>
         <div class="panel panel-default">
           <div class="panel-body" id="xbox">
-            adresse compte xboxlive
+            <?php echo $value['xboxlive']; ?>
           </div>
         </div>
     </div>
@@ -49,7 +57,7 @@ $value = $affichageMembre->fetch();
         <label for="steam" class="col-sm-2">Steam</label>
         <div class="panel panel-default">
           <div class="panel-body" id="steam">
-            adresse compte steam
+            <?php echo $value['steam']; ?>
           </div>
         </div>
     </div>
@@ -59,7 +67,7 @@ $value = $affichageMembre->fetch();
         <label for="battlenet" class="col-sm-2">Battle.net</label>
         <div class="panel panel-default">
           <div class="panel-body" id="battlenet">
-            adresse compte Battle.net
+            <?php echo $value['battlenet']; ?>
           </div>
         </div>
     </div>
@@ -71,7 +79,7 @@ $value = $affichageMembre->fetch();
         <label for="origin" class="col-sm-2">Origin</label>
         <div class="panel panel-default">
           <div class="panel-body" id="origin">
-            adresse compte Origin
+            <?php echo $value['origin']; ?>
           </div>
         </div>
     </div>
@@ -81,11 +89,14 @@ $value = $affichageMembre->fetch();
         <label for="nintendo" class="col-sm-2">Nintendo</label>
         <div class="panel panel-default">
           <div class="panel-body" id="nintendo">
-            adresse compte Nintendo
+            <?php echo $value['compte_nintendo']; ?>
           </div>
         </div>
     </div>
 </div>
-
+<?php
+}// fin de la boucle
+$affichageMembreDivertissements->closeCursor();
+?>
 
 

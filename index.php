@@ -217,7 +217,11 @@ $affichageMembre->closeCursor();
             ?>
             
             <?php
-            if (isset($url["cat"])) { //
+            if (isset($url["cat"])) { //perd le param query lors de l'affichage d'une page profil !
+                //affichage des membres
+                $affichageMembre = $db->prepare('SELECT * FROM membres WHERE id = ? ');
+                $affichageMembre->execute(array($_GET['query']));
+                $value = $affichageMembre->fetch();
             ?>
             <div id="sidebarCat" class="col-md-3 ">
                 <ul><a href="index.php<?php echo "?query=" . $value['id'] . "&" . "cat=" . 2 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Divertissement</a></ul>

@@ -63,11 +63,13 @@
         <!-- menu navbar en dropdown -->
         <div class="row col-md-8 col-md-offset-2" id="menu-nav">
             
-            <a href="../index.php">
-                <button type="button" class="dropdown-toggle" >
-                    <img src="../img/icons/ring.png" id="home">
-                </button>
-            </a>
+            <div class="btn-group">
+                <a href="index.php">
+                    <button type="button" class="dropdown-toggle"> 
+                        <img src="img/icons/ring.png" id="home">
+                    </button>
+                </a>
+            </div>
             
             <!-- bouton divertissement -->
             <div class="btn-group" >
@@ -151,7 +153,7 @@
                     </div>
                     <div class="form-group col-md-6 col-md-offset-3">
                         <label for="password">Password</label>
-                        <input type="text" class="form-control" id="password" placeholder="Paswword" name="mot_de_passe">
+                        <input type="text" class="form-control" id="password" placeholder="Password" name="mot_de_passe">
                     </div>
                 </div>
                 
@@ -159,7 +161,7 @@
                 <div class="row">
                     <div class="form-group col-md-12">
                         <label for="birthD">date de naissance</label>
-                        <input type="date" class="form-control" id="birthD" placeholder="date de naissance" name="ddn">
+                        <input type="date" class="form-control" id="birthD" placeholder="année-mois-jour" name="ddn">
                     </div>
                     <div class="form-group col-md-12">
                         <label for="adresse">Adresse</label>

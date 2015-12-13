@@ -75,11 +75,13 @@ if(isset($_GET["query"])) {
         <!-- menu navbar en dropdown -->
         <div class="row col-md-8 col-md-offset-2" id="menu-nav">
             
-            <a href="index.php">
-                <button type="button" class="dropdown-toggle"> 
-                    <img src="img/icons/ring.png" id="home">
-                </button>
-            </a>
+            <div class="btn-group">
+                <a href="index.php">
+                    <button type="button" class="dropdown-toggle"> 
+                        <img src="img/icons/ring.png" id="home">
+                    </button>
+                </a>
+            </div>
             
             <!-- bouton divertissement -->
             <div class="btn-group" >
@@ -197,6 +199,7 @@ if(isset($_GET["query"])) {
             ?>
             <div id="sidebarCat" class="col-md-3 ">
                 <ul>
+                <li><a href="index.php<?php echo "?query=" . $value['id'] . "&" . "cat=" . 0 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Infos perso</a></li>
                 <li><a href="index.php<?php echo "?query=" . $value['id'] . "&" . "cat=" . 2 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Divertissement</a></li>
                 <li><a href="index.php<?php echo "?query=" . $value['id'] . "&" . "cat=" . 3 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux pro.</a></li>
                 <li><a href="index.php<?php echo "?query=" . $value['id'] . "&" . "cat=" . 4 ; ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>&nbsp;Réseaux sociaux</a></li>

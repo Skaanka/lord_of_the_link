@@ -64,11 +64,13 @@
         <!-- menu navbar en dropdown -->
         <div class="row col-md-8 col-md-offset-2" id="menu-nav">
             
-            <a href="../index.php">
-                <button type="button" class="dropdown-toggle" >
-                    <img src="../img/icons/ring.png" id="home">
-                </button>
-            </a>
+            <div class="btn-group">
+                <a href="index.php">
+                    <button type="button" class="dropdown-toggle"> 
+                        <img src="img/icons/ring.png" id="home">
+                    </button>
+                </a>
+            </div>
             
             <!-- bouton divertissement -->
             <div class="btn-group" >

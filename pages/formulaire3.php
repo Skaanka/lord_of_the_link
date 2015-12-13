@@ -64,11 +64,14 @@
         <!-- menu navbar en dropdown -->
         <div class="row col-md-8 col-md-offset-2" id="menu-nav">
             
-            <a href="../index.php">
-                <button type="button" class="dropdown-toggle" >
-                    <img src="../img/icons/ring.png" id="home">
-                </button>
-            </a>
+            
+            <div class="btn-group">
+                <a href="index.php">
+                    <button type="button" class="dropdown-toggle"> 
+                        <img src="img/icons/ring.png" id="home">
+                    </button>
+                </a>
+            </div>
             
             <!-- bouton divertissement -->
             <div class="btn-group" >
@@ -210,6 +213,13 @@
                             <label for="muxy" class="col-sm-2 control-label celSoc">Muxy</label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control celSoc" id="muxy" placeholder="Muxy" name="muxy">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <img class="icons col-sm-2" src="../img/icons/github_logo.png">
+                            <label for="github" class="col-sm-2 control-label celSoc">GitHub</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control celSoc" id="github" placeholder="GitHub" name="github">
                             </div>
                         </div>
                     </div>

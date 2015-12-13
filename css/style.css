@@ -29,7 +29,6 @@ body {
     font-size: 12px;
 }
 
-
 #menu-nav {
     text-align: center;
     background: grey;
@@ -38,6 +37,18 @@ body {
     background: url(../img/decor01.jpg) no-repeat;
     background-size: cover;
 }
+
+
+.iconMini {
+    height: auto;
+    width: 20px;
+}
+
+#home {
+    height: 18px;
+    width: auto;
+}
+
 
 #avatar {
     float: left;
@@ -107,16 +118,6 @@ body {
     margin-top: 2%;
 }
 
-.iconMini {
-    height: auto;
-    width: 20px;
-}
-
-#home {
-    height: 21.5px;
-    width: auto;
-}
-
 #sidebarMembres {
     background: url(../img/bggrille.png);
     color: white;
@@ -183,10 +184,13 @@ main {
 }
 
 #sidebarCat {
+    position: absolute;
+    top: 400px;
+    right: 20px;
     background: url(../img/post-it-note-orange-final.jpg) no-repeat;
-    background-size: cover;
+    background-size: contain;
     height: 230px;
-    padding-top: 80px;
+    padding-top: 65px;
     float: right;
     transform: rotate(5deg);
     font-family: 'Indie Flower', cursive;

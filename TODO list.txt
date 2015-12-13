@@ -1,0 +1,35 @@
+
+
+- essai d'élargir la colonne princpal du site (a valider en groupe)
+
+
+- champ pour github a vérifier
+	(OK ajouter)
+
+
+- finaliser l'apparence message/bouton quand connecter en haut de l'écran (+ point vert)
+
+
+- Fixer le post-it en haut de page. 
+	(OK)
+
+
+- Mise en page des profils consultable  
+	(OK pour infos perso, reste div, res. pro. et res. soc.)
+
+
+- Mise en page des pages profil perso
+
+
+- crée la page de classement par bouton + mise en page 
+	(page créée en attente des requètes sql pour mise en page)
+
+
+- Taille des avatars doivent etre carré (ex: 150x150 pixels) sinon la taille fait bouger la mise en page dans le profil. voir si possibilité de check lors de l'inscription
+
+
+- icone anneau home a redimensionner
+	(OK)
+
+
+- poser un scrollspy/ ancrage sur menu quand on sort un profil a consulter

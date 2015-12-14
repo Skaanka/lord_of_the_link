@@ -35,13 +35,13 @@ while ($value = $affichageDivertissements->fetch()) { //debut de la boucle
               
 <div class="row col-md-8 col-md-offset-2" id="rowName">
     <div>
-        <img class="icons col-sm-2" src="../img/icons/PSN_logo.png">
+        <img class="icons col-sm-2" src="img/icons/PSN_logo.png">
         <label for="psn" class="col-sm-2 control-label celSoc">PSN</label>
         <div class="well well-sm col-md-2"> <?php echo $value['psn']; ?> </div>
     </div>
     
     <div>
-        <img class="icons col-sm-2" src="../img/icons/Xbox_logo.png">
+        <img class="icons col-sm-2" src="img/icons/Xbox_logo.png">
         <label for="xboxlive" class="col-sm-2 control-label celSoc">XboxLive</label>
         <div class="well well-sm col-md-2"> <?php echo $value['xboxlive']; ?> </div>
     </div>
@@ -49,13 +49,13 @@ while ($value = $affichageDivertissements->fetch()) { //debut de la boucle
 
 <div class="row col-md-8 col-md-offset-2" id="rowName">
     <div>
-        <img class="icons col-sm-2" src="../img/icons/Steam_logo.png">
+        <img class="icons col-sm-2" src="img/icons/Steam_logo.png">
         <label for="steam" class="col-sm-2 control-label celSoc">Steam</label>
         <div class="well well-sm col-md-2"> <?php echo $value['steam']; ?> </div>
     </div>
     
     <div>
-        <img class="icons col-sm-2" src="../img/icons/Xbox_logo.png">
+        <img class="icons col-sm-2" src="img/icons/Xbox_logo.png">
         <label for="battlenet" class="col-sm-2 control-label celSoc">Battle.net</label>
         <div class="well well-sm col-md-2"> <?php echo $value['battlenet']; ?> </div>
     </div>
@@ -63,13 +63,13 @@ while ($value = $affichageDivertissements->fetch()) { //debut de la boucle
 
 <div class="row col-md-8 col-md-offset-2" id="rowName">
     <div>
-        <img class="icons col-sm-2" src="../img/icons/origin1_logo.png">
+        <img class="icons col-sm-2" src="img/icons/origin1_logo.png">
         <label for="origin" class="col-sm-2 control-label celSoc">Origin</label>
         <div class="well well-sm col-md-2"> <?php echo $value['origin']; ?> </div>
     </div>
     
     <div>
-        <img class="icons col-sm-2" src="../img/icons/nintendo_logo.png">
+        <img class="icons col-sm-2" src="img/icons/nintendo_logo.png">
         <label for="nintendo" class="col-sm-2 control-label celSoc">Nintendo.net</label>
         <div class="well well-sm col-md-2"> <?php echo $value['compte_nintendo']; ?> </div>
     </div>
@@ -94,13 +94,13 @@ while ($value = $affichageReseauxPro->fetch()) { //debut de la boucle
 
 <div class="row col-md-8 col-md-offset-2" id="rowName">
     <div>
-        <img class="icons col-sm-2" src="../img/icons/linkedin_logo.png">
+        <img class="icons col-sm-2" src="img/icons/linkedin_logo.png">
         <label for="linkedin" class="col-sm-2 control-label celSoc">LinkedIn</label>
         <div class="well well-sm col-md-2"> <?php echo $value['linkedin']; ?> </div>
     </div>
     
     <div>
-        <img class="icons col-sm-2" src="../img/icons/viadeo_logo.png">
+        <img class="icons col-sm-2" src="img/icons/viadeo_logo.png">
         <label for="viadeo" class="col-sm-2 control-label celSoc">Viadeo</label>
         <div class="well well-sm col-md-2"> <?php echo $value['viadeo']; ?> </div>
     </div>
@@ -108,13 +108,13 @@ while ($value = $affichageReseauxPro->fetch()) { //debut de la boucle
 
 <div class="row col-md-8 col-md-offset-2" id="rowName">
     <div>
-        <img class="icons col-sm-2" src="../img/icons/xing_logo.png">
+        <img class="icons col-sm-2" src="img/icons/xing_logo.png">
         <label for="xing" class="col-sm-2 control-label celSoc">Xing</label>
         <div class="well well-sm col-md-2"> <?php echo $value['xing']; ?> </div>
     </div>
     
     <div>
-        <img class="icons col-sm-2" src="../img/icons/muxi_logo.jpg">
+        <img class="icons col-sm-2" src="img/icons/muxi_logo.jpg">
         <label for="muxy" class="col-sm-2 control-label celSoc">Muxy</label>
         <div class="well well-sm col-md-2"> <?php echo $value['muxi']; ?> </div>
     </div>
@@ -135,16 +135,16 @@ $urlId = $_SESSION['user']['id']; //recuperation de l'id de l'utilisateur
 $affichageReseauxSoc = $db->query('SELECT * FROM reseaux WHERE id_membres =' . $urlId );
                 
 while ($value = $affichageReseauxSoc->fetch()) { //debut de la boucle
-?>5532
+?>
 <div class="row col-md-8 col-md-offset-2" id="rowName">
     <div>
-        <img class="icons col-sm-2" src="../img/icons/FB_logo.png">
+        <img class="icons col-sm-2" src="img/icons/FB_logo.png">
         <label for="facebook" class="col-sm-2 control-label celSoc">Facebook</label>
         <div class="well well-sm col-md-2"> <?php echo $value['facebook']; ?> </div>
     </div>
     
     <div>
-        <img class="icons col-sm-2" src="../img/icons/Twitter-logo.png">
+        <img class="icons col-sm-2" src="img/icons/Twitter-logo.png">
         <label for="twitter" class="col-sm-2 control-label celSoc">Twitter</label>
         <div class="well well-sm col-md-2"> <?php echo $value['twitter']; ?> </div>
     </div>
@@ -152,13 +152,13 @@ while ($value = $affichageReseauxSoc->fetch()) { //debut de la boucle
 
 <div class="row col-md-8 col-md-offset-2" id="rowName">
     <div>
-        <img class="icons col-sm-2" src="../img/icons/YouTube-logo.png">
+        <img class="icons col-sm-2" src="img/icons/YouTube-logo.png">
         <label for="youtube" class="col-sm-2 control-label celSoc">YouTube</label>
         <div class="well well-sm col-md-2"> <?php echo $value['youtube']; ?> </div>
     </div>
     
     <div>
-        <img class="icons col-sm-2" src="../img/icons/googleplus_logo.png">
+        <img class="icons col-sm-2" src="img/icons/googleplus_logo.png">
         <label for="google+" class="col-sm-2 control-label celSoc">Google+</label>
         <div class="well well-sm col-md-2"> <?php echo $value['google']; ?> </div>
     </div>
@@ -166,13 +166,13 @@ while ($value = $affichageReseauxSoc->fetch()) { //debut de la boucle
 
 <div class="row col-md-8 col-md-offset-2" id="rowName">
     <div>
-        <img class="icons col-sm-2" src="../img/icons/Skype_logo.png">
+        <img class="icons col-sm-2" src="img/icons/Skype_logo.png">
         <label for="skype" class="col-sm-2 control-label celSoc">Skype</label>
         <div class="well well-sm col-md-2"> <?php echo $value['skype']; ?> </div>
     </div>
     
     <div>
-        <img class="icons col-sm-2" src="../img/icons/instagram_logo.png">
+        <img class="icons col-sm-2" src="img/icons/instagram_logo.png">
         <label for="instagram" class="col-sm-2 control-label celSoc">Instagram</label>
         <div class="well well-sm col-md-2"> <?php echo $value['instagram']; ?> </div>
     </div>
@@ -180,13 +180,13 @@ while ($value = $affichageReseauxSoc->fetch()) { //debut de la boucle
 
 <div class="row col-md-8 col-md-offset-2" id="rowName">
     <div>
-        <img class="icons col-sm-2" src="../img/icons/pinterest-logo.png">
+        <img class="icons col-sm-2" src="img/icons/pinterest-logo.png">
         <label for="pinteret" class="col-sm-2 control-label celSoc">Pinterest</label>
         <div class="well well-sm col-md-2"> <?php echo $value['pinterest']; ?> </div>
     </div>
     
     <div>
-        <img class="icons col-sm-2" src="../img/icons/Deezer_logo.png">
+        <img class="icons col-sm-2" src="img/icons/Deezer_logo.png">
         <label for="deezer" class="col-sm-2 control-label celSoc">Deezer.net</label>
         <div class="well well-sm col-md-2"> <?php echo $value['deezer']; ?> </div>
     </div>
@@ -194,13 +194,13 @@ while ($value = $affichageReseauxSoc->fetch()) { //debut de la boucle
 
 <div class="row col-md-8 col-md-offset-2" id="rowName">
     <div>
-        <img class="icons col-sm-2" src="../img/icons/Spotify_logo.png">
+        <img class="icons col-sm-2" src="img/icons/Spotify_logo.png">
         <label for="spotify" class="col-sm-2 control-label celSoc">Spotify</label>
         <div class="well well-sm col-md-2"> <?php echo $value['spotify']; ?> </div>
     </div>
     
     <div>
-        <img class="icons col-sm-2" src="../img/icons/Viber-logo.png">
+        <img class="icons col-sm-2" src="img/icons/Viber-logo.png">
         <label for="viber" class="col-sm-2 control-label celSoc">Viber</label>
         <div class="well well-sm col-md-2"> <?php echo $value['viber']; ?> </div>
     </div>

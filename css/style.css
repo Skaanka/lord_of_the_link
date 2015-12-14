@@ -181,19 +181,25 @@ main {
     background: url(../img/calepin.jpg) no-repeat;
     background-size: cover;
     height: 1200px;
+    overflow-x: hidden;
 }
 
 #sidebarCat {
     position: absolute;
     top: 400px;
-    right: 20px;
+    right: 5px;
     background: url(../img/post-it-note-orange-final.jpg) no-repeat;
     background-size: contain;
     height: 230px;
     padding-top: 65px;
     float: right;
-    transform: rotate(5deg);
+    transform: rotate(5deg) translateX(200px);
     font-family: 'Indie Flower', cursive;
+    transition: all ease-in-out 0.3s 0s;
+}
+
+#sidebarCat:hover {
+    right: 190px;
 }
 
 #sidebarCat li{
@@ -241,3 +247,33 @@ main {
 }
 /* fin de boutons déroulants*/
 
+#titrePageDiv {
+    margin-top: 20%;
+    font-family: 'Droid Sans', sans-serif;
+}
+
+.rowPageDiv {
+    /*border: 1px solid black;*/
+    height: 6%;
+    margin-top: 5%;
+}
+
+.iconsPageDiv {
+    margin-top: 5%;
+    height: auto;
+    width: 80px;
+}
+
+.labelDiv {
+    margin-top: 2%;
+}
+
+.well {
+    margin-bottom: 3%;
+}
+
+.infoDiv {
+    box-shadow: 3px 3px 4px grey;
+    border-radius: 5px;
+    background: #afbdbf;
+}

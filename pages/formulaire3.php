@@ -66,9 +66,9 @@
             
             
             <div class="btn-group">
-                <a href="index.php">
+                <a href="../index.php">
                     <button type="button" class="dropdown-toggle"> 
-                        <img src="img/icons/ring.png" id="home">
+                        <img src="../img/icons/ring.png" id="home">
                     </button>
                 </a>
             </div>
@@ -310,8 +310,8 @@
 
                 <div id="bouton" class="row">
                     <div class="">
-                        <input type="submit" class="btn btn-default col-md-offset-1" value="Page précédente" name="return" formaction="formulaire2.php">
-                        <input type="submit" class="btn btn-default col-md-offset-5" value="Page suivante" name="submit" formaction="formulaire_post3.php">
+                        <input type="submit" class="btn btn-primary col-md-offset-1" value="Page précédente" name="return" formaction="formulaire2.php">
+                        <input type="submit" class="btn btn-primary col-md-offset-5" value="Page suivante" name="submit" formaction="formulaire_post3.php">
                     </div>
                 </div>
 

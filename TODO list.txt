@@ -11,7 +11,7 @@
 
 
 - Fixer le post-it en haut de page. 
-	(OK)
+	(OK mais soucis empiètement sur les pages de DIV, SOC, PRO)
 
 
 - Mise en page des profils consultable  

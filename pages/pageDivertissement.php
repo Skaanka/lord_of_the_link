@@ -17,70 +17,70 @@ $value = $affichageMembre->fetch();
 ?>
 
 
-<div>
-    <h2> <?php echo htmlspecialchars($value["prenom"])  ?> utilise ces plateformes de jeux online. </h2> <!-- TODO STYLE -->
+<div class="col-md-10 col-md-offset-2" id="titrePageDiv">
+    <h2> <?php echo htmlspecialchars($value["prenom"])  ?> utilise ces plateformes de jeux online : </h2> <!-- TODO STYLE -->
 </div>
 
-<div class="row col-md-6 col-md-offset-3">
-    <div>
-        <img class="icons col-sm-2" src="img/icons/PSN_logo.png">
-        <label for="psn" class="col-sm-2">PSN</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="psn">
+<div class="row rowPageDiv col-md-10 col-md-offset-2">
+    <div class="col-md-5 infoDiv">
+        <img class="iconsPageDiv col-md-2" src="img/icons/PSN_logo.png">
+        <label for="psn" class="col-sm-6 labelDiv">PSN</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="psn">
             adresse compte psn
           </div>
         </div>
     </div>
     
-    <div>
-        <img class="icons col-sm-2" src="img/icons/Xbox_logo.png">
-        <label for="xbox" class="col-sm-2">XboxLive</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="xbox">
+    <div class="col-md-5 col-md-offset-1 infoDiv">
+        <img class="iconsPageDiv col-md-2" src="img/icons/Xbox_logo.png">
+        <label for="xbox" class="col-sm-6 labelDiv">XboxLive</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="xbox">
             adresse compte xboxlive
           </div>
         </div>
     </div>
 </div>
 
-<div class="row col-md-6 col-md-offset-3">
-    <div>
-        <img class="icons col-sm-2" src="img/icons/Steam_logo.png">
-        <label for="steam" class="col-sm-2">Steam</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="steam">
-            adresse compte steam
+<div class="row rowPageDiv col-md-10 col-md-offset-2">
+    <div class="col-md-5 infoDiv">
+        <img class="iconsPageDiv col-md-2" src="img/icons/Steam_logo.png">
+        <label for="steam" class="col-sm-6 labelDiv">Steam</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="steam">
+            adresse compte Steam
           </div>
         </div>
     </div>
     
-    <div>
-        <img class="icons col-sm-2" src="img/icons/Xbox_logo.png">
-        <label for="battlenet" class="col-sm-2">Battle.net</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="battlenet">
-            adresse compte Battle.net
+    <div class="col-md-5 col-md-offset-1 infoDiv">
+        <img class="iconsPageDiv col-md-2" src="img/icons/battlenet_logo.png">
+        <label for="battlenet" class="col-sm-6 labelDiv">Battle.net</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="battlenet">
+            adresse Battle.net
           </div>
         </div>
     </div>
 </div>
 
-<div class="row col-md-6 col-md-offset-3">
-    <div>
-        <img class="icons col-sm-2" src="img/icons/PSN_logo.png">
-        <label for="origin" class="col-sm-2">Origin</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="origin">
+<div class="row rowPageDiv col-md-10 col-md-offset-2">
+    <div class="col-md-5 infoDiv">
+        <img class="iconsPageDiv col-md-2" src="img/icons/origin1_logo.png">
+        <label for="origin" class="col-sm-6 labelDiv">Origin</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="origin">
             adresse compte Origin
           </div>
         </div>
     </div>
     
-    <div>
-        <img class="icons col-sm-2" src="img/icons/Xbox_logo.png">
-        <label for="nintendo" class="col-sm-2">Nintendo</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="nintendo">
+    <div class="col-md-5  col-md-offset-1 infoDiv">
+        <img class="iconsPageDiv col-md-2" src="img/icons/nintendo_logo.png">
+        <label for="nintendo" class="col-sm-6 labelDiv">Nintendo</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="nintendo">
             adresse compte Nintendo
           </div>
         </div>

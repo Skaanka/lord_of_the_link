@@ -143,15 +143,15 @@
                 <div class="row" id="espaceform">
                     <div class="form-group col-md-6">
                         <label for="name">Nom</label>
-                        <input type="text" class="form-control" id="name" placeholder="nom" name="nom" value="<?php  echo !empty($_SESSION['inscription']['nom']);  ?>">
+                        <input type="text" class="form-control" id="name" placeholder="nom" name="nom" value="<?php  if ( !empty($_SESSION['inscription']['nom'])) {echo $_SESSION['inscription']['nom'];}  ?>">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="firstname">Prenom</label>
-                        <input type="text" class="form-control" id="firstname" placeholder="prenom" name="prenom" value="<?php  echo !empty($_SESSION['inscription']['prenom']);  ?>">
+                        <input type="text" class="form-control" id="firstname" placeholder="prenom" name="prenom" value="<?php  if ( !empty($_SESSION['inscription']['prenom'])) {echo $_SESSION['inscription']['prenom'];}  ?>">
                     </div>
                     <div class="form-group col-md-6 col-md-offset-3">
-                        <label for="password">Password</label>
-                        <input type="text" class="form-control" id="password" placeholder="Paswword" name="mot_de_passe" value="<?php  echo !empty($_SESSION['inscription']['mot_de_passe']) ;  ?>">
+                        <label for="password">Password</label>     <!-- Ajout d'un  champs confirmation mot de passe ? -->
+                        <input type="text" class="form-control" id="password" placeholder="Paswword" name="mot_de_passe" value="">
                     </div>
                 </div>
                 
@@ -159,44 +159,44 @@
                 <div class="row">
                     <div class="form-group col-md-12">
                         <label for="birthD">date de naissance</label>
-                        <input type="date" class="form-control" id="birthD" placeholder="date de naissance" name="ddn" value="<?php  echo !empty($_SESSION['inscription']['ddn'] );  ?>">
+                        <input type="date" class="form-control" id="birthD" placeholder="date de naissance" name="ddn" value="<?php  if ( !empty($_SESSION['inscription']['ddn'])) { echo $_SESSION['inscription']['ddn'];}  ?>">
                     </div>
                     <div class="form-group col-md-12">
                         <label for="adresse">Adresse</label>
-                        <input type="text" class="form-control" id="adresse" placeholder="adresse" name="adresse" value="<?php  echo !empty($_SESSION['inscription']['adresse'] );  ?>">
+                        <input type="text" class="form-control" id="adresse" placeholder="adresse" name="adresse" value="<?php  if ( !empty($_SESSION['inscription']['adresse'])) { echo $_SESSION['inscription']['adresse'];}  ?>">
                     </div>
                 </div>
                 
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="cp">Code Postal</label>
-                        <input type="text" class="form-control" id="cp" placeholder="code postal" name="cp" value="<?php  echo !empty($_SESSION['inscription']['cp'] );  ?>">
+                        <input type="text" class="form-control" id="cp" placeholder="code postal" name="cp" value="<?php  if ( !empty($_SESSION['inscription']['cp'])) { echo $_SESSION['inscription']['cp'];}  ?>">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="city">Ville</label>
-                        <input type="text" class="form-control" id="city" placeholder="Ville" name="ville" value="<?php  echo !empty($_SESSION['inscription']['ville']) ;  ?>">
+                        <input type="text" class="form-control" id="city" placeholder="Ville" name="ville" value="<?php  if ( !empty($_SESSION['inscription']['ville'])) { echo $_SESSION['inscription']['ville'];}  ?>">
                     </div>
                 </div>
                     
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="email">E-mail</label>
-                        <input type="text" class="form-control" id="email" placeholder="E-mail" name="mail" value="<?php  echo !empty($_SESSION['inscription']['mail']) ;  ?>">
+                        <input type="text" class="form-control" id="email" placeholder="E-mail" name="mail" value="">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="phone">Téléphone mobile</label>
-                        <input type="text" class="form-control" id="phone" placeholder="Téléphone mobile" name="phone" value="<?php  echo !empty($_SESSION['inscription']['phone'] ); ?>">
+                        <input type="text" class="form-control" id="phone" placeholder="Téléphone mobile" name="phone" value="<?php  if ( !empty($_SESSION['inscription']['phone'])) { echo $_SESSION['inscription']['phone'];}  ?>">
                     </div>
                 </div>
                 
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="webSite">Site web-perso</label>
-                        <input type="text" class="form-control" id="webSite" placeholder="Site web-perso" name="siteWeb" value="<?php  echo !empty($_SESSION['inscription']['siteWeb']) ; ?>">
+                        <input type="text" class="form-control" id="webSite" placeholder="Site web-perso" name="siteWeb" value="<?php  if ( !empty($_SESSION['inscription']['siteWeb'])) { echo $_SESSION['inscription']['siteWeb'];}  ?>">
                     </div>
                     <label id="spanAvatar"for="pics" class=" col-md-3">Avatar</label>
                     <div class="col-md-6">
-                        <input type="file" class="" id="pics" name="avatar" value="<?php  echo !empty($_SESSION['inscription']['avatar']) ; ?>">
+                        <input type="file" class="" id="pics" name="avatar" value="<?php  if ( !empty($_SESSION['inscription']['avatar'])) { echo $_SESSION['inscription']['avatar'];}  ?>">
                     </div>
                 </div>
                 

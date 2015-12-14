@@ -18,119 +18,118 @@ $value = $affichageMembre->fetch();
 
 
 
-<div>
-    <h2>Voici les réseaux sociaux que <?php echo htmlspecialchars($value["prenom"])  ?> fréquente. </h2>
+<div class="col-md-10 col-md-offset-2" id="titrePage">
+    <img src="uploads/<?php echo $value['avatar']; ?>" id="avatarPage">
+    <h2>Les réseaux sociaux que <?php echo htmlspecialchars($value["prenom"])  ?> fréquente : </h2>
 </div>
 
-<div class="row col-md-6 col-md-offset-3" >
-    <div>
-        <img class="icons col-sm-2" src="img/icons/FB_logo.png">
-        <label for="facebook" class="col-sm-2">Facebook</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="facebook">
-            adresse compte Facebook
+<div class="row rowPage col-md-10" >
+    <div class="col-md-5 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/FB_logo.png">
+        <label for="facebook" class="col-sm-6 labelPage">Facebook</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="facebook">
+            compte Facebook
           </div>
         </div>
     </div>
     
-    <div>
-        <img class="icons col-sm-2" src="img/icons/Twitter-logo.png">
-        <label for="Twitter" class="col-sm-2">Twitter</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="twitter">
-            adresse compte Twitter
+    <div class="col-md-5 col-md-offset-1 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/twitter-logo.png">
+        <label for="twitter" class="col-sm-6 labelPage">Twitter</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="twitter">
+            compte Twitter
           </div>
         </div>
     </div>
 </div>
 
-<div class="row col-md-6 col-md-offset-3" >
-    <div>
-        <img class="icons col-sm-2" src="img/icons/YouTube-logo.png">
-        <label for="Youtube" class="col-sm-2">YouTube</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="YouTube">
-            adresse compte Youtube
+<div class="row rowPage col-md-10" >
+    <div class="col-md-5 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/YouTube-logo.png">
+        <label for="youtube" class="col-sm-6 labelPage">Youtube</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="youtube">
+            compte Youtube
           </div>
         </div>
     </div>
     
-    <div>
-        <img class="icons col-sm-2" src="img/icons/googleplus_logo.png">
-        <label for="google+" class="col-sm-2">Google+</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="ggogle+">
-            adresse compte Google+
+    <div class="col-md-5 col-md-offset-1 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/googleplus_logo.png">
+        <label for="google+" class="col-sm-6 labelPage">Google+</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="google+">
+            compte Google+
           </div>
         </div>
     </div>
 </div>
 
-<div class="row col-md-6 col-md-offset-3" >
-    <div>
-        <img class="icons col-sm-2" src="img/icons/Skype_logo.png">
-        <label for="skype" class="col-sm-2">Skype</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="skype">
-            adresse compte Skype
+<div class="row rowPage col-md-10" >
+    <div class="col-md-5 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/skype_logo.png">
+        <label for="skype" class="col-sm-6 labelPage">Skype</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="skype">
+            compte Skype
           </div>
         </div>
     </div>
     
-    <div>
-        <img class="icons col-sm-2" src="img/icons/instagram_logo.png">
-        <label for="instagram" class="col-sm-2">Instagram</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="instagram">
-            adresse compte Instagram
+    <div class="col-md-5 col-md-offset-1 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/instagram_logo.png">
+        <label for="instagram" class="col-sm-6 labelPage">Instagram</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="instagram">
+            compte Instagram
           </div>
         </div>
     </div>
 </div>
 
-<div class="row col-md-6 col-md-offset-3" >
-    <div>
-        <img class="icons col-sm-2" src="img/icons/pinterest-logo.png">
-        <label for="printerest" class="col-sm-2">Pinterest</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="pinterest">
-            adresse compte Pinterest
+<div class="row rowPage col-md-10" >
+    <div class="col-md-5 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/pinterest-logo.png">
+        <label for="pinterest" class="col-sm-6 labelPage">Pinterest</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="pinterest">
+            compte Pinterest
           </div>
         </div>
     </div>
     
-    <div>
-        <img class="icons col-sm-2" src="img/icons/Deezer_logo.png">
-        <label for="Deezer" class="col-sm-2">Deezer</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="deezer">
-            adresse compte Deezer
+    <div class="col-md-5 col-md-offset-1 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/deezer_logo.png">
+        <label for="deezer" class="col-sm-6 labelPage">Deezer</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="deezer">
+            compte Deezer
           </div>
         </div>
     </div>
 </div>
 
-<div class="row col-md-6 col-md-offset-3" >
-    <div>
-        <img class="icons col-sm-2" src="img/icons/Spotify_logo.png">
-        <label for="spotify" class="col-sm-2">Spotify</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="spotify">
-            adresse compte Spotify
+<div class="row rowPage col-md-10" >
+    <div class="col-md-5 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/spotify_logo.png">
+        <label for="spotify" class="col-sm-6 labelPage">Spotify</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="spotify">
+            compte Spotify
           </div>
         </div>
     </div>
     
-    <div>
-        <img class="icons col-sm-2" src="img/icons/Viber-logo.png">
-        <label for="viber" class="col-sm-2">Viber</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="viber">
-            adresse compte Viber
+    <div class="col-md-5 col-md-offset-1 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/viber-logo.png">
+        <label for="viber" class="col-sm-6 labelPage">Viber</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="viber">
+            compte Twitter
           </div>
         </div>
     </div>
 </div>
-
-
 

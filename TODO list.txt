@@ -11,11 +11,11 @@
 
 
 - Fixer le post-it en haut de page. 
-	(OK mais soucis empiètement sur les pages de DIV, SOC, PRO)
+	(OK mais soucis empiètement sur les pages de DIV, SOC, PRO => en partie résolue en le cachant "méthode tiroir")
 
 
 - Mise en page des profils consultable  
-	(OK pour infos perso, reste div, res. pro. et res. soc.)
+	(OK pour infos perso, div, res. pro. et res. soc.)
 
 
 - Mise en page des pages profil perso

@@ -121,6 +121,7 @@ body {
 #sidebarMembres {
     background: url(../img/bggrille.png);
     color: white;
+    height: 1200px;
 }
 
 #membres {
@@ -247,33 +248,45 @@ main {
 }
 /* fin de boutons déroulants*/
 
-#titrePageDiv {
+#titrePage {
     margin-top: 20%;
     font-family: 'Droid Sans', sans-serif;
 }
 
-.rowPageDiv {
+.rowPage {
     /*border: 1px solid black;*/
     height: 6%;
     margin-top: 5%;
+    margin-left: 12%;
 }
 
-.iconsPageDiv {
+.iconsPage {
     margin-top: 5%;
     height: auto;
     width: 80px;
 }
 
-.labelDiv {
+.labelPage {
     margin-top: 2%;
 }
 
 .well {
     margin-bottom: 3%;
+    box-shadow: 1px 1px 4px;
+    border: 1px solid grey;
 }
 
-.infoDiv {
+.infoPage {
     box-shadow: 3px 3px 4px grey;
     border-radius: 5px;
     background: #afbdbf;
+}
+
+#avatarPage {
+    margin-left: 30%;
+    padding: 0;
+    height: 150px;
+    width: 150px;
+    border: 1px solid grey;
+    box-shadow: 5px 5px 5px grey;
 }

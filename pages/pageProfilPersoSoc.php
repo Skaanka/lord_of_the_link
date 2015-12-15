@@ -1,11 +1,7 @@
 <?php
-// detruit la session inscription si elle existe
-if ( isset ($_SESSION["inscription"])) {
-    unset($_SESSION["inscription"]);
-}
-
-// appel du fichier connexion bdd
-require_once('php/connexion.php');
+// destruction de session inscription
+require_once('php/function.php');
+destructionSessionInscription();
 
 //print_r($params);
 global $db, $params;

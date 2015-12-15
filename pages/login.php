@@ -1,9 +1,11 @@
 <?php
-    if ( isset ($_SESSION["inscription"])) {
-        unset($_SESSION["inscription"]);
-    }
-    session_start();
-    require_once('../php/connexion.php');
+// destruction de session inscription
+require_once('php/function.php');
+destructionSessionInscription();
+//creation de session
+session_start();
+//connexion a la bdd
+require_once('../php/connexion.php');
 
 
 try {

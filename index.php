@@ -1,9 +1,9 @@
 <?php
-// détruit la $_SESSION["inscription"] si elle existe
-if ( isset ($_SESSION["inscription"])) {
-    unset($_SESSION["inscription"]);
-}
-
+// detruit la session inscription si elle existe
+    if ( isset ($_SESSION["inscription"])) {
+        unset($_SESSION["inscription"]);
+    }
+//print_r($_SESSION["inscription"]);
 //creation de session
 session_start();
 

@@ -1,9 +1,7 @@
 <?php
-// detruit la session inscription si elle existe
-if ( isset ($_SESSION["inscription"])) {
-    unset($_SESSION["inscription"]);
-}
-
+// destruction de session inscription
+require_once('php/function.php');
+destructionSessionInscription();
 // appel du fichier connexion bdd
 require_once('php/connexion.php');
 
@@ -22,7 +20,7 @@ $value = $affichageMembre->fetch();
     <img src="uploads/<?php echo $value['avatar']; ?>" id="avatarPage">
     <h2>Les réseaux sociaux que <?php echo htmlspecialchars($value["prenom"])  ?> fréquente : </h2>
 </div>
-
+b 
 <?php
 //affichage des identifiant jeux online
 $urlId = $_GET['query']; //recuperation de l'id de l'utilisateur 

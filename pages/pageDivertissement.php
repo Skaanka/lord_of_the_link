@@ -1,9 +1,7 @@
 <?php
-// detruit la session inscription si elle existe
-if ( isset ($_SESSION["inscription"])) {
-    unset($_SESSION["inscription"]);
-}
-
+// destruction de session inscription
+require_once('php/function.php');
+destructionSessionInscription();
 // appel du fichier connexion bdd
 require_once('php/connexion.php');
 
@@ -15,7 +13,6 @@ $affichageMembre = $db->prepare('SELECT * FROM membres WHERE id = ? ');
 $affichageMembre->execute(array($_GET['query']));
 $value = $affichageMembre->fetch();
 
-print_r($_GET["query"]);
 ?>
 
 

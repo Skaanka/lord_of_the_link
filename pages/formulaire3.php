@@ -1,15 +1,9 @@
 <?php
-    // destruction de $_SESSION["inscription"] si elle existe
-    if ( isset ($_SESSION["inscription"])) {
-        unset($_SESSION["inscription"]);
-    }
-    
-    //creation de session
-    session_start();
-    //print_r($_SESSION['inscription']);
-
-    // connexion bdd
-    require_once('../php/connexion.php');
+//creation de session
+session_start();
+//print_r($_SESSION['inscription']);
+// connexion bdd
+require_once('../php/connexion.php');
 ?>
 
 <!doctype html>

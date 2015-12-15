@@ -1,8 +1,8 @@
 
 <?php
-if ( isset ($_SESSION["inscription"])) {
-    unset($_SESSION["inscription"]);
-}
+// destruction de session inscription
+require_once('php/function.php');
+destructionSessionInscription();
 // connexion bdd
 require_once('php/connexion.php');
 

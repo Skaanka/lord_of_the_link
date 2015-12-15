@@ -1,15 +1,9 @@
 <?php
-    // si une $_SESSION["inscription"] existe alors elle est détruite ! KABOUM
-    if ( isset ($_SESSION["inscription"])) {
-        unset($_SESSION["inscription"]);
-    }
-
-    //creation session
-    session_start();
-    //print_r($_SESSION['inscription']);
-
-    // connexion bdd
-    require_once('../php/connexion.php');
+//creation de session
+session_start();
+//print_r($_SESSION['inscription']);
+// connexion bdd
+require_once('../php/connexion.php');
 ?>
 
 <!doctype html>

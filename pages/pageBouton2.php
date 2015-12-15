@@ -1,6 +1,6 @@
 <?php
-    // connexion bdd
-    require_once('php/connexion.php');
+// connexion bdd
+require_once('php/connexion.php');
 
 
 // choix du fichier function
@@ -12,9 +12,14 @@ if ( isset($url["divCat"]) ) {
     
 } elseif ( isset($url["resCat"]) ) {
     require_once('php/functionResSoc.php');
-}
+    
+} 
+
+
 
 // fonction switch categorie recherche
+
+    //affiche les divertissements
     if ( isset($url["divCat"]) ) {
         $i = $url["divCat"] ;
         switch ($url["divCat"]) {
@@ -38,7 +43,8 @@ if ( isset($url["divCat"]) ) {
                 break;
         } 
             echo $main;
-        
+    
+    //affiche les réseaux pro
     }  elseif ( isset($url["proCat"]) ) {
                 $i = $url["proCat"] ;
                 switch ($url["proCat"]) {
@@ -60,6 +66,7 @@ if ( isset($url["divCat"]) ) {
                 } 
                     echo $main;
         
+    //affiche les réseaux sociaux
     }  elseif ( isset($url["resCat"]) ) {
                 $i = $url["resCat"] ;
                 switch ($url["resCat"]) {

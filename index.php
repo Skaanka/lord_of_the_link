@@ -210,19 +210,19 @@ if(isset($_GET["query"])) {
                 $i = $url["divCat"] ;
                 switch ($url["divCat"]) {
                     case 0: // affiche le profil perso
-                        $main = "pages/#.php";
+                        $main = "pages/pageBouton.php";
                         break;
                     case 1: // affiche le parcour pro
-                        $main = "pages/#.php";
+                        $main = "pages/pageBouton.php";
                         break;
                     case 2: // affiche les reseaux sociaux
-                        $main = "pages/#.php";
+                        $main = "pages/pageBouton.php";
                         break;
                     case 3: // affiche le parcour pro
-                        $main = "pages/#.php";
+                        $main = "pages/pageBouton.php";
                         break;
                     case 4: // affiche les reseaux sociaux
-                        $main = "pages/#.php";
+                        $main = "pages/pageBouton.php";
                         break;
                     default: // la page par défaut
                         $main = "pages/pageProfilPerso.php";
@@ -233,34 +233,34 @@ if(isset($_GET["query"])) {
                 $i = $url["proCat"] ;
                 switch ($url["proCat"]) {
                     case 0: // affiche le profil perso
-                        $main = "pages/#.php";
+                        $main = "pages/pageBouton.php";
                         break;
                     case 1: // affiche le parcour pro
-                        $main = "pages/#.php";
+                        $main = "pages/pageBouton.php";
                         break;
                     case 2: // affiche les reseaux sociaux
-                        $main = "pages/#.php";
+                        $main = "pages/pageBouton.php";
                         break;
                     case 3: // affiche le parcour pro
-                        $main = "pages/#.php";
+                        $main = "pages/pageBouton.php";
                         break;
                     case 4: // affiche les reseaux sociaux
-                        $main = "pages/#.php";
+                        $main = "pages/pageBouton.php";
                         break;
                     case 5: // affiche les reseaux sociaux
-                        $main = "pages/#.php";
+                        $main = "pages/pageBouton.php";
                         break;
                     case 6: // affiche les reseaux sociaux
-                        $main = "pages/#.php";
+                        $main = "pages/pageBouton.php";
                         break;
                     case 7: // affiche les reseaux sociaux
-                        $main = "pages/#.php";
+                        $main = "pages/pageBouton.php";
                         break;
                     case 8: // affiche les reseaux sociaux
-                        $main = "pages/#.php";
+                        $main = "pages/pageBouton.php";
                         break;
                     case 9: // affiche les reseaux sociaux
-                        $main = "pages/#.php";
+                        $main = "pages/pageBouton.php";
                         break;
                     default: // la page par défaut
                         $main = "pages/pageProfilPerso.php";
@@ -274,19 +274,19 @@ if(isset($_GET["query"])) {
                         $main = "pages/#.php";
                         break;
                     case 1: // affiche le parcour pro
-                        $main = "pages/#.php";
+                        $main = "pages/pageBouton.php";
                         break;
                     case 2: // affiche les reseaux sociaux
-                        $main = "pages/#.php";
+                        $main = "pages/pageBouton.php";
                         break;
                     case 3: // affiche le parcour pro
-                        $main = "pages/#.php";
+                        $main = "pages/pageBouton.php";
                         break;
                     case 4: // affiche les reseaux sociaux
-                        $main = "pages/#.php";
+                        $main = "pages/pageBouton.php";
                         break;
                     case 5: // affiche les reseaux sociaux
-                        $main = "pages/#.php";
+                        $main = "pages/pageBouton.php";
                         break;
                     default: // la page par défaut
                         $main = "pages/pageProfilPerso.php";

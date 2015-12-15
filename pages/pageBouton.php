@@ -1,22 +1,14 @@
-
 <?php
-if ( isset ($_SESSION["inscription"])) {
-    unset($_SESSION["inscription"]);
-}
-// connexion bdd
-require_once('php/connexion.php');
+    // destruction de $_SESSION["inscription"] si elle existe
+    if ( isset ($_SESSION["inscription"])) {
+        unset($_SESSION["inscription"]);
+    }
+    
+    //creation de session
+    session_start();
 
-
-?>
-
-<?php
-//affichage des membres
-    //print_r($params);
-    global $db, $params;
-
-    $affichageMembre = $db->prepare('SELECT * FROM membres WHERE id = ? '); /* TODO (pour Greg) Je te laisse le soin de modifier la requète pour la bonne table (François 13/12/15) */
-    $affichageMembre->execute(array($_GET['query']));
-    $value = $affichageMembre->fetch();
+    // connexion bdd
+    require_once('php/connexion.php');
 ?>
 
    

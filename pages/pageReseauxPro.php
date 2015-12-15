@@ -22,14 +22,21 @@ $value = $affichageMembre->fetch();
     <h2> <?php echo htmlspecialchars($value["prenom"])  ?> est présent(e) sur ces réseaux pro. </h2>
 </div>
 
+<?php
+//affichage des identifiant jeux online
+$urlId = $_GET['query']; //recuperation de l'id de l'utilisateur 
 
+$affichageMembreReseauxPro = $db->query('SELECT * FROM pro WHERE id_membres =' . $urlId );
+                
+while ($value = $affichageMembreReseauxPro->fetch()) { //debut de la boucle
+?>
 <div class="row rowPage col-md-10" >
     <div class="col-md-5 infoPage">
         <img class="iconsPage col-md-2" src="img/icons/linkedin_logo.png">
         <label for="linkedin" class="col-sm-6 labelPage">LinkedIn</label>
         <div class="well well-sm col-md-8">
           <div class="" id="linkedin">
-            adresse compte LinkedIn
+            <?php echo $value['linkedin']; ?>
           </div>
         </div>
     </div>
@@ -39,7 +46,7 @@ $value = $affichageMembre->fetch();
         <label for="viadeo" class="col-sm-6 labelPage">Viadeo</label>
         <div class="well well-sm col-md-8">
           <div class="" id="viadeo">
-            adresse compte Viadeo
+            <?php echo $value['viadeo']; ?>
           </div>
         </div>
     </div>
@@ -51,7 +58,7 @@ $value = $affichageMembre->fetch();
         <label for="xing" class="col-sm-6 labelPage">Xing</label>
         <div class="well well-sm col-md-8">
           <div class="" id="xing">
-            adresse compte Xing
+            <?php echo $value['xing']; ?>
           </div>
         </div>
     </div>
@@ -61,7 +68,7 @@ $value = $affichageMembre->fetch();
         <label for="muxy" class="col-sm-6 labelPage">Muxy</label>
         <div class="well well-sm col-md-8">
           <div class="" id="muxy">
-            adresse compte Muxy
+            <?php echo $value['muxi']; ?>
           </div>
         </div>
     </div>
@@ -73,8 +80,12 @@ $value = $affichageMembre->fetch();
         <label for="github" class="col-sm-6 labelPage">GitHub</label>
         <div class="well well-sm col-md-8">
           <div class="" id="github">
-            adresse compte Github
+            <?php echo $value['github']; ?>
           </div>
         </div>
     </div>    
 </div>
+<?php
+}// fin de la boucle
+$affichageMembreReseauxPro->closeCursor();
+?>

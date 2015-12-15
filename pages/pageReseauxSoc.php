@@ -23,13 +23,21 @@ $value = $affichageMembre->fetch();
     <h2>Les réseaux sociaux que <?php echo htmlspecialchars($value["prenom"])  ?> fréquente : </h2>
 </div>
 
+<?php
+//affichage des identifiant jeux online
+$urlId = $_GET['query']; //recuperation de l'id de l'utilisateur 
+
+$affichageMembreReseauxSoc = $db->query('SELECT * FROM reseaux WHERE id_membres =' . $urlId );
+                
+while ($value = $affichageMembreReseauxSoc->fetch()) { //debut de la boucle
+?>
 <div class="row rowPage col-md-10" >
     <div class="col-md-5 infoPage">
         <img class="iconsPage col-md-2" src="img/icons/FB_logo.png">
         <label for="facebook" class="col-sm-6 labelPage">Facebook</label>
         <div class="well well-sm col-md-8">
           <div class="" id="facebook">
-            compte Facebook
+            <?php echo $value['facebook']; ?>
           </div>
         </div>
     </div>
@@ -39,7 +47,7 @@ $value = $affichageMembre->fetch();
         <label for="twitter" class="col-sm-6 labelPage">Twitter</label>
         <div class="well well-sm col-md-8">
           <div class="" id="twitter">
-            compte Twitter
+            <?php echo $value['twitter']; ?>
           </div>
         </div>
     </div>
@@ -51,7 +59,7 @@ $value = $affichageMembre->fetch();
         <label for="youtube" class="col-sm-6 labelPage">Youtube</label>
         <div class="well well-sm col-md-8">
           <div class="" id="youtube">
-            compte Youtube
+            <?php echo $value['youtube']; ?>
           </div>
         </div>
     </div>
@@ -61,7 +69,7 @@ $value = $affichageMembre->fetch();
         <label for="google+" class="col-sm-6 labelPage">Google+</label>
         <div class="well well-sm col-md-8">
           <div class="" id="google+">
-            compte Google+
+            <?php echo $value['google']; ?>
           </div>
         </div>
     </div>
@@ -73,7 +81,7 @@ $value = $affichageMembre->fetch();
         <label for="skype" class="col-sm-6 labelPage">Skype</label>
         <div class="well well-sm col-md-8">
           <div class="" id="skype">
-            compte Skype
+            <?php echo $value['skype']; ?>
           </div>
         </div>
     </div>
@@ -83,7 +91,7 @@ $value = $affichageMembre->fetch();
         <label for="instagram" class="col-sm-6 labelPage">Instagram</label>
         <div class="well well-sm col-md-8">
           <div class="" id="instagram">
-            compte Instagram
+            <?php echo $value['instagram']; ?>
           </div>
         </div>
     </div>
@@ -95,7 +103,7 @@ $value = $affichageMembre->fetch();
         <label for="pinterest" class="col-sm-6 labelPage">Pinterest</label>
         <div class="well well-sm col-md-8">
           <div class="" id="pinterest">
-            compte Pinterest
+            <?php echo $value['pinterest']; ?>
           </div>
         </div>
     </div>
@@ -105,7 +113,7 @@ $value = $affichageMembre->fetch();
         <label for="deezer" class="col-sm-6 labelPage">Deezer</label>
         <div class="well well-sm col-md-8">
           <div class="" id="deezer">
-            compte Deezer
+            <?php echo $value['deezer']; ?>
           </div>
         </div>
     </div>
@@ -117,7 +125,7 @@ $value = $affichageMembre->fetch();
         <label for="spotify" class="col-sm-6 labelPage">Spotify</label>
         <div class="well well-sm col-md-8">
           <div class="" id="spotify">
-            compte Spotify
+            <?php echo $value['spotify']; ?>
           </div>
         </div>
     </div>
@@ -127,9 +135,12 @@ $value = $affichageMembre->fetch();
         <label for="viber" class="col-sm-6 labelPage">Viber</label>
         <div class="well well-sm col-md-8">
           <div class="" id="viber">
-            compte Twitter
+            <?php echo $value['viber']; ?>
           </div>
         </div>
     </div>
 </div>
-
+<?php
+}// fin de la boucle
+$affichageMembreReseauxSoc->closeCursor();
+?>

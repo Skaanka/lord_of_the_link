@@ -64,7 +64,7 @@
                 
             } else {
                 echo "Erreur : echec de l'inscription !";
-                header("Location: formulaire.php");
+                //header("Location: formulaire.php");
             }
             
         } // fin if ($_POST)

@@ -14,9 +14,9 @@ global $db, $params;
 $affichageMembre = $db->prepare('SELECT * FROM membres WHERE id = ? ');
 $affichageMembre->execute(array($_GET['query']));
 $value = $affichageMembre->fetch();
+
+print_r($_GET["query"]);
 ?>
-
-
 
 
 <div class="col-md-10 col-md-offset-2" id="titrePage">
@@ -24,13 +24,22 @@ $value = $affichageMembre->fetch();
     <h2> <?php echo htmlspecialchars($value["prenom"])  ?> utilise ces plateformes de jeux online : </h2> 
 </div>
 
+<?php
+//affichage des identifiant jeux online
+$urlId = $_GET['query']; //recuperation de l'id de l'utilisateur 
+
+$affichageMembreDivertissements = $db->query('SELECT * FROM divertissements WHERE id_membres =' . $urlId );
+                
+while ($value = $affichageMembreDivertissements->fetch()) { //debut de la boucle
+?>
+
 <div class="row rowPage col-md-10">
     <div class="col-md-5 infoPage">
         <img class="iconsPage col-md-2" src="img/icons/PSN_logo.png">
         <label for="psn" class="col-sm-6 labelPage">PSN</label>
         <div class="well well-sm col-md-8">
           <div class="" id="psn">
-            adresse compte psn
+            <?php echo $value['psn']; ?>
           </div>
         </div>
     </div>
@@ -40,7 +49,7 @@ $value = $affichageMembre->fetch();
         <label for="xbox" class="col-sm-6 labelPage">XboxLive</label>
         <div class="well well-sm col-md-8">
           <div class="" id="xbox">
-            adresse compte xboxlive
+            <?php echo $value['xboxlive']; ?>
           </div>
         </div>
     </div>
@@ -52,7 +61,7 @@ $value = $affichageMembre->fetch();
         <label for="steam" class="col-sm-6 labelPage">Steam</label>
         <div class="well well-sm col-md-8">
           <div class="" id="steam">
-            adresse compte Steam
+            <?php echo $value['steam']; ?>
           </div>
         </div>
     </div>
@@ -62,7 +71,7 @@ $value = $affichageMembre->fetch();
         <label for="battlenet" class="col-sm-6 labelPage">Battle.net</label>
         <div class="well well-sm col-md-8">
           <div class="" id="battlenet">
-            adresse Battle.net
+            <?php echo $value['battlenet']; ?>
           </div>
         </div>
     </div>
@@ -74,7 +83,7 @@ $value = $affichageMembre->fetch();
         <label for="origin" class="col-sm-6 labelPage">Origin</label>
         <div class="well well-sm col-md-8">
           <div class="" id="origin">
-            adresse compte Origin
+            <?php echo $value['origin']; ?>
           </div>
         </div>
     </div>
@@ -84,11 +93,14 @@ $value = $affichageMembre->fetch();
         <label for="nintendo" class="col-sm-6 labelPage">Nintendo</label>
         <div class="well well-sm col-md-8">
           <div class="" id="nintendo">
-            adresse compte Nintendo
+            <?php echo $value['compte_nintendo']; ?>
           </div>
         </div>
     </div>
 </div>
-
+<?php
+}// fin de la boucle
+$affichageMembreDivertissements->closeCursor();
+?>
 
 

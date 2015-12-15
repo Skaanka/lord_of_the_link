@@ -74,7 +74,7 @@ if(isset($_GET["query"])) {
         
         
         <!-- menu navbar en dropdown -->
-        <div class="row col-md-8 col-md-offset-2" id="menu-nav">
+        <div class="row col-md-8 col-md-offset-2" id="menu-nav" name="navbar">
             
             <div class="btn-group">
                 <a href="index.php">
@@ -146,7 +146,7 @@ if(isset($_GET["query"])) {
                 $affichageMembre = $db->query('SELECT id, prenom, nom FROM membres');
                 while ($value = $affichageMembre->fetch()) {
                 ?>
-                <li id="animated-example" class="animated fadeInLeft"><a href="index.php<?php echo "?query=" .$value['id'] . "&" . "cat=" . 0 ; ?>"><?php echo htmlspecialchars($value["prenom"]) . " " . htmlspecialchars($value["nom"]) ?></a></li>
+                <li id="animated-example" class="animated fadeInLeft scroll"><a id="scroll" href="index.php<?php echo "?query=" .$value['id'] . "&" . "cat=" . 0 ; ?>"><?php echo htmlspecialchars($value["prenom"]) . " " . htmlspecialchars($value["nom"]) ?></a></li>
                 <?php
                 }
                 $affichageMembre->closeCursor();
@@ -332,6 +332,5 @@ if(isset($_GET["query"])) {
         <script src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
         
-
     </body>
 </html>

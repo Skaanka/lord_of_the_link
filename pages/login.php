@@ -11,17 +11,13 @@ try {
         
         if(!empty($_POST['mail'] && $_POST['mot_de_passe'])) {
             
-            // recupere le profil de l'utilisateur connecté dans la table membres
-            $login = $db->prepare('SELECT * FROM membres WHERE mail= ?');
+            $login = $db->prepare('SELECT * FROM membres WHERE mail=?');
             $login ->execute(array($_POST["mail"]));
             $results = $login->fetch(PDO::FETCH_ASSOC);
             $login->closeCursor();
-            
-            
-            if ($results) { //ajouter les autres results
+
+            if ($results) {
                 if (password_verify($_POST['mot_de_passe'], $results['mot_de_passe']) ) {
-                    
-                    //recuperation profil general
                     $_SESSION['user']['id'] = $results['id'];
                     $_SESSION['user']['nom'] = $results['nom'];
                     $_SESSION['user']['prenom'] = $results['prenom'];
@@ -40,7 +36,7 @@ try {
                     $login_erreur = "pseudo ou mot de passe invalide!";
                     global $login_erreur;
                     $redirection = $_SERVER['HTTP_REFERER'] ;//. "?=" . $login_erreur ; // TODO sur la bonne piste // ! HTTP_REFERER ne serait pas fiable en terme de sécurité.
-                    header("Location: $redirection");
+                    header("Location: $redirection"); 
                 }
             } // fin du if ($results)
           
@@ -48,8 +44,6 @@ try {
             $login_erreur = "pseudo et/ou mot de passe manquant!";
             $redirection = $_SERVER['HTTP_REFERER'] ;//. "?=" . $login_erreur ; // TODO sur la bonne piste // ! HTTP_REFERER ne serait pas fiable en terme de sécurité.
             header("Location: $redirection"); 
-            echo "erreur" ;
-            
         }
         
     } 

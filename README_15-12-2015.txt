@@ -7,7 +7,6 @@ ne renvoie nul part (page à créer)
 Le profil perso s'affiche completement
 
 Les profil des membres inscrit s'affiche entierement 
-(manque un bouton dans l'aside droite pour retour profil general (reflexion en cour coté php)
 a faire: edition du profil (je propose d'attendre d'avoir un formulaire finie entierement 
 un copier coller suffit).
 
@@ -20,6 +19,5 @@ le bouton connexion et deconnexion fonctionne sans probleme
 les formulaire d'inscription :
 
 l'enregistrement fonctionne pour la creation d'un membre 
-(en test : boutton précédent, pour moi tout a l'air de bien fonctionner avec le boutton précédent[greg])
 
 supprimer la possibilité de connexion pendant l'inscription ?

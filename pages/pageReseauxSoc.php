@@ -13,13 +13,14 @@ global $db, $params;
 //affichage des membres
 $affichageMembre = $db->prepare('SELECT * FROM membres WHERE id = ? ');
 $affichageMembre->execute(array($_GET['query']));
-$value1 = $affichageMembre->fetch();
+$value = $affichageMembre->fetch();
 ?>
 
 
 
-<div>
-    <h2>Voici les réseaux sociaux que <?php echo htmlspecialchars($value1["prenom"])  ?> fréquente. </h2>
+<div class="col-md-10 col-md-offset-2" id="titrePage">
+    <img src="uploads/<?php echo $value['avatar']; ?>" id="avatarPage">
+    <h2>Les réseaux sociaux que <?php echo htmlspecialchars($value["prenom"])  ?> fréquente : </h2>
 </div>
 
 <?php
@@ -30,110 +31,110 @@ $affichageMembreReseauxSoc = $db->query('SELECT * FROM reseaux WHERE id_membres 
                 
 while ($value = $affichageMembreReseauxSoc->fetch()) { //debut de la boucle
 ?>
-<div class="row col-md-6 col-md-offset-3" id="rowName">
-    <div>
-        <img class="icons col-sm-2" src="img/icons/FB_logo.png">
-        <label for="facebook" class="col-sm-2">Facebook</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="facebook">
+<div class="row rowPage col-md-10" >
+    <div class="col-md-5 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/FB_logo.png">
+        <label for="facebook" class="col-sm-6 labelPage">Facebook</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="facebook">
             <?php echo $value['facebook']; ?>
           </div>
         </div>
     </div>
     
-    <div>
-        <img class="icons col-sm-2" src="img/icons/Twitter-logo.png">
-        <label for="Twitter" class="col-sm-2">Twitter</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="twitter">
+    <div class="col-md-5 col-md-offset-1 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/twitter-logo.png">
+        <label for="twitter" class="col-sm-6 labelPage">Twitter</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="twitter">
             <?php echo $value['twitter']; ?>
           </div>
         </div>
     </div>
 </div>
 
-<div class="row col-md-6 col-md-offset-3" id="rowName">
-    <div>
-        <img class="icons col-sm-2" src="img/icons/YouTube-logo.png">
-        <label for="Youtube" class="col-sm-2">YouTube</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="YouTube">
+<div class="row rowPage col-md-10" >
+    <div class="col-md-5 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/YouTube-logo.png">
+        <label for="youtube" class="col-sm-6 labelPage">Youtube</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="youtube">
             <?php echo $value['youtube']; ?>
           </div>
         </div>
     </div>
     
-    <div>
-        <img class="icons col-sm-2" src="img/icons/googleplus_logo.png">
-        <label for="google+" class="col-sm-2">Google+</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="ggogle+">
+    <div class="col-md-5 col-md-offset-1 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/googleplus_logo.png">
+        <label for="google+" class="col-sm-6 labelPage">Google+</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="google+">
             <?php echo $value['google']; ?>
           </div>
         </div>
     </div>
 </div>
 
-<div class="row col-md-6 col-md-offset-3" id="rowName">
-    <div>
-        <img class="icons col-sm-2" src="img/icons/Skype_logo.png">
-        <label for="skype" class="col-sm-2">Skype</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="skype">
+<div class="row rowPage col-md-10" >
+    <div class="col-md-5 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/skype_logo.png">
+        <label for="skype" class="col-sm-6 labelPage">Skype</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="skype">
             <?php echo $value['skype']; ?>
           </div>
         </div>
     </div>
     
-    <div>
-        <img class="icons col-sm-2" src="img/icons/instagram_logo.png">
-        <label for="instagram" class="col-sm-2">Instagram</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="instagram">
+    <div class="col-md-5 col-md-offset-1 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/instagram_logo.png">
+        <label for="instagram" class="col-sm-6 labelPage">Instagram</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="instagram">
             <?php echo $value['instagram']; ?>
           </div>
         </div>
     </div>
 </div>
 
-<div class="row col-md-6 col-md-offset-3" id="rowName">
-    <div>
-        <img class="icons col-sm-2" src="img/icons/pinterest-logo.png">
-        <label for="printerest" class="col-sm-2">Pinterest</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="pinterest">
+<div class="row rowPage col-md-10" >
+    <div class="col-md-5 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/pinterest-logo.png">
+        <label for="pinterest" class="col-sm-6 labelPage">Pinterest</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="pinterest">
             <?php echo $value['pinterest']; ?>
           </div>
         </div>
     </div>
     
-    <div>
-        <img class="icons col-sm-2" src="img/icons/Deezer_logo.png">
-        <label for="Deezer" class="col-sm-2">Deezer</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="deezer">
+    <div class="col-md-5 col-md-offset-1 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/deezer_logo.png">
+        <label for="deezer" class="col-sm-6 labelPage">Deezer</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="deezer">
             <?php echo $value['deezer']; ?>
           </div>
         </div>
     </div>
 </div>
 
-<div class="row col-md-6 col-md-offset-3" id="rowName">
-    <div>
-        <img class="icons col-sm-2" src="img/icons/Spotify_logo.png">
-        <label for="spotify" class="col-sm-2">Spotify</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="spotify">
+<div class="row rowPage col-md-10" >
+    <div class="col-md-5 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/spotify_logo.png">
+        <label for="spotify" class="col-sm-6 labelPage">Spotify</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="spotify">
             <?php echo $value['spotify']; ?>
           </div>
         </div>
     </div>
     
-    <div>
-        <img class="icons col-sm-2" src="img/icons/Viber-logo.png">
-        <label for="viber" class="col-sm-2">Viber</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="viber">
+    <div class="col-md-5 col-md-offset-1 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/viber-logo.png">
+        <label for="viber" class="col-sm-6 labelPage">Viber</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="viber">
             <?php echo $value['viber']; ?>
           </div>
         </div>
@@ -143,5 +144,3 @@ while ($value = $affichageMembreReseauxSoc->fetch()) { //debut de la boucle
 }// fin de la boucle
 $affichageMembreReseauxSoc->closeCursor();
 ?>
-
-

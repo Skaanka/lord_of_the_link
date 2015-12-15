@@ -14,11 +14,14 @@ global $db, $params;
 $affichageMembre = $db->prepare('SELECT * FROM membres WHERE id = ? ');
 $affichageMembre->execute(array($_GET['query']));
 $value = $affichageMembre->fetch();
+
+print_r($_GET["query"]);
 ?>
 
 
-<div>
-    <h2> <?php echo htmlspecialchars($value["prenom"])  ?> utilise ces plateformes de jeux online. </h2> <!-- TODO STYLE -->
+<div class="col-md-10 col-md-offset-2" id="titrePage">
+    <img src="uploads/<?php echo $value['avatar']; ?>"  id="avatarPage">
+    <h2> <?php echo htmlspecialchars($value["prenom"])  ?> utilise ces plateformes de jeux online : </h2> 
 </div>
 
 <?php
@@ -29,66 +32,67 @@ $affichageMembreDivertissements = $db->query('SELECT * FROM divertissements WHER
                 
 while ($value = $affichageMembreDivertissements->fetch()) { //debut de la boucle
 ?>
-<div class="row col-md-6 col-md-offset-3" id="rowName">
-    <div>
-        <img class="icons col-sm-2" src="img/icons/PSN_logo.png">
-        <label for="psn" class="col-sm-2">PSN</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="psn">
+
+<div class="row rowPage col-md-10">
+    <div class="col-md-5 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/PSN_logo.png">
+        <label for="psn" class="col-sm-6 labelPage">PSN</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="psn">
             <?php echo $value['psn']; ?>
           </div>
         </div>
     </div>
     
-    <div>
-        <img class="icons col-sm-2" src="img/icons/Xbox_logo.png">
-        <label for="xbox" class="col-sm-2">XboxLive</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="xbox">
+    <div class="col-md-5 col-md-offset-1 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/Xbox_logo.png">
+        <label for="xbox" class="col-sm-6 labelPage">XboxLive</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="xbox">
             <?php echo $value['xboxlive']; ?>
           </div>
         </div>
     </div>
 </div>
 
-<div class="row col-md-6 col-md-offset-3" id="rowName">
-    <div>
-        <img class="icons col-sm-2" src="img/icons/Steam_logo.png">
-        <label for="steam" class="col-sm-2">Steam</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="steam">
+<div class="row rowPage col-md-10 col-md-offset-2">
+    <div class="col-md-5 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/Steam_logo.png">
+        <label for="steam" class="col-sm-6 labelPage">Steam</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="steam">
             <?php echo $value['steam']; ?>
           </div>
         </div>
     </div>
     
-    <div>
-        <img class="icons col-sm-2" src="img/icons/Xbox_logo.png">
-        <label for="battlenet" class="col-sm-2">Battle.net</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="battlenet">
+    <div class="col-md-5 col-md-offset-1 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/battlenet_logo.png">
+        <label for="battlenet" class="col-sm-6 labelPage">Battle.net</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="battlenet">
             <?php echo $value['battlenet']; ?>
           </div>
         </div>
     </div>
 </div>
 
-<div class="row col-md-6 col-md-offset-3" id="rowName">
-    <div>
-        <img class="icons col-sm-2" src="img/icons/PSN_logo.png">
-        <label for="origin" class="col-sm-2">Origin</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="origin">
+<div class="row rowPage col-md-10 col-md-offset-2">
+    <div class="col-md-5 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/origin1_logo.png">
+        <label for="origin" class="col-sm-6 labelPage">Origin</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="origin">
             <?php echo $value['origin']; ?>
           </div>
         </div>
     </div>
     
-    <div>
-        <img class="icons col-sm-2" src="img/icons/Xbox_logo.png">
-        <label for="nintendo" class="col-sm-2">Nintendo</label>
-        <div class="panel panel-default">
-          <div class="panel-body" id="nintendo">
+    <div class="col-md-5  col-md-offset-1 infoPage">
+        <img class="iconsPage col-md-2" src="img/icons/nintendo_logo.png">
+        <label for="nintendo" class="col-sm-6 labelPage">Nintendo</label>
+        <div class="well well-sm col-md-8">
+          <div class="" id="nintendo">
             <?php echo $value['compte_nintendo']; ?>
           </div>
         </div>

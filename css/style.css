@@ -1,0 +1,292 @@
+
+
+body {
+    display: block;
+    background: url(../img/back_blue.jpg) no-repeat, center;
+    background-size: cover;
+    
+}
+
+#header {
+    background: url(../img/bandeau.jpg) no-repeat, fixed, center;
+    background-size: cover;
+    height: 400px;
+}
+
+#wrapper {
+    padding-top: 10em;
+    padding-bottom: 10em;
+    background: white;
+}
+
+#connexionbar {
+    padding: 8px;
+    background: black;
+}
+
+#connexion {
+    text-align: right;
+    font-size: 12px;
+}
+
+#menu-nav {
+    text-align: center;
+    background: grey;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: url(../img/decor01.jpg) no-repeat;
+    background-size: cover;
+}
+
+
+.iconMini {
+    height: auto;
+    width: 20px;
+}
+
+#home {
+    height: 18px;
+    width: auto;
+}
+
+
+#avatar {
+    float: left;
+}
+
+#avatarProfil {
+    height: 50px;
+    width: auto;
+}
+
+.rowProfil {
+    font-size: 24px;
+    font-family: 'Droid Sans', sans-serif;
+}
+
+.name {
+    font-size: 34px;
+}
+
+#rowName {
+    margin-top: 18em;
+}
+
+#avatarProfilName {
+    padding: 0;
+    height: 150px;
+    width: 150px;
+    border: 1px solid grey;
+    box-shadow: 5px 5px 5px grey;
+}
+
+#rowAdress {
+    margin-top: 4em;
+}
+
+#rowCom {
+    margin-top: 4em;
+}
+
+#espaceform {
+    padding-top: 5em;
+}
+
+#bouton {
+    padding-top: 4em;
+}
+
+#footer {
+    background: black;
+    height: 150px;
+}
+
+#diplomes {
+    text-align: center;
+}
+
+.panel-heading {
+    text-align: center;
+}
+
+.icons {
+    height: auto;
+    width: 90px;
+}
+
+.celSoc {
+    margin-top: 2%;
+}
+
+#sidebarMembres {
+    background: url(../img/bggrille.png);
+    color: white;
+    height: 1200px;
+}
+
+#membres {
+    list-style-type: none;
+}
+
+#membres li {
+    padding: 10px 0 10px 0;
+    border-bottom: 1px solid white;
+}
+
+
+/* Début animation membres*/
+/*============*/
+.animated:hover { 
+    -webkit-animation-duration: 0.2s; 
+    animation-duration: 0.2s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+    -webkit-animation-timing-function: ease-out; 
+    animation-timing-function: ease-out; 
+    background: white;
+    color: black;
+    font-size: 20px;
+    padding-left: 30px;
+} 
+
+@-webkit-keyframes fadeInLeft { 
+    0% { 
+        opacity: 0; 
+        -webkit-transform: translateX(-5px); 
+    } 
+    100% { 
+        opacity: 1; 
+        -webkit-transform: translateX(10px); 
+    } 
+} 
+@keyframes fadeInLeft { 
+    0% { 
+        opacity: 0; 
+        transform: translateX(-5px); 
+    } 
+    
+    100% { 
+        opacity: 1; 
+        transform: translateX(10px); 
+    } 
+} 
+.fadeInLeft:hover { 
+    -webkit-animation-name: fadeInLeft; 
+    animation-name: fadeInLeft; 
+}
+/* Fin animation membres*/
+/*============*/
+
+
+main {
+    background: url(../img/calepin.jpg) no-repeat;
+    background-size: cover;
+    height: 1200px;
+    overflow-x: hidden;
+}
+
+#sidebarCat {
+    position: absolute;
+    top: 400px;
+    right: 5px;
+    background: url(../img/post-it-note-orange-final.jpg) no-repeat;
+    background-size: contain;
+    height: 230px;
+    padding-top: 65px;
+    float: right;
+    transform: rotate(5deg) translateX(200px);
+    font-family: 'Indie Flower', cursive;
+    transition: all ease-in-out 0.3s 0s;
+}
+
+#sidebarCat:hover {
+    right: 190px;
+}
+
+#sidebarCat li{
+    padding-bottom: 0.5em;
+    list-style-type: none;
+    margin-left: -8%;
+    list-style-type: none;
+    font-size: 1.3em;
+}
+
+#sidebarCat a {
+    color: black;
+}
+
+
+/* Boutons déroulants */
+.dropdown-menu {
+    background: #9b9fa3;
+    font-weight: bold;
+}
+
+.dropdown-toggle {
+  background: #9b9fa3;
+  background-image: -webkit-linear-gradient(top, #9b9fa3, #0f0f0f);
+  background-image: -moz-linear-gradient(top, #9b9fa3, #0f0f0f);
+  background-image: -ms-linear-gradient(top, #9b9fa3, #0f0f0f);
+  background-image: -o-linear-gradient(top, #9b9fa3, #0f0f0f);
+  background-image: linear-gradient(to bottom, #9b9fa3, #0f0f0f);
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 5px 10px 5px 10px;
+  border: solid #c4c4c4 2px;
+  text-decoration: none;
+}
+
+.dropdown-toggle:hover {
+  background:#e3e3e3;
+  background-image: -webkit-linear-gradient(top, #e3e3e3, #45535c);
+  background-image: -moz-linear-gradient(top, #e3e3e3, #45535c);
+  background-image: -ms-linear-gradient(top, #e3e3e3, #45535c);
+  background-image: -o-linear-gradient(top, #e3e3e3, #45535c);
+  background-image: linear-gradient(to bottom, #e3e3e3, #45535c);
+  text-decoration: none;
+}
+/* fin de boutons déroulants*/
+
+#titrePage {
+    margin-top: 20%;
+    font-family: 'Droid Sans', sans-serif;
+}
+
+.rowPage {
+    /*border: 1px solid black;*/
+    height: 6%;
+    margin-top: 5%;
+    margin-left: 12%;
+}
+
+.iconsPage {
+    margin-top: 5%;
+    height: auto;
+    width: 80px;
+}
+
+.labelPage {
+    margin-top: 2%;
+}
+
+.well {
+    margin-bottom: 3%;
+    box-shadow: 1px 1px 4px;
+    border: 1px solid grey;
+}
+
+.infoPage {
+    box-shadow: 3px 3px 4px grey;
+    border-radius: 5px;
+    background: #afbdbf;
+}
+
+#avatarPage {
+    margin-left: 30%;
+    padding: 0;
+    height: 150px;
+    width: 150px;
+    border: 1px solid grey;
+    box-shadow: 5px 5px 5px grey;
+}

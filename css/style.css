@@ -29,6 +29,16 @@ body {
     font-size: 12px;
 }
 
+#wellcome {
+    color: white;
+}
+
+.glyphicon-ok-sign {
+    color: #01a801;
+    font-size: 20px;
+    top: 6px;
+}
+
 #menu-nav {
     text-align: center;
     background: grey;

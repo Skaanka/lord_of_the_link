@@ -7,7 +7,8 @@
 	(OK ajouter)
 
 
-- finaliser l'apparence message/bouton quand connecter en haut de l'écran (+ point vert)
+- finaliser l'apparence message/bouton quand connecter en haut de l'écran (+ point vert)	
+	(OK)
 
 
 - Fixer le post-it en haut de page. 
@@ -33,3 +34,6 @@
 
 
 - poser un scrollspy/ ancrage sur menu quand on sort un profil a consulter
+
+
+- mini bouton "copier" dans la fenetre des ID de compte

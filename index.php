@@ -152,7 +152,7 @@ require_once('php/requete/functionRequete.php');
             <?php
             include('php/switchIndex.php'); // affichage du contenu de la page index.
             
-            if (isset($url["cat"])) { //perd le param query lors de l'affichage d'une page profil !
+            if (isset($url["cat"])) { 
                 affichageMembre();
             ?>
             <div id="sidebarCat" class="col-md-3 ">

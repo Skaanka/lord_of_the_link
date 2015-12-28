@@ -50,20 +50,26 @@ $affichageMembreDivertissements = $db->query('SELECT * FROM divertissements WHER
 $value = $affichageMembreDivertissements->fetch(); //creation d'un tableau 
 //print_r($value); //enlever le commentaire pour voir le tableau
 
+$tableauTitre = array('', '', 'Psn', 'Xbox-Live', 'Steam', 'Battle net', 'Nintendo', 'Origin'); // on créer un tableau pour le titre des section.
+
+?>
+<div class="row rowPage col-md-10"> <!-- la fameuse div que je souhaiterai unique -->
+    
+<?php
 for ($i = 2; $i <= 7; $i++) { //la boucle qui va parcourir le tableau, ici $i est la valeur du tableau (2 pour psn, 3 pour xboxlive, ...? 7 pour origin)
 ?>
 
-<div class="row rowPage col-md-10">
+
     <div class="col-md-5 infoPage">
         <img class="iconsPage col-md-2" src="../../img/icons/<?php echo $value[$i]; ?>_logo.png">
-        <label for="<?php echo $value[$i]; ?>" class="col-sm-6 labelPage"><?php echo ucfirst($value[$i]); ?></label>
+        <label for="<?php echo $value[$i]; ?>" class="col-sm-6 labelPage"><?php echo ucfirst($tableauTitre[$i]); ?></label>
         <div class="well well-sm col-md-8">
           <div class="" id="<?php echo $value[$i]; ?>">
             <?php echo $value[$i]; ?>
           </div>
         </div>
     </div>
-</div>
+
 
 
 <?php
@@ -71,5 +77,9 @@ for ($i = 2; $i <= 7; $i++) { //la boucle qui va parcourir le tableau, ici $i es
 
 //note perso sur la proposition: necessite de renommer toute les image en psn_logo.png, xboxlive_logo.png, steam_logo.png, battlenet_png, ...
 ?>
+</div><!-- fin de la fameuse div que je souhaiterai unique -->
+        
+        
+        
     </body>
 </html>

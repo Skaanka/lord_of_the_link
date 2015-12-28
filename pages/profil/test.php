@@ -57,7 +57,10 @@ $tableauTitre = array('', '', 'Psn', 'Xbox-Live', 'Steam', 'Battle net', 'Ninten
     
 <?php
 for ($i = 2; $i <= 7; $i++) { //la boucle qui va parcourir le tableau, ici $i est la valeur du tableau (2 pour psn, 3 pour xboxlive, ...? 7 pour origin)
+    
+    if (!empty($value[$i])) {  // si les données existe dans la bdd                                           
 ?>
+
 
 
     <div class="col-md-5 infoPage">
@@ -73,6 +76,7 @@ for ($i = 2; $i <= 7; $i++) { //la boucle qui va parcourir le tableau, ici $i es
 
 
 <?php
+    } // fin du if
 } //fin de la boucle
 
 //note perso sur la proposition: necessite de renommer toute les image en psn_logo.png, xboxlive_logo.png, steam_logo.png, battlenet_png, ...

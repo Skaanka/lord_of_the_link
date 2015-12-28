@@ -29,6 +29,8 @@ $urlId = $_SESSION['user']['id']; //recuperation de l'id de l'utilisateur
 $affichageXpPro = $db->query('SELECT * FROM diplomes WHERE id_membres =' . $urlId );
                 
 while ($value = $affichageXpPro->fetch()) { //debut de la boucle
+    
+    if ( !empty($value['annees_obt'] &&!empty($value['intitule'] && !empty($value['ecole']) ) {                                              
 ?>
 <div class="row col-md-8 col-md-offset-2">
     <p class="col-md-2 col-md-offset-1">Années d'obt. <?php echo $value['annees_obt']; ?></p>
@@ -36,6 +38,7 @@ while ($value = $affichageXpPro->fetch()) { //debut de la boucle
     <p class="col-md-2 col-md-offset-1">Ecole <?php echo $value['ecole']; ?></p>
 </div>
 <?php
+    }
 }// fin de la boucle
 $affichageXpPro->closeCursor();
 ?>

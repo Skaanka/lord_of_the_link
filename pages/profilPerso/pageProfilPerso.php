@@ -46,5 +46,3 @@ global $db, $params;
     <p class="col-md-2 col-md-offset-1"><?php echo htmlspecialchars($_SESSION['user']["phone"])  ?></p>
     <p class="col-md-2 col-md-offset-1"><?php echo htmlspecialchars($_SESSION['user']["siteWeb"])  ?></p>
 </div>
-
-

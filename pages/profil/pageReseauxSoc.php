@@ -20,7 +20,6 @@ $value = $affichageMembre->fetch();
     <img src="uploads/<?php echo $value['avatar']; ?>" id="avatarPage">
     <h2>Les réseaux sociaux que <?php echo htmlspecialchars($value["prenom"])  ?> fréquente : </h2>
 </div>
-b 
 <?php
 //affichage des identifiant jeux online
 $urlId = $_GET['query']; //recuperation de l'id de l'utilisateur 
@@ -30,6 +29,10 @@ $affichageMembreReseauxSoc = $db->query('SELECT * FROM reseaux WHERE id_membres 
 while ($value = $affichageMembreReseauxSoc->fetch()) { //debut de la boucle
 ?>
 <div class="row rowPage col-md-10" >
+    
+    <?php
+    if (!empty($value['facebook'])) {                                             
+    ?>
     <div class="col-md-5 infoPage">
         <img class="iconsPage col-md-2" src="img/icons/FB_logo.png">
         <label for="facebook" class="col-sm-6 labelPage">Facebook</label>
@@ -39,7 +42,11 @@ while ($value = $affichageMembreReseauxSoc->fetch()) { //debut de la boucle
           </div>
         </div>
     </div>
-    
+    <?php
+    }                                             
+   
+    if (!empty($value['twitter'])) {                                             
+    ?>
     <div class="col-md-5 col-md-offset-1 infoPage">
         <img class="iconsPage col-md-2" src="img/icons/twitter-logo.png">
         <label for="twitter" class="col-sm-6 labelPage">Twitter</label>
@@ -49,9 +56,16 @@ while ($value = $affichageMembreReseauxSoc->fetch()) { //debut de la boucle
           </div>
         </div>
     </div>
+    <?php
+    }                                             
+    ?>
 </div>
 
 <div class="row rowPage col-md-10" >
+    
+    <?php
+    if (!empty($value['youtube'])) {                                             
+    ?>
     <div class="col-md-5 infoPage">
         <img class="iconsPage col-md-2" src="img/icons/YouTube-logo.png">
         <label for="youtube" class="col-sm-6 labelPage">Youtube</label>
@@ -61,7 +75,11 @@ while ($value = $affichageMembreReseauxSoc->fetch()) { //debut de la boucle
           </div>
         </div>
     </div>
-    
+    <?php
+    }                                             
+   
+    if (!empty($value['google'])) {                                             
+    ?>
     <div class="col-md-5 col-md-offset-1 infoPage">
         <img class="iconsPage col-md-2" src="img/icons/googleplus_logo.png">
         <label for="google+" class="col-sm-6 labelPage">Google+</label>
@@ -71,9 +89,16 @@ while ($value = $affichageMembreReseauxSoc->fetch()) { //debut de la boucle
           </div>
         </div>
     </div>
+    <?php
+    }                                             
+    ?>
 </div>
 
 <div class="row rowPage col-md-10" >
+    
+    <?php
+    if (!empty($value['skype'])) {                                             
+    ?>
     <div class="col-md-5 infoPage">
         <img class="iconsPage col-md-2" src="img/icons/skype_logo.png">
         <label for="skype" class="col-sm-6 labelPage">Skype</label>
@@ -83,7 +108,11 @@ while ($value = $affichageMembreReseauxSoc->fetch()) { //debut de la boucle
           </div>
         </div>
     </div>
-    
+    <?php
+    }                                             
+   
+    if (!empty($value['instagram'])) {                                             
+    ?>
     <div class="col-md-5 col-md-offset-1 infoPage">
         <img class="iconsPage col-md-2" src="img/icons/instagram_logo.png">
         <label for="instagram" class="col-sm-6 labelPage">Instagram</label>
@@ -93,9 +122,16 @@ while ($value = $affichageMembreReseauxSoc->fetch()) { //debut de la boucle
           </div>
         </div>
     </div>
+    <?php
+    }                                             
+    ?>
 </div>
 
 <div class="row rowPage col-md-10" >
+    
+    <?php
+    if (!empty($value['pinterest'])) {                                             
+    ?>
     <div class="col-md-5 infoPage">
         <img class="iconsPage col-md-2" src="img/icons/pinterest-logo.png">
         <label for="pinterest" class="col-sm-6 labelPage">Pinterest</label>
@@ -105,7 +141,11 @@ while ($value = $affichageMembreReseauxSoc->fetch()) { //debut de la boucle
           </div>
         </div>
     </div>
-    
+    <?php
+    }                                             
+   
+    if (!empty($value['deezer'])) {                                             
+    ?>
     <div class="col-md-5 col-md-offset-1 infoPage">
         <img class="iconsPage col-md-2" src="img/icons/deezer_logo.png">
         <label for="deezer" class="col-sm-6 labelPage">Deezer</label>
@@ -115,9 +155,16 @@ while ($value = $affichageMembreReseauxSoc->fetch()) { //debut de la boucle
           </div>
         </div>
     </div>
+    <?php
+    }                                             
+    ?>
 </div>
 
 <div class="row rowPage col-md-10" >
+    
+    <?php
+    if (!empty($value['spotify'])) {                                             
+    ?>
     <div class="col-md-5 infoPage">
         <img class="iconsPage col-md-2" src="img/icons/spotify_logo.png">
         <label for="spotify" class="col-sm-6 labelPage">Spotify</label>
@@ -127,7 +174,11 @@ while ($value = $affichageMembreReseauxSoc->fetch()) { //debut de la boucle
           </div>
         </div>
     </div>
-    
+    <?php
+    }                                             
+   
+    if (!empty($value['viber'])) {                                             
+    ?>
     <div class="col-md-5 col-md-offset-1 infoPage">
         <img class="iconsPage col-md-2" src="img/icons/viber-logo.png">
         <label for="viber" class="col-sm-6 labelPage">Viber</label>
@@ -137,6 +188,9 @@ while ($value = $affichageMembreReseauxSoc->fetch()) { //debut de la boucle
           </div>
         </div>
     </div>
+    <?php
+    }                                             
+    ?>
 </div>
 <?php
 }// fin de la boucle

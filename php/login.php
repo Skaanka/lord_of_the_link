@@ -1,7 +1,5 @@
 <?php
-// destruction de session inscription
-require_once('php/function.php');
-destructionSessionInscription();
+require_once('../php/function.php');
 //creation de session
 session_start();
 //connexion a la bdd
@@ -52,7 +50,7 @@ try {
     
 } catch(PDOException $ex) {
         echo "erreur try !";
-    }
+}
 
 
 

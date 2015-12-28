@@ -1,5 +1,4 @@
 <?php
-
 // Connexion a la base de donnees
 try {
     $user = 'root';
@@ -13,4 +12,3 @@ try {
     echo "erreur connexion !";
 }
 
-?>

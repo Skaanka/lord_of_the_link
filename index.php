@@ -1,24 +1,15 @@
 <?php
 // detruit la session inscription si elle existe
-    if ( isset ($_SESSION["inscription"])) {
-        unset($_SESSION["inscription"]);
-    }
+require_once('php/function.php');
+destructionSessionInscription();
 //print_r($_SESSION["inscription"]);
+
 //creation de session
 session_start();
-
 // connexion bdd
 require_once('php/connexion.php');
-
-// recuperation dans l'url
-if(isset($_GET["query"])) {
-    $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    $query  = parse_url($actual_link)["query"];
-    //echo $query;
-    parse_str($query, $params);
-    //print_r($params);
-    //echo $params["test"];
-}
+//parser
+require_once('php/parser.php');
 
 ?>
 
@@ -45,7 +36,7 @@ if(isset($_GET["query"])) {
                         <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> 
                         <label for="profil" id="wellcome">&nbsp; Bienvenue <?php echo $_SESSION['user']['prenom'] . " " . $_SESSION['user']['nom'] ; ?> &nbsp;</label> <!-- TODO STYLE ECHO NOM PRENOM -->
                         <input type="submit" id="profil" class="btn-xs dropdown-toggle" name="profil" value="profil" formaction="index.php<?php echo "?query=" .$_SESSION['user']['id'] . "&" . "pCat=" . 0 ; ?>"> <!--TODO affichage profil utilisateur -->
-                        <input type="submit" class="btn-xs dropdown-toggle" name="deconnexion" value="déconnexion" formaction="pages/logoff.php">
+                        <input type="submit" class="btn-xs dropdown-toggle" name="deconnexion" value="déconnexion" formaction="php/logoff.php">
                     </div>
                 <?php
                 } elseif ( empty($_SESSION['user']) )  {
@@ -59,8 +50,8 @@ if(isset($_GET["query"])) {
                         <input type="password" class="" id="password" placeholder="Password" name="mot_de_passe">
                     </div>
 
-                     <input type="submit" class="dropdown-toggle" name="connexion" value="connexion" formaction="pages/login.php">
-                    <input type="submit" class="dropdown-toggle" name="" formaction="pages/formulaire.php" value="Inscription">
+                     <input type="submit" class="dropdown-toggle" name="connexion" value="connexion" formaction="php/login.php">
+                    <input type="submit" class="dropdown-toggle" name="" formaction="pages/formulaire/formulaire.php" value="Inscription">
                 <?php
                     //echo $login_erreur; // TODO affiche message d'erreur : "erreur email ou mot de passe, veuillez réessayer" 
                 }
@@ -173,19 +164,19 @@ if(isset($_GET["query"])) {
                 $i = $url["cat"] ;
                 switch ($url["cat"]) {
                     case 0: // affiche le profil du membre clické
-                        $main = "pages/pageProfil.php";
+                        $main = "pages/profil/pageProfil.php";
                         break;
                     case 2: // affiche les reseaux jeux du membre clické
-                        $main = "pages/pageDivertissement.php";
+                        $main = "pages/profil/pageDivertissement.php";
                         break;
                     case 3: // affiche les reseaux pro du membre clické
-                        $main = "pages/pageReseauxPro.php";
+                        $main = "pages/profil/pageReseauxPro.php";
                         break;
                     case 4: // affiche les reseaux sociaux du membre clické
-                        $main = "pages/pageReseauxSoc.php";
+                        $main = "pages/profil/pageReseauxSoc.php";
                         break;
                     default: // affiche le profil du membre par défaut clické
-                        $main = "pages/pageProfil.php";
+                        $main = "pages/profil/pageProfil.php";
                 } 
                 include($main);  
                 
@@ -193,16 +184,16 @@ if(isset($_GET["query"])) {
                 $i = $url["pCat"] ;
                 switch ($url["pCat"]) {
                     case 0: // affiche le profil perso
-                        $main = "pages/pageProfilPerso.php";
+                        $main = "pages/profilPerso/pageProfilPerso.php";
                         break;
                     case 1: // affiche le parcour pro perso
-                        $main = "pages/pageProfilPersoPro.php";
+                        $main = "pages/profilPerso/pageProfilPersoPro.php";
                         break;
                     case 2: // affiche les reseaux sociaux perso
-                        $main = "pages/pageProfilPersoSoc.php";
+                        $main = "pages/profilPerso/pageProfilPersoSoc.php";
                         break;
                     default: // affiche le profil perso par défaut
-                        $main = "pages/pageProfilPerso.php";
+                        $main = "pages/profilPerso/pageProfilPerso.php";
                 } 
                     include($main);
                 

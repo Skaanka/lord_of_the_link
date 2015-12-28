@@ -2,7 +2,7 @@
     //creation de session
     session_start();
     // connexion bdd
-    require_once('../php/connexion.php');
+    require_once('../../php/connexion.php');
 
 
     try { 

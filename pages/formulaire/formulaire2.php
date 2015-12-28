@@ -3,7 +3,7 @@
 session_start();
 //print_r($_SESSION['inscription']);
 // connexion bdd
-require_once('../php/connexion.php');
+require_once('../../php/connexion.php');
 ?>
 
 <!doctype html>
@@ -13,8 +13,8 @@ require_once('../php/connexion.php');
     <head>
         <meta charset="utf-8">
         <title>LOTL formulaire</title>
-        <link rel="stylesheet" href="../css/bootstrap.css">
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/style.css">
     </head>
     <body>
         
@@ -26,22 +26,22 @@ require_once('../php/connexion.php');
                 ?>
                     <div class="form-group">
                         <label for="profil">Bienvenue <?php echo $_SESSION['user']['prenom'] . " " . $_SESSION['user']['nom'] ; ?></label> <!-- TODO STYLE ECHO NOM PRENOM -->
-                        <input type="submit" id="profil" class="btn btn-default btn-xs" name="profil" value="profil" formaction="#.php">
-                        <input type="submit" class="btn btn-default btn-xs" name="deconnexion" value="déconnexion" formaction="logoff.php">
+                        <input type="submit" id="profil" class="btn btn-default btn-xs" name="profil" value="profil" formaction=".php">
+                        <input type="submit" class="btn btn-default btn-xs" name="deconnexion" value="déconnexion" formaction="../../php/logoff.php">
                     </div>
                 <?php
                 } elseif ( empty($_SESSION['user']) )  {
                 ?>
                     <div class="form-group">
                         <label class="sr-only" for="mail">Email address</label>
-                        <input type="email" class="mail" id="mail" placeholder="Email">
+                        <input type="email" class="mail" id="mail" placeholder="Email" name="mail">
                     </div>
                     <div class="form-group">
                         <label class="sr-only" for="password">Password</label>
-                        <input type="password" class="" id="password" placeholder="Password">
+                        <input type="password" class="" id="password" placeholder="Password" name="mot_de_passe">
                     </div>
 
-                     <input type="submit" class="dropdown-toggle" name="connexion" value="connexion" formaction="login.php">
+                     <input type="submit" class="dropdown-toggle" name="connexion" value="connexion" formaction="../../php/login.php">
                     <input type="submit" class="dropdown-toggle" name="" formaction="formulaire.php" value="Inscription">
                 <?php
                     //echo $login_erreur; // TODO affiche message d'erreur : "erreur email ou mot de passe, veuillez réessayer" 
@@ -58,9 +58,9 @@ require_once('../php/connexion.php');
         <!-- menu navbar en dropdown -->
         <div class="row col-md-8 col-md-offset-2" id="menu-nav">
             
-            <a href="../index.php">
+            <a href="../../index.php">
                 <button type="button" class="dropdown-toggle" >
-                    <img src="../img/icons/ring.png" id="home">
+                    <img src="../../img/icons/ring.png" id="home">
                 </button>
             </a>
             
@@ -70,12 +70,12 @@ require_once('../php/connexion.php');
                 Divertissement <span class="caret"></span>
               </button>
               <ul class="dropdown-menu">
-                <li><a href="index.php<?php echo "?divCat=" . 0 ; ?>"><img src="../img/icons/PSN_logo.png" class="iconMini">&nbsp;PSN</a></li>
-                <li><a href="index.php<?php echo "?divCat=" . 1 ; ?>"><img src="../img/icons/Xbox_logo.png" class="iconMini">&nbsp;XboxLive</a></li>
-                <li><a href="index.php<?php echo "?divCat=" . 2 ; ?>"><img src="../img/icons/Steam_logo.png" class="iconMini">&nbsp;Steam</a></li>
-                <li><a href="index.php<?php echo "?divCat=" . 3 ; ?>"><img src="../img/icons/battlenet_logo.png" class="iconMini">&nbsp;Battle.net</a></li>
-                <li><a href="index.php<?php echo "?divCat=" . 4 ; ?>"><img src="../img/icons/nintendo_logo.png" class="iconMini">&nbsp;Nintendo</a></li>
-                <li><a href="index.php<?php echo "?divCat=" . 5 ; ?>"><img src="../img/icons/origin1_logo.png" class="iconMini">&nbsp;Origin</a></li>
+                <li><a href="index.php<?php echo "?divCat=" . 0 ; ?>"><img src="../../img/icons/PSN_logo.png" class="iconMini">&nbsp;PSN</a></li>
+                <li><a href="index.php<?php echo "?divCat=" . 1 ; ?>"><img src="../../img/icons/Xbox_logo.png" class="iconMini">&nbsp;XboxLive</a></li>
+                <li><a href="index.php<?php echo "?divCat=" . 2 ; ?>"><img src="../../img/icons/Steam_logo.png" class="iconMini">&nbsp;Steam</a></li>
+                <li><a href="index.php<?php echo "?divCat=" . 3 ; ?>"><img src="../../img/icons/battlenet_logo.png" class="iconMini">&nbsp;Battle.net</a></li>
+                <li><a href="index.php<?php echo "?divCat=" . 4 ; ?>"><img src="../../img/icons/nintendo_logo.png" class="iconMini">&nbsp;Nintendo</a></li>
+                <li><a href="index.php<?php echo "?divCat=" . 5 ; ?>"><img src="../../img/icons/origin1_logo.png" class="iconMini">&nbsp;Origin</a></li>
               </ul>
             </div>
 
@@ -85,11 +85,11 @@ require_once('../php/connexion.php');
                 Réseaux pro. <span class="caret"></span>
               </button>
               <ul class="dropdown-menu">
-                <li><a href="index.php<?php echo "?proCat=" . 0 ; ?>"><img src="../img/icons/linkedin_logo.png" class="iconMini">&nbsp;LinkedIn</a></li>
-                <li><a href="index.php<?php echo "?proCat=" . 1 ; ?>"><img src="../img/icons/viadeo_logo.png" class="iconMini">&nbsp;Viadeo</a></li>
-                <li><a href="index.php<?php echo "?proCat=" . 2 ; ?>"><img src="../img/icons/xing_logo.png" class="iconMini">&nbsp;xing</a></li>
-                <li><a href="index.php<?php echo "?proCat=" . 3 ; ?>"><img src="../img/icons/muxi_logo.jpg" class="iconMini">&nbsp;Muxy</a></li>
-                <li><a href="index.php<?php echo "?proCat=" . 4 ; ?>"><img src="../img/icons/github_logo.png" class="iconMini">&nbsp;GitHub</a></li>
+                <li><a href="index.php<?php echo "?proCat=" . 0 ; ?>"><img src="../../img/icons/linkedin_logo.png" class="iconMini">&nbsp;LinkedIn</a></li>
+                <li><a href="index.php<?php echo "?proCat=" . 1 ; ?>"><img src="../../img/icons/viadeo_logo.png" class="iconMini">&nbsp;Viadeo</a></li>
+                <li><a href="index.php<?php echo "?proCat=" . 2 ; ?>"><img src="../../img/icons/xing_logo.png" class="iconMini">&nbsp;xing</a></li>
+                <li><a href="index.php<?php echo "?proCat=" . 3 ; ?>"><img src="../../img/icons/muxi_logo.jpg" class="iconMini">&nbsp;Muxy</a></li>
+                <li><a href="index.php<?php echo "?proCat=" . 4 ; ?>"><img src="../../img/icons/github_logo.png" class="iconMini">&nbsp;GitHub</a></li>
               </ul>
             </div>
             
@@ -99,16 +99,16 @@ require_once('../php/connexion.php');
                 Réseaux sociaux <span class="caret"></span>
               </button>
               <ul class="dropdown-menu">
-                <li><a href="<?php echo "?resCat=" . 0 ; ?>"><img src="../img/icons/FB_logo.png" class="iconMini">&nbsp;Facebook</a></li>
-                <li><a href="<?php echo "?resCat=" . 1 ; ?>"><img src="../img/icons/Twitter-logo.png" class="iconMini">&nbsp;Twitter</a></li>
-                <li><a href="<?php echo "?resCat=" . 2 ; ?>"><img src="../img/icons/YouTube-logo.png" class="iconMini">&nbsp;Youtube</a></li>
-                <li><a href="<?php echo "?resCat=" . 3 ; ?>"><img src="../img/icons/googleplus_logo.png" class="iconMini">&nbsp;Google+</a></li>
-                <li><a href="<?php echo "?resCat=" . 4 ; ?>"><img src="../img/icons/Skype_logo.png" class="iconMini">&nbsp;Skype</a></li>
-                <li><a href="<?php echo "?resCat=" . 5 ; ?>"><img src="../img/icons/instagram_logo.png" class="iconMini">&nbsp;Instagram</a></li>
-                <li><a href="<?php echo "?resCat=" . 6 ; ?>"><img src="../img/icons/pinterest-logo.png" class="iconMini">&nbsp;Pinterest</a></li>
-                <li><a href="<?php echo "?resCat=" . 7 ; ?>"><img src="../img/icons/Deezer_logo.png" class="iconMini">&nbsp;Deezer</a></li>
-                <li><a href="<?php echo "?resCat=" . 8 ; ?>"><img src="../img/icons/Spotify_logo.png" class="iconMini">&nbsp;Spotify</a></li>
-                <li><a href="<?php echo "?resCat=" . 9 ; ?>"><img src="../img/icons/Viber-logo.png" class="iconMini">&nbsp;Viber</a></li>
+                <li><a href="<?php echo "?resCat=" . 0 ; ?>"><img src="../../img/icons/FB_logo.png" class="iconMini">&nbsp;Facebook</a></li>
+                <li><a href="<?php echo "?resCat=" . 1 ; ?>"><img src="../../img/icons/Twitter-logo.png" class="iconMini">&nbsp;Twitter</a></li>
+                <li><a href="<?php echo "?resCat=" . 2 ; ?>"><img src="../../img/icons/YouTube-logo.png" class="iconMini">&nbsp;Youtube</a></li>
+                <li><a href="<?php echo "?resCat=" . 3 ; ?>"><img src="../../img/icons/googleplus_logo.png" class="iconMini">&nbsp;Google+</a></li>
+                <li><a href="<?php echo "?resCat=" . 4 ; ?>"><img src="../../img/icons/Skype_logo.png" class="iconMini">&nbsp;Skype</a></li>
+                <li><a href="<?php echo "?resCat=" . 5 ; ?>"><img src="../../img/icons/instagram_logo.png" class="iconMini">&nbsp;Instagram</a></li>
+                <li><a href="<?php echo "?resCat=" . 6 ; ?>"><img src="../../img/icons/pinterest-logo.png" class="iconMini">&nbsp;Pinterest</a></li>
+                <li><a href="<?php echo "?resCat=" . 7 ; ?>"><img src="../../img/icons/Deezer_logo.png" class="iconMini">&nbsp;Deezer</a></li>
+                <li><a href="<?php echo "?resCat=" . 8 ; ?>"><img src="../../img/icons/Spotify_logo.png" class="iconMini">&nbsp;Spotify</a></li>
+                <li><a href="<?php echo "?resCat=" . 9 ; ?>"><img src="../../img/icons/Viber-logo.png" class="iconMini">&nbsp;Viber</a></li>
               </ul>
             </div>
             
@@ -349,6 +349,7 @@ require_once('../php/connexion.php');
 
         <div id="footer" class="col-md-8 col-md-offset-2">
         </div>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
     </body>
 </html>

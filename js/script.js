@@ -10,10 +10,20 @@ function toggle_visibility(sidebarCat) {
 
 
 
-/*$(document).ready(function(){
-
+$(document).ready(function(){
     
-var navbar = $("#menu-nav").offset().top;
+/*    $(".scrollMembres").click(function(event){
+        event.preventDefault;
+        $("html,body").animate({scrollTop : 200}, 500);
+        return false;
+    })
+    */
+    
+    
+    
+    
+    
+/*var navbar = $("#menu-nav").offset().top;
     console.log(navbar);
 
 $(".scroll").click(function(){
@@ -24,5 +34,5 @@ $(".scroll").click(function(){
                 return false;
                 break;
         }
-    })
-})*/
+    })*/
+})

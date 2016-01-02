@@ -1,12 +1,11 @@
 <?php 
     // creation de session
     session_start();
-    
     // connexion bdd
-    require_once('../php/connexion.php');
+    require_once('../../php/connexion.php');
     //print_r($_SESSION['inscription']);
     
-    //try { TODO RE ACTIVER LE TRY
+    try {
         if ( isset($_POST['submit']) ) {
             //TODO nettoyer les espace non voulue 
             //$nom = trim($_POST["nom"]);            
@@ -123,13 +122,9 @@
         } else {
             //header("Location: formulaire2.php"); // supprimer le mode commentaire lorsque page OK
             echo "Erreur : echec de l'inscription !";
-        }
-
-
-
+        } 
         
-    /*catch(PDOException $ex) {
+    }catch(PDOException $ex) {
       echo "erreur! !";
     }
 
-    }*/

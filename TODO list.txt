@@ -20,6 +20,7 @@
 
 
 - Mise en page des pages profil perso
+	(OK crée, a finir)
 
 
 - crée la page de classement par bouton + mise en page 
@@ -34,6 +35,7 @@
 
 
 - poser un scrollspy/ ancrage sur menu quand on sort un profil a consulter
+	(code jQuery OK mais ne fonctionne pas car actif sur un <a>)
 
 
 - mini bouton "copier" dans la fenetre des ID de compte

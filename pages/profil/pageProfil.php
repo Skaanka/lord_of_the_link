@@ -1,8 +1,5 @@
 
 <?php
-if ( isset ($_SESSION["inscription"])) {
-    unset($_SESSION["inscription"]);
-}
 // connexion bdd
 require_once('php/connexion.php');
 

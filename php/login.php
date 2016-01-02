@@ -1,9 +1,9 @@
 <?php
-    if ( isset ($_SESSION["inscription"])) {
-        unset($_SESSION["inscription"]);
-    }
-    session_start();
-    require_once('../php/connexion.php');
+require_once('../php/function.php');
+//creation de session
+session_start();
+//connexion a la bdd
+require_once('../php/connexion.php');
 
 
 try {
@@ -50,7 +50,7 @@ try {
     
 } catch(PDOException $ex) {
         echo "erreur try !";
-    }
+}
 
 
 

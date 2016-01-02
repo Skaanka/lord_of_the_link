@@ -1,9 +1,7 @@
 <?php
-// detruit la session inscription si elle existe
-if ( isset ($_SESSION["inscription"])) {
-    unset($_SESSION["inscription"]);
-}
-
+// destruction de session inscription
+require_once('php/function.php');
+destructionSessionInscription();
 // appel du fichier connexion bdd
 require_once('php/connexion.php');
 
@@ -31,6 +29,10 @@ $affichageMembreReseauxPro = $db->query('SELECT * FROM pro WHERE id_membres =' .
 while ($value = $affichageMembreReseauxPro->fetch()) { //debut de la boucle
 ?>
 <div class="row rowPage col-md-10" >
+    
+    <?php
+    if (!empty($value['linkedin'])) {                                             
+    ?>
     <div class="col-md-5 infoPage">
         <img class="iconsPage col-md-2" src="img/icons/linkedin_logo.png">
         <label for="linkedin" class="col-sm-6 labelPage">LinkedIn</label>
@@ -40,7 +42,11 @@ while ($value = $affichageMembreReseauxPro->fetch()) { //debut de la boucle
           </div>
         </div>
     </div>
-    
+    <?php
+    }                                             
+   
+    if (!empty($value['viadeo'])) {                                             
+    ?>
     <div class="col-md-5 col-md-offset-1 infoPage">
         <img class="iconsPage col-md-2" src="img/icons/viadeo_logo.png">
         <label for="viadeo" class="col-sm-6 labelPage">Viadeo</label>
@@ -50,9 +56,16 @@ while ($value = $affichageMembreReseauxPro->fetch()) { //debut de la boucle
           </div>
         </div>
     </div>
+    <?php
+    }                                             
+    ?>
 </div>
 
 <div class="row rowPage col-md-10" >
+    
+    <?php
+    if (!empty($value['xing'])) {                                             
+    ?>
     <div class="col-md-5 infoPage">
         <img class="iconsPage col-md-2" src="img/icons/xing_logo.png">
         <label for="xing" class="col-sm-6 labelPage">Xing</label>
@@ -62,19 +75,30 @@ while ($value = $affichageMembreReseauxPro->fetch()) { //debut de la boucle
           </div>
         </div>
     </div>
-    
+    <?php
+    }                                             
+   
+    if (!empty($value['muxi'])) {                                             
+    ?>
     <div class="col-md-5 col-md-offset-1 infoPage">
         <img class="iconsPage col-md-2" src="img/icons/muxi_logo.jpg">
         <label for="muxy" class="col-sm-6 labelPage">Muxy</label>
         <div class="well well-sm col-md-8">
-          <div class="" id="muxy">
-            <?php echo $value['muxi']; ?>
-          </div>
+            <div class="" id="muxy">
+                <?php echo $value['muxi']; ?>
+              </div>
         </div>
     </div>
+    <?php
+    }                                             
+    ?>
 </div>
 
 <div class="row rowPage col-md-10" >
+    
+    <?php
+    if (!empty($value['github'])) {                                             
+    ?>
     <div class="col-md-5 infoPage">
         <img class="iconsPage col-md-2" src="img/icons/github_logo.png">
         <label for="github" class="col-sm-6 labelPage">GitHub</label>
@@ -83,7 +107,10 @@ while ($value = $affichageMembreReseauxPro->fetch()) { //debut de la boucle
             <?php echo $value['github']; ?>
           </div>
         </div>
-    </div>    
+    </div>
+    <?php
+    }                                             
+    ?>
 </div>
 <?php
 }// fin de la boucle

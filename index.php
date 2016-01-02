@@ -1,24 +1,15 @@
 <?php
-// détruit la $_SESSION["inscription"] si elle existe
-if ( isset ($_SESSION["inscription"])) {
-    unset($_SESSION["inscription"]);
-}
+// detruit la session inscription si elle existe
+require_once('php/function.php');
+destructionSessionInscription();
+//print_r($_SESSION["inscription"]);
 
 //creation de session
 session_start();
-
 // connexion bdd
 require_once('php/connexion.php');
-
-// recuperation dans l'url
-if(isset($_GET["query"])) {
-    $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    $query  = parse_url($actual_link)["query"];
-    //echo $query;
-    parse_str($query, $params);
-    //print_r($params);
-    //echo $params["test"];
-}
+//parser
+require_once('php/parser.php');
 
 ?>
 
@@ -45,7 +36,7 @@ if(isset($_GET["query"])) {
                         <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> 
                         <label for="profil" id="wellcome">&nbsp; Bienvenue <?php echo $_SESSION['user']['prenom'] . " " . $_SESSION['user']['nom'] ; ?> &nbsp;</label> <!-- TODO STYLE ECHO NOM PRENOM -->
                         <input type="submit" id="profil" class="btn-xs dropdown-toggle" name="profil" value="profil" formaction="index.php<?php echo "?query=" .$_SESSION['user']['id'] . "&" . "pCat=" . 0 ; ?>"> <!--TODO affichage profil utilisateur -->
-                        <input type="submit" class="btn-xs dropdown-toggle" name="deconnexion" value="déconnexion" formaction="pages/logoff.php">
+                        <input type="submit" class="btn-xs dropdown-toggle" name="deconnexion" value="déconnexion" formaction="php/logoff.php">
                     </div>
                 <?php
                 } elseif ( empty($_SESSION['user']) )  {
@@ -59,8 +50,8 @@ if(isset($_GET["query"])) {
                         <input type="password" class="" id="password" placeholder="Password" name="mot_de_passe">
                     </div>
 
-                     <input type="submit" class="dropdown-toggle" name="connexion" value="connexion" formaction="pages/login.php">
-                    <input type="submit" class="dropdown-toggle" name="" formaction="pages/formulaire.php" value="Inscription">
+                     <input type="submit" class="dropdown-toggle" name="connexion" value="connexion" formaction="php/login.php">
+                    <input type="submit" class="dropdown-toggle" name="" formaction="pages/formulaire/formulaire.php" value="Inscription">
                 <?php
                     //echo $login_erreur; // TODO affiche message d'erreur : "erreur email ou mot de passe, veuillez réessayer" 
                 }
@@ -74,7 +65,7 @@ if(isset($_GET["query"])) {
         
         
         <!-- menu navbar en dropdown -->
-        <div class="row col-md-8 col-md-offset-2" id="menu-nav" name="navbar">
+        <div class="row col-md-8 col-md-offset-2" id="menu-nav">
             
             <div class="btn-group">
                 <a href="index.php">
@@ -146,7 +137,7 @@ if(isset($_GET["query"])) {
                 $affichageMembre = $db->query('SELECT id, prenom, nom FROM membres');
                 while ($value = $affichageMembre->fetch()) {
                 ?>
-                <li id="animated-example" class="animated fadeInLeft scroll"><a id="scroll" href="index.php<?php echo "?query=" .$value['id'] . "&" . "cat=" . 0 ; ?>"><?php echo htmlspecialchars($value["prenom"]) . " " . htmlspecialchars($value["nom"]) ?></a></li>
+                <li id="animated-example" class="animated fadeInLeft"><a href="index.php<?php echo "?query=" .$value['id'] . "&" . "cat=" . 0 ; ?>" class="scrollMembres"><?php echo htmlspecialchars($value["prenom"]) . " " . htmlspecialchars($value["nom"]) ?></a></li>
                 <?php
                 }
                 $affichageMembre->closeCursor();
@@ -168,24 +159,24 @@ if(isset($_GET["query"])) {
             //echo "<br/>";
             //print_r($url["cat"]);
 
-            // affichage default, profil user, profil visited     ------- TODO ajout affichage du profil de l'utilisateur connecter
+            // affichage default, profil user, profil visited   
             if  ( isset($_GET["query"]) && isset($url["cat"]) ) {
                 $i = $url["cat"] ;
                 switch ($url["cat"]) {
                     case 0: // affiche le profil du membre clické
-                        $main = "pages/pageProfil.php";
+                        $main = "pages/profil/pageProfil.php";
                         break;
-                    case 2: // affiche le profil du membre clické
-                        $main = "pages/pageDivertissement.php";
+                    case 2: // affiche les reseaux jeux du membre clické
+                        $main = "pages/profil/pageDivertissement.php";
                         break;
-                    case 3: // affiche le profil du membre clické
-                        $main = "pages/pageReseauxPro.php";
+                    case 3: // affiche les reseaux pro du membre clické
+                        $main = "pages/profil/pageReseauxPro.php";
                         break;
-                    case 4: // affiche le profil du membre clické
-                        $main = "pages/pageReseauxSoc.php";
+                    case 4: // affiche les reseaux sociaux du membre clické
+                        $main = "pages/profil/pageReseauxSoc.php";
                         break;
-                    default: // la page par défaut
-                        $main = "pages/pageProfil.php";
+                    default: // affiche le profil du membre par défaut clické
+                        $main = "pages/profil/pageProfil.php";
                 } 
                 include($main);  
                 
@@ -193,103 +184,97 @@ if(isset($_GET["query"])) {
                 $i = $url["pCat"] ;
                 switch ($url["pCat"]) {
                     case 0: // affiche le profil perso
-                        $main = "pages/pageProfilPerso.php";
+                        $main = "pages/profilPerso/pageProfilPerso.php";
                         break;
-                    case 1: // affiche le parcour pro
-                        $main = "pages/pageProfilPersoPro.php";
+                    case 1: // affiche le parcour pro perso
+                        $main = "pages/profilPerso/pageProfilPersoPro.php";
                         break;
-                    case 2: // affiche les reseaux sociaux
-                        $main = "pages/pageProfilPersoSoc.php";
+                    case 2: // affiche les reseaux sociaux perso
+                        $main = "pages/profilPerso/pageProfilPersoSoc.php";
                         break;
-                    default: // la page par défaut
-                        $main = "pages/pageProfilPerso.php";
+                    default: // affiche le profil perso par défaut
+                        $main = "pages/profilPerso/pageProfilPerso.php";
                 } 
                     include($main);
                 
             } elseif ( isset($url["divCat"]) ) {
                 $i = $url["divCat"] ;
                 switch ($url["divCat"]) {
-                    case 0: // affiche le profil perso
-                        $main = "pages/pageBouton.php";
+                    case 0: // affiche les profils perso psn
+                        $main = "pages/pagebouton2.php";
                         break;
-                    case 1: // affiche le parcour pro
-                        $main = "pages/pageBouton.php";
+                    case 1: // affiche les profils xboxlive
+                        $main = "pages/pagebouton2.php";
                         break;
-                    case 2: // affiche les reseaux sociaux
-                        $main = "pages/pageBouton.php";
+                    case 2: // affiche les profils steam
+                        $main = "pages/pagebouton2.php";
                         break;
-                    case 3: // affiche le parcour pro
-                        $main = "pages/pageBouton.php";
+                    case 3: // affiche les profils battlenet
+                        $main = "pages/pagebouton2.php";
                         break;
-                    case 4: // affiche les reseaux sociaux
-                        $main = "pages/pageBouton.php";
+                    case 4: // affiche les profils nintendo
+                        $main = "pages/pagebouton2.php";
                         break;
-                    default: // la page par défaut
-                        $main = "pages/pageProfilPerso.php";
-                } 
-                    include($main);
-                
-            } elseif ( isset($url["proCat"]) ) {
-                $i = $url["proCat"] ;
-                switch ($url["proCat"]) {
-                    case 0: // affiche le profil perso
-                        $main = "pages/pageBouton.php";
+                    case 5: // affiche les profils origin
+                        $main = "pages/pagebouton2.php";
                         break;
-                    case 1: // affiche le parcour pro
-                        $main = "pages/pageBouton.php";
-                        break;
-                    case 2: // affiche les reseaux sociaux
-                        $main = "pages/pageBouton.php";
-                        break;
-                    case 3: // affiche le parcour pro
-                        $main = "pages/pageBouton.php";
-                        break;
-                    case 4: // affiche les reseaux sociaux
-                        $main = "pages/pageBouton.php";
-                        break;
-                    case 5: // affiche les reseaux sociaux
-                        $main = "pages/pageBouton.php";
-                        break;
-                    case 6: // affiche les reseaux sociaux
-                        $main = "pages/pageBouton.php";
-                        break;
-                    case 7: // affiche les reseaux sociaux
-                        $main = "pages/pageBouton.php";
-                        break;
-                    case 8: // affiche les reseaux sociaux
-                        $main = "pages/pageBouton.php";
-                        break;
-                    case 9: // affiche les reseaux sociaux
-                        $main = "pages/pageBouton.php";
-                        break;
-                    default: // la page par défaut
-                        $main = "pages/pageProfilPerso.php";
                 } 
                     include($main);
                 
             } elseif ( isset($url["resCat"]) ) {
                 $i = $url["resCat"] ;
                 switch ($url["resCat"]) {
-                    case 0: // affiche le profil perso
-                        $main = "pages/#.php";
+                    case 0: // affiche les profils facebook
+                        $main = "pages/pagebouton2.php";
                         break;
-                    case 1: // affiche le parcour pro
-                        $main = "pages/pageBouton.php";
+                    case 1: // affiche les profils twitter
+                        $main = "pages/pagebouton2.php";
                         break;
-                    case 2: // affiche les reseaux sociaux
-                        $main = "pages/pageBouton.php";
+                    case 2: // affiche les profils youtube
+                        $main = "pages/pagebouton2.php";
                         break;
-                    case 3: // affiche le parcour pro
-                        $main = "pages/pageBouton.php";
+                    case 3: // affiche les profils google+
+                        $main = "pages/pagebouton2.php";
                         break;
-                    case 4: // affiche les reseaux sociaux
-                        $main = "pages/pageBouton.php";
+                    case 4: // affiche les profils skype
+                        $main = "pages/pagebouton2.php";
                         break;
-                    case 5: // affiche les reseaux sociaux
-                        $main = "pages/pageBouton.php";
+                    case 5: // affiche les profils instagram
+                        $main = "pages/pagebouton2.php";
                         break;
-                    default: // la page par défaut
-                        $main = "pages/pageProfilPerso.php";
+                    case 6: // affiche les profils pinterest
+                        $main = "pages/pagebouton2.php";
+                        break;
+                    case 7: // affiche les profils deezer
+                        $main = "pages/pagebouton2.php";
+                        break;
+                    case 8: // affiche les profils spotify
+                        $main = "pages/pagebouton2.php";
+                        break;
+                    case 9: // affiche les profils viber 
+                        $main = "pages/pagebouton2.php";
+                        break;
+                } 
+                    include($main);
+                
+            } elseif ( isset($url["proCat"]) ) {
+                $i = $url["proCat"] ;
+                switch ($url["proCat"]) {
+                    case 0: // affiche les profils linkedin
+                        $main = "pages/pagebouton2.php";
+                        break;
+                    case 1: // affiche les profils viadeo
+                        $main = "pages/pagebouton2.php";
+                        break;
+                    case 2: // affiche les profils xing
+                        $main = "pages/pagebouton2.php";
+                        break;
+                    case 3: // affiche les profils muxy
+                        $main = "pages/pagebouton2.php";
+                        break;
+                    case 4: // affiche les profils github
+                        $main = "pages/pagebouton2.php";
+                        break;
                 } 
                     include($main);
             } else {
@@ -332,5 +317,6 @@ if(isset($_GET["query"])) {
         <script src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
         
+
     </body>
 </html>

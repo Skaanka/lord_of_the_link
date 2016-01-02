@@ -1,9 +1,7 @@
 <?php
-// detruit la session inscription si elle existe
-if ( isset ($_SESSION["inscription"])) {
-    unset($_SESSION["inscription"]);
-}
-
+// destruction de session inscription
+require_once('php/function.php');
+destructionSessionInscription();
 // appel du fichier connexion bdd
 require_once('php/connexion.php');
 
@@ -15,7 +13,6 @@ $affichageMembre = $db->prepare('SELECT * FROM membres WHERE id = ? ');
 $affichageMembre->execute(array($_GET['query']));
 $value = $affichageMembre->fetch();
 
-print_r($_GET["query"]);
 ?>
 
 
@@ -55,7 +52,7 @@ while ($value = $affichageMembreDivertissements->fetch()) { //debut de la boucle
     </div>
 </div>
 
-<div class="row rowPage col-md-10 col-md-offset-2">
+<div class="row rowPage col-md-10">
     <div class="col-md-5 infoPage">
         <img class="iconsPage col-md-2" src="img/icons/Steam_logo.png">
         <label for="steam" class="col-sm-6 labelPage">Steam</label>
@@ -77,7 +74,7 @@ while ($value = $affichageMembreDivertissements->fetch()) { //debut de la boucle
     </div>
 </div>
 
-<div class="row rowPage col-md-10 col-md-offset-2">
+<div class="row rowPage col-md-10">
     <div class="col-md-5 infoPage">
         <img class="iconsPage col-md-2" src="img/icons/origin1_logo.png">
         <label for="origin" class="col-sm-6 labelPage">Origin</label>

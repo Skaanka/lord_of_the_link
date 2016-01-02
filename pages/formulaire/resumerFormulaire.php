@@ -1,12 +1,10 @@
 <?php 
+// creation de session
+session_start();   
+// connexion bdd
+require_once('../php/connexion.php');
 
-    // creation de session
-    session_start();
-    
-    // connexion bdd
-    require_once('../php/connexion.php');
-
-    /* aide debug */
+/* aide debug */
     //echo "<pre>";
     //print_r($_SESSION['inscription']);
     //echo "<pre>";
@@ -15,7 +13,6 @@
 
 // INSERT des 3 pages de formulaire.
 
-//Probleme numero 1 : Comment faire comprendre a l'insert la bonne id membre
 
 /************************
 // INSERT Formulaire 1 //    --------> [OK]
@@ -55,8 +52,6 @@ $inscriptionTemp->closeCursor();
 /************************
 // INSERT formulaire 2 //     -------->  [OK]
 ************************/
-
-
 
 /*******************
 //    DIPLOMES    //    --------> [OK] [4/4]
@@ -253,9 +248,9 @@ if(isset($_SESSION['inscription']['porte_folio'])) {
 
 
 
-        /************************
-        // INSERT Formulaire 3 //    --------> [OK]
-        ************************/
+/************************
+// INSERT Formulaire 3 //    --------> [OK]
+************************/
 
 
 /*******************

@@ -1,9 +1,6 @@
 <?php 
-// A FAIRE ENTIEREMENT
-
     // creation de session 
     session_start();
-
     // connexion bdd
     require_once('../php/connexion.php');
     
@@ -37,7 +34,8 @@
             $_SESSION['inscription']['deezer'] = $_POST['deezer'];
             $_SESSION['inscription']['spotify'] = $_POST['spotify'];
             $_SESSION['inscription']['viber'] = $_POST['viber'];
-
+            
+            
             header("Location: resumerFormulaire.php");
             
         } else {

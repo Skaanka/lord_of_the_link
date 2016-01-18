@@ -52,6 +52,8 @@ $value = $affichageMembreDivertissements->fetch(); //creation d'un tableau
 
 $tableauTitre = array('', '', 'Psn', 'Xbox-Live', 'Steam', 'Battle net', 'Nintendo', 'Origin'); // on créer un tableau pour le titre des section.
 
+
+/* TODO AJOUT ARRAY COUNT */
 ?>
 <div class="row rowPage col-md-10"> <!-- la fameuse div que je souhaiterai unique -->
     

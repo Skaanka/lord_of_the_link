@@ -322,5 +322,5 @@ if(isset($_SESSION['inscription']['facebook'], $_SESSION['inscription']['twitter
 
 //un fois le traitement du formulaire enregistrer dans la BDD, on peut détruire la session inscription et rediriger l'utilisateur sur la page index.ph
 unset($_SESSION["inscription"]);
-header('location: ../index.php'); // TODO page de validation du formulaire exemple : index.php?return=succes ou succes sera un "case succes " dans la boucle switch
+header('location: ../index.php'); // TODO page de validation du formulaire exemple : index.php?return=succes ou succes sera un "case: succes " dans la boucle switch
 
